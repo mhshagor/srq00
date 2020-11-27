@@ -1,0 +1,44 @@
+/* --------------------------------
+-- Global CSS For All Template ----
+----------------------------------- */
+
+/* ---- a ---- */
+/* ---- b ---- */
+
+[id*="-error"]{
+color:red;
+float:left;
+margin-top:-5px;
+font-weight: 600;
+}
+/*-----global---------*/
+.bg-norepeat{
+	background-repeat:no-repeat;
+}
+.bg-transparent-white{
+	background-color:#4151774d;
+}
+.bg-transparent-dark{
+	background-color:#00000070;
+}
+.top-auto{
+	top:auto;
+}
+.left-auto{
+	left:auto;
+}
+.card-hover-visible{
+	visibility:hidden;
+}
+.card:hover .card-hover-visible{
+	visibility:visible;
+}
+.bg-transparent-noimportant {
+    background-color: transparent;
+}
+/* ---- c ---- */
+
+section{
+	padding-top:100px;
+	padding-bottom:75px;
+}

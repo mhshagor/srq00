@@ -1,0 +1,79 @@
+/* ------------ Theme CSS ---------- */
+
+/* ======= Menu part ======= */
+body{
+	background-image:url('../images/exp.jpg');
+	background-size:cover;
+	background-position:ceter;
+	background-attachment:fixed;
+}
+#main-menu a.active,
+#main-menu a:hover{
+	background-color:black;
+	border-radius:5px;
+}
+/* ======= Home part ======= */
+#home{
+	background-image:url('../images/bg1.jpg');
+	background-size:cover;
+	background-position:ceter;
+}
+/* ======= Service part ======= */
+#service{
+	background-image:url('../images/service.jpg');
+	background-attachment:fixed;
+	background-size:cover;
+	background-position:ceter;
+}
+/* ======= Review part ======= */
+#review{
+	background-image:url('../images/review.jpg');
+	background-size:cover;
+	background-position:ceter;
+}
+/* ======= Contact part ======= */
+#contact{
+	background-image:url('../images/contact.jpg');
+	background-size:cover;
+	background-position:ceter;
+	background-attachment:fixed;
+}
+footer{
+	background-image:url('../images/footer.jpg');
+	background-size:cover;
+	background-position:ceter;
+	background-attachment:fixed;
+}
+/* ======= Social part ======= */
+#social a{
+	height:40px;
+	width:40px;
+}
+#upper{
+	display:none;
+}
+@media (max-width:576px){
+	/* ======= Home part ======= */
+	#home p{
+		font-size: .7rem;
+	}
+	#home h5 {
+		font-size: .8rem;
+	}
+	#home h1 {
+		font-size: 1.2rem;
+	}
+	#home .btn{
+		font-size: .65rem;
+	}
+	#home img{
+		min-width: 200px;
+	}
+	#canvas{
+		height:100px;
+		width:100px;
+	}
+	#main-menu li{
+		margin:1px 0;
+	}
+}
