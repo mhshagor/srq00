@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>	
+		
+		<!-- Alpine Plugins -->
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		<!-- Alpine Core -->
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+		
+		<title>Tailwind Button Style</title>
+		<style>
+			[x-cloak]{
+				display:none;
+			}
+			$navClass = isset($offcanvas) && $offcanvas ? 'after:bg-white hover:text-gray-50' : 'after:bg-black hover:text-gray-900'; 
+			.activeNavClass{
+				after:bg-white after:w-full' : 'after:w-full after:bg-black text-gray-900'
+			}
+			.active{
+				background-color:#f91942;
+				color: white;
+			}
+			.active .bottom-nav-item,
+			.group-hover:hover .bottom-nav-item{
+				color: white!important;
+				background:linear-gradient(180deg, rgba(0,254,97,1) 0%, rgba(2,162,37,1) 69%);
+			}
+			.active .bottom-nav-item{
+				margin-top:-1rem;
+				transform: scale(1.3);
+			}
+			.wave-group .input:focus ~ label .label-char,
+			.wave-group .input:valid ~ label .label-char {
+			  transform: translateY(-20px);
+			  font-size: 14px;
+			  color:green;
+			}
+			.wave-group .input:focus ~ .bar:before,
+			.wave-group .input:focus ~ .bar:after {
+			  width: 50%;
+			}
+			.wave-group .label-char {
+			  transition: 0.2s ease all;
+			  transition-delay: calc(var(--index) * .05s);
+			}
+			.swiper-pagination{
+				z-index:-1;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			}
+			.swiper-pagination .swiper-pagination-bullet{
+				background-color:#707070;
+				padding:4px;
+			}
+			.swiper-pagination .swiper-pagination-bullet-active{
+				background-color:#2c8c50;
+				padding:6px;
+			}
+			#testimonials .swiper-pagination .swiper-pagination-bullet{
+				background-color:#ffd;
+			}
+			#testimonials .swiper-pagination .swiper-pagination-bullet-active{
+				background-color:#fff;
+			}
+			@keyframes up-down {
+				0% {
+					transform: translateY(10px);
+				}
+				100% {
+					transform: translateY(-10px);
+				}
+			}
+		</style>
+    
+	</head>
+    <body > 
+		<main class="bg-gray-50 min-h-screen space-y-10">
+			<section id="service" class="min-h-[250px] bg-cover bg-center bg-no-repeat bg-gradient-to-br from-green-500 to-green-900 bg-blend-multiply" style="background-image:linear-gradient(146deg,rgb(34 195 93)0%,rgb(23 109 56)69%), url(images/service_bg.png)">
+				<div class="lg:container text-white pt-36 pb-20 px-6 md:px-20 xl:px-28 mx-auto">
+					<h1 class="text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Tailwind Nav
+					</h1>
+				</div>
+			</section>
+				<nav id="main-nav" class="text-sm text-sm bg-white shadow duration-700" x-data="{ open: true, focus: true }" @keydown.escape="onEscape">
+					<div class="mx-auto max-w-7xl px-4 px-2 sm:px-8 lg:px-20">
+						<div class="lg:flex hidden items-center justify-between py-4 md:justify-start md:space-x-10">
+							<div class="flex flex-shrink-0 gap-2 justify-start">
+								<a href="{{url('/')}}" >
+									<img src="images/logos/logo.png" alt="" class="h-11 mx-auto object-cover -mt-1">
+								</a>
+								<h2 class="font-bold text-2xl bg-gradient-to-r from-green-700 via-purple-500 to-red-500 inline-block text-transparent bg-clip-text from-20% via-40% to-90%">Explore Tech Solutions</h2>
+							</div>
+							<div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0 gap-2"> 
+								<ul class="text-lg flex items-center justify-center lg:gap-8 mr-6 text-base text-gray-700">
+									<li class="">
+										<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
+									</li>
+									<li class="">
+										<a href="{{url('about-us')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block  after:duration-500 after:w-full after:bg-black text-gray-900 duration-300">About</a>
+									</li>
+									<li class="">
+										<a href="{{url('our-services')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Service</a>
+									</li>
+									<li class="">
+										<a href="{{url('our-team')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Team</a>
+									</li>
+									<li class="">
+										<a href="{{url('our-blogs')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Blogs</a>
+									</li>
+									<li class="">
+										<a href="#contact" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Contact</a>
+									</li>
+								</ul>
+								<div class="flex items-center gap-2">
+									<a href="{{url('login')}}" class="bg-green-700 flex border border-2 border-green-800 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+										SignIn                                                                                  
+										<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+										<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- mobile navBar -->
+					<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky top-0 z-30 bg-white px-4 sm:px-8 md:px-16 lg:px-28 mx-auto lg:hidden">
+						<div class="flex items-center justify-between">
+							<div>
+								<a href="{{url('/')}}">
+								  <img class="h-14 w-auto" src="images/logos/logo.png" alt="Logo">
+								</a>
+							</div>
+							<div class="">
+								<div class=" flex relative py-3 sm:max-w-xl mx-auto">
+									<!-- offcanvase open button -->
+									<div class="shrink-0 block lg:hidden">
+										<button type="button" class="text-black hover:bg-green-700 hover:text-white border border-green-800 transition duration-700 ease-in-out h-10 w-10 flex justify-center items-center" @click="open = true">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+											</svg>
+										</button>
+									</div>
+									<!-- end offcanvase open button -->
+								</div>
+							</div>
+						</div>
+						<!-- Mobile offcanvase dialog -->
+						<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" style="display: none;">
+							<div class="fixed inset-0 z-40 flex">
+								<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-green-700 py-4 pb-12 shadow-xl" @click.away="open = false" style="display: none;">
+									<!-- offcanvase close -->
+									<div class="flex items-center px-4">
+										<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-green-800 border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
+											 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+										  </svg>
+										</button>
+									</div>
+									<!-- end offcanvase close -->
+									<!-- offcanvases -->
+									<div class="blocktext-white px-10 py-16">
+										<ul class="list-none text-white space-y-4 text-[1.15rem]">
+											<li class="">
+												<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
+											</li>
+											<li class="">
+												<a href="{{url('about-us')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block  after:duration-500 after:w-full after:bg-black text-gray-900 duration-300">About</a>
+											</li>
+											<li class="">
+												<a href="{{url('our-services')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Service</a>
+											</li>
+											<li class="">
+												<a href="{{url('our-team')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Team</a>
+											</li>
+											<li class="">
+												<a href="{{url('our-blogs')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Blogs</a>
+											</li>
+											<li class="">
+												<a href="#contact" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Contact</a>
+											</li>
+										</ul>
+										<div class="mt-5 flex">
+											<a href="{{url('login')}}" class="flex border border-2 border-gray-100 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+												SignIn                                                                                  
+												<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+												<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>        
+
+			</section>
+		</main>
+	</body>
+</html>
+	

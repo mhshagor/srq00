@@ -1,0 +1,160 @@
+@font-face {
+	font-family: "Business";
+	src: url("../iconfonts/Business.woff") format("woff"), url("../iconfonts/Business.ttf") format("truetype");
+}
+*[data-ico-business]:before {
+	font-family: Business;
+	content: attr(data-ico-business);
+}
+@font-face {
+	font-family: "Construction";
+	src: url("../iconfonts/Construction.woff") format("woff"), url("../iconfonts/Construction.ttf") format("truetype");
+}
+*[data-ico-construction]:before {
+	font-family: Construction;
+	content: attr(data-ico-construction);
+}
+@font-face {
+	font-family: "Design";
+	src: url("../iconfonts/Design.woff") format("woff"), url("../iconfonts/Design.ttf") format("truetype");
+}
+*[data-ico-design]:before {
+	font-family: Design;
+	content: attr(data-ico-design);
+}
+@font-face {
+	font-family: "Development";
+	src: url("../iconfonts/Development.woff") format("woff"), url("../iconfonts/Development.ttf") format("truetype");
+}
+*[data-ico-development]:before {
+	font-family: Development;
+	content: attr(data-ico-development);
+}
+@font-face {
+	font-family: "Essential";
+	src: url("../iconfonts/Essential.woff") format("woff"), url("../iconfonts/Essential.ttf") format("truetype");
+}
+*[data-ico-essential]:before {
+	font-family: Essential;
+	content: attr(data-ico-essential);
+}
+@font-face {
+	font-family: "FontAwesome";
+	src: url("../iconfonts/FontAwesome.woff") format("woff"), url("../iconfonts/FontAwesome.ttf") format("truetype");
+}
+*[data-ico-fontawesome]:before {
+	font-family: FontAwesome;
+	content: attr(data-ico-fontawesome);
+}
+@font-face {
+	font-family: "FontAwesome5Brands";
+	src: url("../iconfonts/FontAwesome5Brands.woff") format("woff"), url("../iconfonts/FontAwesome5Brands.ttf") format("truetype");
+}
+*[data-ico-fontawesome5brands]:before {
+	font-family: FontAwesome5Brands;
+	content: attr(data-ico-fontawesome5brands);
+}
+@font-face {
+	font-family: "FontAwesome5Regular";
+	src: url("../iconfonts/FontAwesome5Regular.woff") format("woff"), url("../iconfonts/FontAwesome5Regular.ttf") format("truetype");
+}
+*[data-ico-fontawesome5regular]:before {
+	font-family: FontAwesome5Regular;
+	content: attr(data-ico-fontawesome5regular);
+}
+@font-face {
+	font-family: "FontAwesome5Solid";
+	src: url("../iconfonts/FontAwesome5Solid.woff") format("woff"), url("../iconfonts/FontAwesome5Solid.ttf") format("truetype");
+}
+*[data-ico-fontawesome5solid]:before {
+	font-family: FontAwesome5Solid;
+	content: attr(data-ico-fontawesome5solid);
+}
+@font-face {
+	font-family: "HumanResources";
+	src: url("../iconfonts/HumanResources.woff") format("woff"), url("../iconfonts/HumanResources.ttf") format("truetype");
+}
+*[data-ico-humanresources]:before {
+	font-family: HumanResources;
+	content: attr(data-ico-humanresources);
+}
+@font-face {
+	font-family: "Icon7Stroke";
+	src: url("../iconfonts/Icon7Stroke.woff") format("woff"), url("../iconfonts/Icon7Stroke.ttf") format("truetype");
+}
+*[data-ico-icon7stroke]:before {
+	font-family: Icon7Stroke;
+	content: attr(data-ico-icon7stroke);
+}
+@font-face {
+	font-family: "Productivity";
+	src: url("../iconfonts/Productivity.woff") format("woff"), url("../iconfonts/Productivity.ttf") format("truetype");
+}
+*[data-ico-productivity]:before {
+	font-family: Productivity;
+	content: attr(data-ico-productivity);
+}
+@font-face {
+	font-family: "ResearchAndAnalysis";
+	src: url("../iconfonts/ResearchAndAnalysis.woff") format("woff"), url("../iconfonts/ResearchAndAnalysis.ttf") format("truetype");
+}
+*[data-ico-researchandanalysis]:before {
+	font-family: ResearchAndAnalysis;
+	content: attr(data-ico-researchandanalysis);
+}
+@font-face {
+	font-family: "Science";
+	src: url("../iconfonts/Science.woff") format("woff"), url("../iconfonts/Science.ttf") format("truetype");
+}
+*[data-ico-science]:before {
+	font-family: Science;
+	content: attr(data-ico-science);
+}
+@font-face {
+	font-family: "Startup";
+	src: url("../iconfonts/Startup.woff") format("woff"), url("../iconfonts/Startup.ttf") format("truetype");
+}
+*[data-ico-startup]:before {
+	font-family: Startup;
+	content: attr(data-ico-startup);
+}
+@font-face {
+	font-family: "Teamwork";
+	src: url("../iconfonts/Teamwork.woff") format("woff"), url("../iconfonts/Teamwork.ttf") format("truetype");
+}
+*[data-ico-teamwork]:before {
+	font-family: Teamwork;
+	content: attr(data-ico-teamwork);
+}
+@font-face {
+	font-family: "Transportation";
+	src: url("../iconfonts/Transportation.woff") format("woff"), url("../iconfonts/Transportation.ttf") format("truetype");
+}
+*[data-ico-transportation]:before {
+	font-family: Transportation;
+	content: attr(data-ico-transportation);
+}
+@font-face {
+	font-family: "btEducation";
+	src: url("../iconfonts/btEducation.woff") format("woff"), url("../iconfonts/btEducation.ttf") format("truetype");
+}
+*[data-ico-bteducation]:before {
+	font-family: btEducation;
+	content: attr(data-ico-bteducation);
+}
+@font-face {
+	font-family: "btFitnessSport";
+	src: url("../iconfonts/btFitnessSport.woff") format("woff"), url("../iconfonts/btFitnessSport.ttf") format("truetype");
+}
+*[data-ico-btfitnesssport]:before {
+	font-family: btFitnessSport;
+	content: attr(data-ico-btfitnesssport);
+}
+@font-face {
+	font-family: "btFurniture";
+	src: url("../iconfonts/btFurniture.woff") format("woff"), url("../iconfonts/btFurniture.ttf") format("truetype");
+}
+*[data-ico-btfurniture]:before {
+	font-family: btFurniture;
+	content: attr(data-ico-btfurniture);
+}

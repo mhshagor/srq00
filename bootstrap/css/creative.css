@@ -1,0 +1,14 @@
+/* =======================================================
+================== Creative CSS ============================
+======================================================== */
+
+#service-box .theme-icon-holder-white-to-black{
+	height:6rem;
+	width:6rem;
+}
+@media(max-width:576px){
+	#service-box .theme-icon-holder-white-to-black{
+		height:5rem;
+		width:5rem;
+	}
+}

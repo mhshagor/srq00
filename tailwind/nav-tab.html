@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>	
+		
+		<!-- Alpine Plugins -->
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		<!-- Alpine Core -->
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+		
+		<title>Tailwind Style</title>
+	</head>
+    <body > 
+		<main class="bg-gray-50 min-h-screen space-y-10">
+			<section id="service" class="min-h-[250px] bg-cover bg-center bg-no-repeat bg-gradient-to-br from-green-500 to-green-900 bg-blend-multiply" style="background-image:linear-gradient(146deg,rgb(34 195 93)0%,rgb(23 109 56)69%), url(images/service_bg.png)">
+				<div class="lg:container text-white pt-36 pb-20 px-6 md:px-20 xl:px-28 mx-auto">
+					<h1 class="text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Tailwind Nav Tab
+					</h1>
+				</div>
+			</section>
+			<section id="service" class="">
+				<div class="px-4">
+					<div class="">
+						<div class="p-4" x-data="{ activeTab: '5-day' }">
+							<div class="flex flex-wrap gap-1.5 sm:gap-2.5 whitespace-nowrap justify-center my-8 text-[12px] sm:text-base">
+								<button type="button" @click="activeTab = '5-day'" class="block !px-7 py-1 rounded-lg font-bold capitalize border-2 hover:bg-green-800 hover:text-white" :class="activeTab == '5-day' ? 'bg-green-800 text-white' : ''">5 Day</button>
+								<button type="button" @click="activeTab = '10-day'" class="block !px-7 py-1 rounded-lg font-bold capitalize border-2 hover:bg-green-800 hover:text-white" :class="activeTab == '10-day' ? 'bg-green-800 text-white' : ''">10 Day</button>
+								<button type="button" @click="activeTab = '15-day'" class="block !px-7 py-1 rounded-lg font-bold capitalize border-2 hover:bg-green-800 hover:text-white" :class="activeTab == '15-day' ? 'bg-green-800 text-white' : ''">15 Day</button>
+							</div>
+							<div class="p-0 md:p-3.5">
+								<div class="flex flex-wrap gap-2.5 whitespace-nowrap justify-center mb-14" x-show.transition.in.opacity.duration.600="activeTab == '5-day'">
+									<div class="w-[95%] sm:w-[47%] lg:w-[31.5%] shrink-0 flex flex-col border border-green-500 px-4 py-6 rounded-xl hover:shadow-lg hover:scale-105 bg-white hover:bg-green-50 duration-500">
+										<div class="text-center space-y-2.5">
+											<h4 class="text-xl sm:text-2xl lg:text-3xl font-bold pt-2.5 lg:py-4 leading-tight">5 USD Boost</h4>
+											<div>
+												<h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-green-800"><sup>৳</sup>750.00</h2>
+												<h6 class="text-sm font-bold text-gray-400 py-2.5 leading-tight capitalize">For 5 Day</h6>
+											</div>
+											<ul class="divide-y text-sm md:text-lg">
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>5 USD Boost</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>7,000-12,000 Reach</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>40-150+ Message</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>Target Audience</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>24/7 Support</p>
+												</li>
+											</ul>
+										</div>
+										<form method="post" action="https://bestsheba.com.bd/cart/list" class="mt-auto pt-2.5">
+											<input type="hidden" name="_token" value="BMtLcXAYpNNMk75dWnsqIZOPSbNuxznpjfh4Fs9p" autocomplete="off">                            <input type="hidden" name="item_code" value="5">
+											<button type="submit" class="mx-auto flex justify-center border text-white font-semibold bg-gradient-to-br hover:bg-gradient-to-bl from-green-800 to-green-500 px-10 py-2 rounded-full whitespace-nowrap duration-500">Order Now</button>
+										</form>
+									</div>
+									<div class="w-[95%] sm:w-[47%] lg:w-[31.5%] shrink-0 flex flex-col border border-green-500 px-4 py-6 rounded-xl hover:shadow-lg hover:scale-105 bg-white hover:bg-green-50 duration-500">
+										<div class="text-center space-y-2.5">
+											<h4 class="text-xl sm:text-2xl lg:text-3xl font-bold pt-2.5 lg:py-4 leading-tight">5 USD Boost</h4>
+											<div>
+												<h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-green-800"><sup>৳</sup>750.00</h2>
+												<h6 class="text-sm font-bold text-gray-400 py-2.5 leading-tight capitalize">For 5 Day</h6>
+											</div>
+											<ul class="divide-y text-sm md:text-lg">
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>5 USD Boost</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>7,000-12,000 Reach</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>40-150+ Message</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>Target Audience</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>24/7 Support</p>
+												</li>
+											</ul>
+										</div>
+										<form method="post" action="https://bestsheba.com.bd/cart/list" class="mt-auto pt-2.5">
+											<input type="hidden" name="_token" value="BMtLcXAYpNNMk75dWnsqIZOPSbNuxznpjfh4Fs9p" autocomplete="off">                            <input type="hidden" name="item_code" value="5">
+											<button type="submit" class="mx-auto flex justify-center border text-white font-semibold bg-gradient-to-br hover:bg-gradient-to-bl from-green-800 to-green-500 px-10 py-2 rounded-full whitespace-nowrap duration-500">Order Now</button>
+										</form>
+									</div>
+									<div class="w-[95%] sm:w-[47%] lg:w-[31.5%] shrink-0 flex flex-col border border-green-500 px-4 py-6 rounded-xl hover:shadow-lg hover:scale-105 bg-white hover:bg-green-50 duration-500">
+										<div class="text-center space-y-2.5">
+											<h4 class="text-xl sm:text-2xl lg:text-3xl font-bold pt-2.5 lg:py-4 leading-tight">5 USD Boost</h4>
+											<div>
+												<h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-green-800"><sup>৳</sup>750.00</h2>
+												<h6 class="text-sm font-bold text-gray-400 py-2.5 leading-tight capitalize">For 5 Day</h6>
+											</div>
+											<ul class="divide-y text-sm md:text-lg">
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>5 USD Boost</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>7,000-12,000 Reach</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>40-150+ Message</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>Target Audience</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>24/7 Support</p>
+												</li>
+											</ul>
+										</div>
+										<form method="post" action="https://bestsheba.com.bd/cart/list" class="mt-auto pt-2.5">
+											<input type="hidden" name="_token" value="BMtLcXAYpNNMk75dWnsqIZOPSbNuxznpjfh4Fs9p" autocomplete="off">                            <input type="hidden" name="item_code" value="5">
+											<button type="submit" class="mx-auto flex justify-center border text-white font-semibold bg-gradient-to-br hover:bg-gradient-to-bl from-green-800 to-green-500 px-10 py-2 rounded-full whitespace-nowrap duration-500">Order Now</button>
+										</form>
+									</div>
+								</div>
+								<div class="flex flex-wrap gap-2.5 whitespace-nowrap justify-center mb-14" x-show.transition.in.opacity.duration.600="activeTab == '10-day'">
+									<div class="w-[95%] sm:w-[47%] lg:w-[31.5%] shrink-0 flex flex-col border border-green-500 px-4 py-6 rounded-xl hover:shadow-lg hover:scale-105 bg-white hover:bg-green-50 duration-500">
+										<div class="text-center space-y-2.5">
+											<h4 class="text-xl sm:text-2xl lg:text-3xl font-bold pt-2.5 lg:py-4 leading-tight">Popular</h4>
+											<div>
+												<h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-green-800"><sup>৳</sup>1,500.00</h2>
+												<h6 class="text-sm font-bold text-gray-400 py-2.5 leading-tight capitalize">For 10 Day</h6>
+											</div>
+											<ul class="divide-y text-sm md:text-lg">
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>10 USD Boost</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>10,000-25,000 Reach</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>80-250+ Message</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>Custom Audience</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>24/7 Support</p>
+												</li>
+											</ul>
+										</div>
+										<form method="post" action="https://bestsheba.com.bd/cart/list" class="mt-auto pt-2.5">
+											<input type="hidden" name="_token" value="BMtLcXAYpNNMk75dWnsqIZOPSbNuxznpjfh4Fs9p" autocomplete="off">                            <input type="hidden" name="item_code" value="4">
+											<button type="submit" class="mx-auto flex justify-center border text-white font-semibold bg-gradient-to-br hover:bg-gradient-to-bl from-green-800 to-green-500 px-10 py-2 rounded-full whitespace-nowrap duration-500">Order Now</button>
+										</form>
+									</div>
+								</div>
+								<div class="flex flex-wrap gap-2.5 whitespace-nowrap justify-center mb-14" x-show.transition.in.opacity.duration.600="activeTab == '15-day'">
+									<div class="w-[95%] sm:w-[47%] lg:w-[31.5%] shrink-0 flex flex-col border border-green-500 px-4 py-6 rounded-xl hover:shadow-lg hover:scale-105 bg-white hover:bg-green-50 duration-500">
+										<div class="text-center space-y-2.5">
+											<h4 class="text-xl sm:text-2xl lg:text-3xl font-bold pt-2.5 lg:py-4 leading-tight">Business</h4>
+											<div>
+												<h2 class="text-3xl sm:text-5xl lg:text-7xl font-bold text-green-800"><sup>৳</sup>3,000.00</h2>
+												<h6 class="text-sm font-bold text-gray-400 py-2.5 leading-tight capitalize">For 15 Day</h6>
+											</div>
+											<ul class="divide-y text-sm md:text-lg">
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>20 USD Boost</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>20,000-35,000 Reach</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>150-450+ Message</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>Lookalike Audience</p>
+												</li>
+												<li class="flex items-center gap-1.5 px-1.5 py-2 hover:bg-gray-200 justify-center">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+														<path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+													</svg>
+													<p>24/7 Support</p>
+												</li>
+											</ul>
+										</div>
+										<form method="post" action="https://bestsheba.com.bd/cart/list" class="mt-auto pt-2.5">
+											<input type="hidden" name="_token" value="BMtLcXAYpNNMk75dWnsqIZOPSbNuxznpjfh4Fs9p" autocomplete="off">                            
+											<input type="hidden" name="item_code" value="3">
+											<button type="submit" class="mx-auto flex justify-center border text-white font-semibold bg-gradient-to-br hover:bg-gradient-to-bl from-green-800 to-green-500 px-10 py-2 rounded-full whitespace-nowrap duration-500">
+												Order Now
+											</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
+	

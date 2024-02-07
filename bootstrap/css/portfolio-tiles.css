@@ -1,0 +1,17 @@
+/* =======================================================
+================== Portfolio Tiles Css ============================
+======================================================== */
+
+.group-hover:hover .hover-top-0,
+.hover-top-0:hover {
+	top: 0 !important;
+}
+
+.hover-z-50:hover {
+	z-index: 50 !important;
+}
+
+.group-hover:hover .hover-border-8,
+.hover-border-8:hover {
+	border: 8px solid white !important;
+}

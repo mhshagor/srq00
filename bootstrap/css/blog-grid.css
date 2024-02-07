@@ -1,0 +1,60 @@
+/* =======================================================
+================== Blog Grid CSS ============================
+======================================================== */
+
+.fa-facebook-f.theme-icon-search-circle-holder:before {
+	font-size: .9rem;
+	webkit-box-shadow: 0 0 0 1.2em #0d6efd inset!important;
+	box-shadow: 0 0 0 1.2em #0d6efd inset!important;
+	color: #fff;
+}
+
+.fa-facebook-f.theme-icon-search-circle-holder:hover:before {
+	webkit-box-shadow: 0 0 0 2px #0d6efd inset!important;
+	box-shadow: 0 0 0 2px #0d6efd inset!important;
+	background-color:transparent;
+    color: #0d6efd;
+}
+.fa-linkedin-in.theme-icon-search-circle-holder:before {
+	font-size: .9rem;
+	webkit-box-shadow: 0 0 0 1.2em #3b5998 inset!important;
+	box-shadow: 0 0 0 1.2em #3b5998 inset!important;
+	color: #fff;
+}
+
+.fa-linkedin-in.theme-icon-search-circle-holder:hover:before {
+	webkit-box-shadow: 0 0 0 2px #3b5998 inset!important;
+	box-shadow: 0 0 0 2px #3b5998 inset!important;
+	background-color:transparent;
+    color: #3b5998;
+}
+
+.fa-twitter.theme-icon-search-circle-holder:before {
+	font-size: .9rem;
+	webkit-box-shadow: 0 0 0 1em #1da1f2 inset!important;
+    box-shadow: 0 0 0 1em #1da1f2 inset!important;
+	color: #fff;
+}
+
+.fa-twitter.theme-icon-search-circle-holder:hover:before {
+	webkit-box-shadow: 0 0 0 2px #1da1f2 inset!important;
+    box-shadow: 0 0 0 2px #1da1f2 inset!important;
+	background-color:transparent;
+    color: #1da1f2;
+}
+.fa-instagram.theme-icon-search-circle-holder:before {
+	font-size: .9rem;
+	-webkit-box-shadow: none;
+    box-shadow: none;
+    background: -webkit-radial-gradient(circle at 33% 100%,#fed373 10%,#f15245 35%,#d92e7f 62%,#9b36b7 85%,#515ecf)!important;
+    background: -moz-radial-gradient(circle at 33% 100%,#fed373 10%,#f15245 35%,#d92e7f 62%,#9b36b7 85%,#515ecf)!important;
+    background: radial-gradient(circle at 33% 100%,#fed373 10%,#f15245 35%,#d92e7f 62%,#9b36b7 85%,#515ecf)!important;
+	color: #fff;
+}
+
+.fa-instagram.theme-icon-search-circle-holder:hover:before {
+	webkit-box-shadow: 0 0 0 2px #ac38a2 inset!important;
+    box-shadow: 0 0 0 2px #ac38a2 inset!important;
+    background: transparent!important;
+    color: #ac38a2;
+}

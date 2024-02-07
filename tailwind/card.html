@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>	
+		
+		<!-- Alpine Plugins -->
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		<!-- Alpine Core -->
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+		
+		<title>Tailwind Style</title>
+	</head>
+    <body > 
+		<main class="bg-gray-50 min-h-screen space-y-10">
+			<section id="service" class="min-h-[250px] bg-cover bg-center bg-no-repeat bg-gradient-to-br from-green-500 to-green-900 bg-blend-multiply" style="background-image:linear-gradient(146deg,rgb(34 195 93)0%,rgb(23 109 56)69%), url(images/service_bg.png)">
+				<div class="lg:container text-white pt-36 pb-20 px-6 md:px-20 xl:px-28 mx-auto">
+					<h1 class="text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Tailwind Card
+					</h1>
+				</div>
+			</section>
+			<section class="space-y-5">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+					<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+						<div class="space-y-4">
+							<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+							</div>
+							<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Web Development</a>
+							<p class="text-slate-400 duration-500">Web Development Company in Bangladesh</p>
+						</div>
+					</div>
+					<div class="shrink-0 flex flex-col bg-green-700 bg-opacity-100 hover:bg-opacity-10 group border shadow-lg pt-12 pb-4 px-8 hover:-translate-y-2 transition-all duration-500 text-center hover:rounded-xl">
+						<div class="space-y-4 mb-2.5">
+							<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-white group-hover:text-white bg-green-800 group-hover:bg-opacity-90 bg-opacity-10 duration-700 overflow-hidden">
+								<div class="flex items-center" alt="Facebook Advertising">
+									<img class="w-full " src="images/c8ow2lmzlKpfMG3wwAHIDtAOrb8NM7J1p2QRBLFJ.jpg">
+								</div>		
+							</div>
+							<h1 class="block text-gray-100 text-xl group-hover:text-green-900 duration-500 font-semibold">Facebook Advertising</h1>
+							<p class="text-gray-100 group-hover:text-black duration-500">Facebook Marketing Agency in Bangladesh</p>
+						</div>
+						<div class="px-6 py-2 bg-green-600 mt-auto text-gray-300 group-hover:text-gray-50">
+							Choose Your Packages
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="dataCenter" class="py-8">
+				<div class="px-8 sm:px-20 lg:px-32">
+					<div class="text-center">
+						<h1 class="relative text-green-800 text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase">
+							Our Memorable Journey
+						</h1>
+					</div>
+					<div class="text-gray-700 body-font">
+						<div class="container px-5 py-7 mx-auto">
+							<div class="flex flex-wrap -m-4 text-center">
+								<div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+									<div class="border-2 border-green-800 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+										<svg class="text-green-800 w-12 h-12 mb-3 inline-block" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"></path>
+											<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"></path>
+										</svg>
+										<h2 class="title-font font-medium text-3xl text-gray-900">5+</h2>
+										<p class="leading-relaxed">Years Experience</p>
+									</div>
+								</div>
+								<div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+									<div class="border-2 border-green-800 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+										<svg class="text-green-800 w-12 h-12 mb-3 inline-block" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z">
+											</path>
+										</svg>
+										<h2 class="title-font font-medium text-3xl text-gray-900">4000+</h2>
+										<p class="leading-relaxed">Digital Marketing Clients</p>
+									</div>
+								</div>
+								<div class="p-4 md:w-1/3 sm:w-1/2 w-full">
+									<div class="border-2 border-green-800 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+										<svg class="text-green-800 w-12 h-12 mb-3 inline-block" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"></path>
+										</svg>
+										<h2 class="title-font font-medium text-3xl text-gray-900">125+</h2>
+										<p class="leading-relaxed">Web Development</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			</main>
+	</body>
+</html>
+	
