@@ -4,19 +4,12 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="images/logos/favicon.ico" type="image/x-icon">
         <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script>	
+        <script src="css/tailwind-3.4.1.min.css"></script>
+		<script defer src="js/collapse.min.js"></script>
+		<script defer src="js/alpine.min.js"></script> 
 		
-		<!-- Alpine Plugins -->
-		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-		<!-- Alpine Core -->
-		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
-		<style>
-			[x-cloak]{
-				display:none;
-			}
-		</style>
 		<title>Tailwind Style</title>
 	</head>
     <body > 
@@ -24,16 +17,15 @@
 			<section id="service" class="min-h-[250px] bg-cover bg-center bg-no-repeat bg-gradient-to-br from-green-500 to-green-900 bg-blend-multiply" style="background-image:linear-gradient(146deg,rgb(34 195 93)0%,rgb(23 109 56)69%), url(images/service_bg.png)">
 				<div class="lg:container text-white pt-36 pb-20 px-6 md:px-20 xl:px-28 mx-auto">
 					<h1 class="text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-						Tailwind Nav Tab
+						Tailwind Accordion
 					</h1>
 				</div>
 			</section>
+			<div class="text-center text-[#37517e]">
+				<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">Accordion</h1>
+			</div>
 			<section>
-				<div class="py-10 w-11/12 sm:w-10/12 md:w-9/12 lg:w-2/3 mx-auto">
-					<div class="text-center">
-						<h1 class="relative text-green-800 text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase">FREQUENTLY ASKED QUESTIONS</h1>
-						<p class="mt-4">Feel free to ask any question.</p>
-					</div>
+				<div class="w-11/12 sm:w-10/12 md:w-9/12 lg:w-2/3 mx-auto">
 					<div x-data="{ selected: 'faq-1' }" class="space-y-5 mt-10">
 						<div class="bg-white rounded px-5 hover:shadow">
 							<button class="py-4 w-full group  text-gray-800" @click="selected !== 'faq-1' ? selected = 'faq-1' : selected = false">

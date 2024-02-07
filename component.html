@@ -4,20 +4,13 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="tailwind/images/logos/favicon.ico" type="image/x-icon">
         <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script>	
+        <script src="tailwind/css/tailwind-3.4.1.min.css"></script>
+		<script defer src="tailwind/js/collapse.min.js"></script>
+		<script defer src="tailwind/js/alpine.min.js"></script> 
 		
-		<!-- Alpine Plugins -->
-		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-		<!-- Alpine Core -->
-		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> 
-		<style>
-			[x-cloak]{
-				display:none;
-			}
-		</style>
-		<title>My Component</title>
+		<title>Tailwind Style</title>
 	</head>
     <body > 
 		<main class="bg-gray-50 min-h-screen pb-20">
@@ -34,12 +27,12 @@
 						<h1 class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase">Tailwind Component</h1>
 					</div>
 					<div class="flex flex-wrap gap-3 justify-center">
+						<a href="tailwind/Header.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Header</a>
+						<a href="tailwind/footer.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Footer</a>
 						<a href="tailwind/button.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Button</a>
 						<a href="tailwind/form.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Form</a>
 						<a href="tailwind/accordion.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Accordion</a>
 						<a href="tailwind/card.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Card</a>
-						<a href="tailwind/nav.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Nav</a>
-						<a href="tailwind/footer.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Footer</a>
 						<a href="tailwind/nav-tab.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Nav-Tab</a>
 					</div>
 				</div>

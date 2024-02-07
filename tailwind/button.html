@@ -4,15 +4,13 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="images/logos/favicon.ico" type="image/x-icon">
         <!-- Tailwind CSS -->
-        <script src="https://cdn.tailwindcss.com"></script>	
-		<title>Tailwind Button Style</title>
-		<style>
-			[x-cloak]{
-				display:none;
-			}
-		</style>
+        <script src="css/tailwind-3.4.1.min.css"></script>
+		<script defer src="js/collapse.min.js"></script>
+		<script defer src="js/alpine.min.js"></script> 
+		
+		<title>Tailwind Style</title>
 	</head>
     <body > 
 		<main class="bg-gray-50 min-h-screen space-y-10 pb-20">
@@ -23,38 +21,40 @@
 					</h1>
 				</div>
 			</section>
-				<div class="flex justify-center text-center items-center gap-4">
-					<div class="">
-						<a href="#" class="flex border border-2 border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap w-full">
-							Get Started
-							<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
-						</a>
-					</div>
-					<div class="">
-						<a href="#" class="flex border border-2 text-white font-semibold hover:shadow-[0_0_0_2em_#53ba00_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
-							SignIn                                                                                  
-							<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
-							<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
-						</a>
-					</div>
-					<div>
-						<a href="{{url('login')}}" class="bg-green-700 flex border border-2 border-green-800 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
-							SignIn                                                                                  
-							<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
-							<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
-						</a>
-					</div>
-					<div class="">
-						<a href="#" class="whitespace-nowrap border border-2 border-white hover:border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] px-10 py-3 rounded-full duration-700 overflow-hidden relative group inline-flex">
-							Call To Action
-							<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
-						</a>
-					</div>
-					<div class="">
-						<a href="#" class="group relative inline-flex border border-[#37517e] focus:outline-none hover:bg-black focus:bg-[#37517e] mt-2 no-underline duration-300">
-							<span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 bg-white text-center font-bold uppercase ring-1 group-hover:ring-[#47B2E4] group-focus:ring-[#47B2E4] group-hover:text-[#47B2E4] group-focus:text-[#47B2E4] ring-black ring-offset-1 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1 duration-300 text-[#37517e]">Send Message</span>
-						</a>
-					</div>
+			<div class="text-center text-[#37517e]">
+				<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">Button</h1>
+			</div>
+			<section class="flex justify-center text-center items-center gap-4">
+				<div class="">
+					<a href="#" class="flex border border-2 border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap w-full">
+						Get Started
+						<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+					</a>
+				</div>
+				<div class="">
+					<a href="#" class="flex border border-2 text-white font-semibold hover:shadow-[0_0_0_2em_#53ba00_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+						SignIn                                                                                  
+						<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+						<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+					</a>
+				</div>
+				<div>
+					<a href="{{url('login')}}" class="bg-green-700 flex border border-2 border-green-800 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+						SignIn                                                                                  
+						<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+						<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+					</a>
+				</div>
+				<div class="">
+					<a href="#" class="whitespace-nowrap border border-2 border-white hover:border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] px-10 py-3 rounded-full duration-700 overflow-hidden relative group inline-flex">
+						Call To Action
+						<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+					</a>
+				</div>
+				<div class="">
+					<a href="#" class="group relative inline-flex border border-[#37517e] focus:outline-none hover:bg-black focus:bg-[#37517e] mt-2 no-underline duration-300">
+						<span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 bg-white text-center font-bold uppercase ring-1 group-hover:ring-[#47B2E4] group-focus:ring-[#47B2E4] group-hover:text-[#47B2E4] group-focus:text-[#47B2E4] ring-black ring-offset-1 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1 duration-300 text-[#37517e]">Send Message</span>
+					</a>
 				</div>
 			</section>
 			<section class=" space-y-5">
