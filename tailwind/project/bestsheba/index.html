@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="remixicon/remixicon.css" />
+		
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>	
+		<title>Best Seba</title>
+		
+		<style>
+			[x-cloak]{
+				display:none;
+			}
+			.active{
+				background-color:#f91942;
+				color: white;
+			}
+			.wave-group .input:focus ~ label .label-char,
+			.wave-group .input:valid ~ label .label-char {
+			  transform: translateY(-20px);
+			  font-size: 14px;
+			  color: #47B2E4;
+			}
+			.wave-group .input:focus ~ .bar:before,
+			.wave-group .input:focus ~ .bar:after {
+			  width: 50%;
+			}
+			.wave-group .label-char {
+			  transition: 0.2s ease all;
+			  transition-delay: calc(var(--index) * .05s);
+			}
+			.swiper-pagination{
+				z-index:-1;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			}
+			.swiper-pagination .swiper-pagination-bullet{
+				background-color:#707070;
+				padding:6px;
+			}
+			.swiper-pagination .swiper-pagination-bullet-active{
+				background-color:#47B2E4;
+				padding:8px;
+			}
+			@keyframes up-down {
+				0% {
+					transform: translateY(10px);
+				}
+				100% {
+					transform: translateY(-10px);
+				}
+			}
+		</style>
+	</head>
+    <body >                    
+		<!-- Header Part -->
+        <header class="relative z-50">
+			<div class="fixed inset-x-0 text-sm bg-[rgba(40,58,90,0.9)] text-sm " x-data="Components.popover({ open: true, focus: true })" x-init="init()" @keydown.escape="onEscape" @close-popover-group.window="onClosePopoverGroup">
+				<div class="mx-auto max-w-7xl px-4 px-2 sm:px-8 lg:px-20">
+					<div class="lg:flex hidden items-center justify-between py-4 md:justify-start md:space-x-10">
+						<div class="flex flex-shrink-0 justify-start hidden md:block">
+							<a href="#">
+							  <span class="sr-only">Your Company</span>
+							  <img class="h-14 w-auto" src="images/best-sheba-logo.png" alt="">
+							</a>
+						</div>
+						<div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0 gap-2"> 
+							<ul class="flex items-center justify-center gap-6 mr-7 text-base text-white"> 
+								<li class="">
+									<a class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] hover:text-[#47B2E4] after:duration-500 duration-300" href="#">Home</a>
+								</li>
+								<li class="">
+									<a href="#" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] hover:text-[#47B2E4] after:duration-500 duration-300">About</a>
+								</li>
+								<li class="">
+									<a href="#" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] hover:text-[#47B2E4] after:duration-500 duration-300">Service</a>
+								</li>
+								<li class="">
+									<a href="#" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] hover:text-[#47B2E4] after:duration-500 duration-300">Team</a>
+								</li>
+								<li class="">
+									<a href="#" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] hover:text-[#47B2E4] after:duration-500 duration-300">Blogs</a>
+								</li>
+								<li class="">
+									<a href="#" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] hover:text-[#47B2E4] after:duration-500 duration-300">Contact</a>
+								</li>
+							</ul>
+							<div class="">
+								<a href="#" class="flex border border-2 border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+									Get Started
+									<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+								</a>
+							</div>
+							<div class="">
+								<a href="#" class="flex border border-2 text-white font-semibold hover:shadow-[0_0_0_2em_#53ba00_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+									SignIn                                                                                  
+									<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+									<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- mobile navBar -->
+				<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky top-0 z-30 bg-black bg-opacity-10 px-4 sm:px-8 md:px-16 lg:px-28 mx-auto lg:hidden">
+					<div class="flex items-center justify-between">
+						<div>
+							<a href="#">
+								<span class="sr-only">Your Company</span>
+								<img class="h-12 w-auto" src="images/best-sheba-logo.png" alt="">
+							</a>
+						</div>
+						<div class="">
+							<div class=" flex relative py-3 sm:max-w-xl mx-auto">
+								<!-- offcanvase open button -->
+								<div class="shrink-0 block lg:hidden">
+									<button type="button" class="text-white hover:bg-white hover:text-black border border-white transition duration-700 ease-in-out h-10 w-10 flex justify-center items-center" @click="open = true">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+									</svg>
+									</button>
+								</div>
+								<!-- end offcanvase open button -->
+							</div>
+						</div>
+					</div>
+					<!-- Mobile offcanvase dialog -->
+					<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" style="display: none;">
+						<div class="fixed inset-0 z-40 flex">
+							<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-black py-4 pb-12 shadow-xl" @click.away="open = false" style="display: none;">
+								<!-- offcanvase close -->
+								<div class="flex items-center justify-end px-4">
+									<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-black border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
+										 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+									  </svg>
+									</button>
+								</div>
+								<!-- end offcanvase close -->
+								<!-- offcanvases -->
+								<div class="lg:hidden block lg:w-50 text-white">
+									<ul class="list-none text-white px-10 py-16 space-y-4">
+										<li class="">
+											<a class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-full hover:after:w-full after:bg-[#47B2E4] after:duration-300 " href="">HOME</a>
+										</li>
+										<li class="">
+											<a href="" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] after:duration-300 ">
+												ABOUT
+											</a>
+										</li>
+										<li class="">
+											<a href="" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] after:duration-300">SERVICES</a>
+										</li>
+										<li class="">
+											<a href="" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] after:duration-300">TEAM</a>
+										</li>
+										<li class="">
+											<a href="" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] after:duration-300">BLOGS</a>
+										</li>
+										<li class="">
+											<a href="" class="relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-[#47B2E4] after:duration-300">CONTACT</a>
+										</li>
+										<li class="">
+											<a href="#" class="inline-flex border border-2 border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-0 duration-700 overflow-hidden relative group whitespace-nowrap uppercase">
+												Get Started
+												<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+											</a>
+										</li>
+										<li class="">
+											<a href="#" class="inline-flex border border-2 border-white hover:border-[#53ba00] text-white font-semibold hover:shadow-[0_0_0_2em_#53ba00_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-none duration-700 overflow-hidden relative group whitespace-nowrap uppercase">
+												SignIn                                                                                  
+												<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+												<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+											</a>
+										</li>
+									
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>        
+		</header>
+		<main>
+			<!-- Home -->
+			<section id="cta" class="bg-fixed bg-[#37517E]">
+				<div class="mx-auto max-w-7xl px-4 px-2 sm:px-8 lg:px-20 pt-[5.5rem] pb-4">
+					<div class="grid grid-cols-12 justify-center text-center lg:text-start lg:justify-between items-center gap-4">
+						<div class="col-span-full lg:col-span-6 text-white space-y-3 order-2 lg:order-1">
+							<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold md:leading-[56px]">Better Solutions For Your Business</h1>
+							<p class="text-xl lg:text-2xl font-semibold md:w-8/12 lg:w-11/12 mx-auto lg:mx-0 text-gray-400 leading-1 pb-5">We are team of talented designers making websites with latest technology</p>
+							<a href="#" class="inline-block border border-2 border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+								Get Started
+								<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+							</a>
+						</div>
+						<div class="col-span-full lg:col-span-6 order-1 lg:order-2">
+							<img src="images/hero-img.png" alt="" class="w-1/2 lg:w-full mx-auto animate-[up-down_2s_ease-in-out_infinite_alternate-reverse_both;] duration-500" />
+						</div>
+					</div>
+				</div>
+			</section> 
+	 <div>
+			<!-- Clients Part -->
+			<section id="clients" class="bg-gray-100">
+				<div class="px-8 lg:px-20 py-6">
+					<div class="grid grid-cols-12 gap-8">
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/client-1.png" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/client-2.png" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/client-3.png" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/client-4.png" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/client-5.png" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/client-6.png" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+					</div>
+				</div>
+			</section>   
+			<!-- About Part -->
+			<section id="about" class="">
+				<div class="px-8 sm:px-20 lg:px-32 py-20 text-[#37517e]">
+					<div class="text-center">
+						<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">About Us</h1>
+					</div>
+					<div class="mt-8">
+						<div class="space-y-3 text-justify">
+							<p>Best Sheba is a digital marketing and IT solutions company. It provides digital marketing and IT solution services across Bangladesh.</p>
+
+							<p>Our mission is to support entrepreneurs all over Bangladesh by providing various services including Facebook marketing, web hosting, web development, software development and more</p>
+
+							<p>We started our journey with the name "Best Sheba" with a dream to bring all online services on one platform. Our dream journey started in the month of January 2020 with respected customers. Our goal is to provide fast and reliable service. We have easy and quick refund facilities. What makes us unique. We want to reach the ultimate goal with the trust, satisfaction and love of customers with honesty and devotion.</p>
+						</div>
+						<ul class="mt-8 space-y-2 text-lg">
+							<li><i class="ri-check-double-line mr-2 text-[#47B2E4]"></i>24/7 CUSTOMERS SERVICE</li>
+							<li><i class="ri-check-double-line mr-2 text-[#47B2E4]"></i>100% SECURE PRIVACY</li>
+							<li><i class="ri-check-double-line mr-2 text-[#47B2E4]"></i>NATIONWIDE SERVICE</li>
+							<li><i class="ri-check-double-line mr-2 text-[#47B2E4]"></i>EXPERT MARKETING TEAM</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<!-- Service Part -->
+			<section id="service" class="bg-gray-100">
+				<div class="px-8 sm:px-20 xl:px-32 py-20">
+					<div class="text-center text-[#37517e]">
+						<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">Services</h1>
+						<p class="mt-4">We are expert on digital marketing and develop cloud based any kinds of software</p>
+					</div>
+					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-xl group-hover:text-[#47B2E4] duration-500 font-semibold">Facebook Marketing</a>
+								<p class="text-slate-400 duration-500">Advertising from your Facebook Page can help you reach people who care about your business</p>
+							</div>
+						</div>
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512">		<path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Facebook Page Restriction Recovery</a>
+								<p class="text-slate-400 duration-500">A Facebook restriction restricts your account’s activities, preventing you from your regular Facebook activities, such as sharing posts. Besides, if your account is restricted,</p>
+							</div>
+						</div>
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Graphics Design</a>
+								<p class="text-slate-400 duration-500">Graphic design is a profession, academic discipline and applied art whose activity consists in projecting visual communications intended to transmit specific messages to social groups, with specific objectives.</p>
+							</div>
+						</div>
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Web Development</a>
+								<p class="text-slate-400 duration-500">Web Development Company in Bangladesh</p>
+							</div>
+						</div>
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Software Development</a>
+								<p class="text-slate-400 duration-500">Cloud Based Software Company in Bangladesh</p>
+							</div>
+						</div>
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Web Hosting</a>
+								<p class="text-slate-400 duration-500">Best Web Hosting Company in Bangladesh</p>
+							</div>
+						</div>
+						<div class="bg-white group border shadow-lg py-16 px-8 hover:-translate-y-2 transition-all duration-500 text-center">
+							<div class="space-y-4">
+								<div class="h-20 w-20 flex items-center justify-center mx-auto rounded-full text-[#47B2E4] group-hover:text-white bg-[#47B2E4] group-hover:bg-opacity-75 bg-opacity-10 duration-300">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="currentColor" viewBox="0 0 512 512"><path d="M256 8C119.252 8 8 119.252 8 256s111.252 248 248 248 248-111.252 248-248S392.748 8 256 8zm163.97 114.366c29.503 36.046 47.369 81.957 47.835 131.955-6.984-1.477-77.018-15.682-147.502-6.818-5.752-14.041-11.181-26.393-18.617-41.614 78.321-31.977 113.818-77.482 118.284-83.523zM396.421 97.87c-3.81 5.427-35.697 48.286-111.021 76.519-34.712-63.776-73.185-116.168-79.04-124.008 67.176-16.193 137.966 1.27 190.061 47.489zm-230.48-33.25c5.585 7.659 43.438 60.116 78.537 122.509-99.087 26.313-186.36 25.934-195.834 25.809C62.38 147.205 106.678 92.573 165.941 64.62zM44.17 256.323c0-2.166.043-4.322.108-6.473 9.268.19 111.92 1.513 217.706-30.146 6.064 11.868 11.857 23.915 17.174 35.949-76.599 21.575-146.194 83.527-180.531 142.306C64.794 360.405 44.17 310.73 44.17 256.323zm81.807 167.113c22.127-45.233 82.178-103.622 167.579-132.756 29.74 77.283 42.039 142.053 45.189 160.638-68.112 29.013-150.015 21.053-212.768-27.882zm248.38 8.489c-2.171-12.886-13.446-74.897-41.152-151.033 66.38-10.626 124.7 6.768 131.947 9.055-9.442 58.941-43.273 109.844-90.795 141.978z"/></svg>				
+								</div>
+								<a href="#" class="block text-[#37517e] text-2xl group-hover:text-[#47B2E4] duration-500 font-semibold">Creative Marketing Video</a>
+								<p class="text-slate-400 duration-500">Creative Marketing Video Creator Agency in Bangladesh</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Call To Action Part -->
+			<section id="cta" class="bg-fixed bg-center bg-cover bg-[linear-gradient(rgba(40,58,90,0.9),rgba(40,58,90,0.9)),url(images/cta-bg.jpg)]">
+				<div class="px-8 sm:px-20 lg:px-32 py-32">
+					<div class="grid grid-cols-12 justify-center text-center lg:text-justify lg:justify-between items-center gap-4">
+						<div class="col-span-full lg:col-span-9 text-white space-y-3">
+							<h1 class="text-3xl font-bold">Call To Action</h1>
+							<p class="text-base md:w-8/12 lg:w-9/12 mx-auto lg:mx-0">We have been working successfully all over Bangladesh for the past 3 years. "Best Sheba" is a Digital Marketing & IT Solutions Company</p>
+						</div>
+						<div class="col-span-full lg:col-span-3">
+							<a href="#" class="whitespace-nowrap border border-2 border-white hover:border-blue-400 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(96,165,250)_inset,_0_3px_10px_rgba(24,24,24,0.3)] px-10 py-3 rounded-full duration-700 overflow-hidden relative group inline-flex">
+								Call To Action
+								<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Data Center Part -->
+			<section id="dataCenter" class="">
+				<div class="px-8 sm:px-20 lg:px-32 py-20">
+					<div class="text-center text-[#37517e]">
+						<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">DATA CENTER</h1>
+						<p class="mt-4 w-11/12 mx-auto">Best Sheba maintains private cloud infrastructure at thirteen state-of-the-art Datacenters in the USA. Our USA Head Office is located in Orlando, and Data Centers are located in Florida, Texas, Georgia, Virginia, Missouri, California, Wisconsin, Michigan, Arkansas, North Carolina, Illinois, Massachusetts, New York & New Jersey. More data centers in other states will be added soon.</p>
+					</div>
+					<div class="swiper TLSwiper">
+						<div class="swiper-wrapper py-[4rem]">
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d946e7c7c169245728664e0d946e7c82.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d937b8371169245727164e0d937b8375.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d92894bbf169245725664e0d92894bc3.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d916f3e1d169245723864e0d916f3e22.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d8ffdca5e169245721564e0d8ffdca62.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d8dcded7e169245718064e0d8dcded83.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d946e7c7c169245728664e0d946e7c82.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d937b8371169245727164e0d937b8375.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d92894bbf169245725664e0d92894bc3.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d916f3e1d169245723864e0d916f3e22.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d8ffdca5e169245721564e0d8ffdca62.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-5 rounded-lg">
+								<img src="images/64e0d8dcded7e169245718064e0d8dcded83.jpg" class="w-[75%] mx-auto" alt="" />
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+			<!-- Testimonials Part -->
+			<section id="testimonials" class="">
+				<div class="px-8 sm:px-20 lg:px-32 py-20">
+					<div class="text-center text-[#37517e]">
+						<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">TESTIMONIALS</h1>
+					</div>
+					<div class="swiper TLSwiper">
+						<div class="swiper-wrapper py-[4rem]">
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf5ac1369d169226794864ddf5ac136a2.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf59bb30cf169226793164ddf59bb30d3.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf58dc95ed169226791764ddf58dc95f1.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf56629201169226787864ddf56629207.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf58dc95ed169226791764ddf58dc95f1 (1).jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf5ac1369d169226794864ddf5ac136a2.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf59bb30cf169226793164ddf59bb30d3.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf58dc95ed169226791764ddf58dc95f1.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf56629201169226787864ddf56629207.jpg" alt="" />
+							</div>
+							<div class="swiper-slide border shadow-lg p-3 rounded-lg">
+								<img src="images/64ddf58dc95ed169226791764ddf58dc95f1 (1).jpg" alt="" />
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</section>
+			<!-- Happy Clients Part -->
+			<section id="happyClients" class="bg-gray-100">
+				<div class="px-8 lg:px-20 py-10">
+					<div class="text-center  text-[#37517e]">
+						<h2 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">Our Happy Clients</h2>
+					</div>
+					<div class="grid grid-cols-12 py-6 gap-8 mt-8">
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/64e0dd4f20e23169245831964e0dd4f20e27.jpg" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/64e0dd35e6767169245829364e0dd35e676b.jpg" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/64e0dd0717162169245824764e0dd0717178.jpg" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/64e0dcd745731169245819964e0dcd745735.jpg" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/64e0dcc441a1c169245818064e0dcc441a21.jpg" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="lg:col-span-2 md:col-span-4 col-span-6 flex items-center justify-center">
+							<img src="images/64e0dcb3af568169245816364e0dcb3af56c.jpg" class="w-[45%] grayscale hover:grayscale-0 duration-500 hover:scale-110" alt="">
+						</div>
+						<div class="col-span-full flex items-center justify-center">
+							<div class="paginate">
+								<nav class="flex justify-between gap-3 text-lg">
+									<span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md">« Previous</span>
+									<a href="#" class="relative inline-flex items-center px-4 py-2 text-sm font-medium bg-white border border-gray-300 leading-5 rounded-md text-[#47B2E4] hover:bg-gray-100 hover:bg-opacity-10 duration-300">Next »</a>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Contact Part -->
+			<section id="contact" class="" >
+				<div class="py-10 w-11/12 sm:w-10/12 md:w-9/12 lg:w-2/3 mx-auto">
+					<div class="text-center text-[#37517e]">
+						<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">CONTACT</h1>
+						<p class="mt-4">Feel free to contact with us.</p>
+					</div>
+					<div class="mt-10 bg-gray-200 bg-opacity-10 rounded overflow-hidden border shadow-lg">
+						<form class="grid grid-span-1 md:grid-cols-2 gap-8 px-14 py-10 border-y-4 border-[#47B2E4] text-[#37517e]">
+							<div class="wave-group relative">
+								<input required="" type="text" class="input text-base px-1.5 py-4 block w-full border-b-2 border-[#37517e] bg-transparent focus:outline-none">
+								<span class="bar relative block w-full before:content-[''] before:absolute before:left-1/2 before:h-0.5 before:w-0 before:bottom-0 before:bg-[#47B2E4] before:duration-300 after:content-[''] after:absolute after:h-0.5 after:w-0 after:bottom-0 after:bg-[#47B2E4] after:duration-300 after:right-1/2 "></span>
+							  <label class="label absolute flex text-lg top-2.5 space-x-[1px]">
+								<span class="label-char text-sm" style="--index: 0">N</span>
+								<span class="label-char text-sm" style="--index: 1">a</span>
+								<span class="label-char text-sm" style="--index: 2">m</span>
+								<span class="label-char text-sm" style="--index: 3">e</span>
+							  </label>
+							</div>
+							<div class="wave-group relative">
+							  <input required="" type="text" class="input text-base px-1.5 py-4 block w-full border-b-2 border-[#37517e] bg-transparent focus:outline-none">
+							  <span class="bar relative block w-full before:content-[''] before:absolute before:left-1/2 before:h-0.5 before:w-0 before:bottom-0 before:bg-[#47B2E4] before:duration-300 after:content-[''] after:absolute after:h-0.5 after:w-0 after:bottom-0 after:bg-[#47B2E4] after:duration-300 after:right-1/2"></span>
+							  <label class="label absolute flex text-lg top-2.5 space-x-[1px]">
+								<span class="label-char text-sm" style="--index: 0">E</span>
+								<span class="label-char text-sm" style="--index: 1">m</span>
+								<span class="label-char text-sm" style="--index: 2">a</span>
+								<span class="label-char text-sm" style="--index: 3">i</span>
+								<span class="label-char text-sm" style="--index: 3">l</span>
+							  </label>
+							</div>
+							<div class="wave-group relative">
+							  <input required="" type="text" class="input text-base px-1.5 py-4 block w-full border-b-2 border-[#37517e] bg-transparent focus:outline-none">
+							  <span class="bar relative block w-full before:content-[''] before:absolute before:left-1/2 before:h-0.5 before:w-0 before:bottom-0 before:bg-[#47B2E4] before:duration-300 after:content-[''] after:absolute after:h-0.5 after:w-0 after:bottom-0 after:bg-[#47B2E4] after:duration-300 after:right-1/2"></span>
+							  <label class="label absolute flex text-lg top-2.5 space-x-[1px]">
+								<span class="label-char text-sm" style="--index: 0">S</span>
+								<span class="label-char text-sm" style="--index: 1">u</span>
+								<span class="label-char text-sm" style="--index: 2">b</span>
+								<span class="label-char text-sm" style="--index: 3">j</span>
+								<span class="label-char text-sm" style="--index: 3">e</span>
+								<span class="label-char text-sm" style="--index: 3">c</span>
+								<span class="label-char text-sm" style="--index: 3">t</span>
+							  </label>
+							</div>
+							<div class="wave-group relative">
+							  <input required="" type="text" class="input text-base px-1.5 py-4 block w-full border-b-2 border-[#37517e] bg-transparent focus:outline-none">
+							  <span class="bar relative block w-full before:content-[''] before:absolute before:left-1/2 before:h-0.5 before:w-0 before:bottom-0 before:bg-[#47B2E4] before:duration-300 after:content-[''] after:absolute after:h-0.5 after:w-0 after:bottom-0 after:bg-[#47B2E4] after:duration-300 after:right-1/2"></span>
+							  <label class="label absolute flex text-lg top-2.5 space-x-[1px]">
+								<span class="label-char text-sm" style="--index: 0">M</span>
+								<span class="label-char text-sm" style="--index: 1">o</span>
+								<span class="label-char text-sm" style="--index: 2">b</span>
+								<span class="label-char text-sm" style="--index: 3">i</span>
+								<span class="label-char text-sm" style="--index: 3">l</span>
+								<span class="label-char text-sm" style="--index: 3">e</span>
+							  </label>
+							</div>
+							<div class="wave-group relative col-span-full">
+							  <textarea required="" type="text" class="input w-full text-base px-1.5 py-4 block w-full border-b-2 border-[#37517e] bg-transparent focus:outline-none"></textarea>
+							  <span class="bar relative block w-full before:content-[''] before:absolute before:left-1/2 before:h-0.5 before:w-0 before:bottom-0 before:bg-[#47B2E4] before:duration-300 after:content-[''] after:absolute after:h-0.5 after:w-0 after:bottom-0 after:bg-[#47B2E4] after:duration-300 after:right-1/2 "></span>
+							  <label class="label absolute flex text-lg top-2.5 space-x-[1px]">
+								<span class="label-char text-sm" style="--index: 1">M</span>
+								<span class="label-char text-sm" style="--index: 0">e</span>
+								<span class="label-char text-sm" style="--index: 2">s</span>
+								<span class="label-char text-sm" style="--index: 3">s</span>
+								<span class="label-char text-sm" style="--index: 3">a</span>
+								<span class="label-char text-sm" style="--index: 3">g</span>
+								<span class="label-char text-sm" style="--index: 3">e</span>
+							  </label>
+							</div>
+							<div class="col-span-full mx-auto">
+								<a href="#" class="group relative inline-flex border border-[#37517e] focus:outline-none hover:bg-black focus:bg-[#37517e] mt-2 no-underline duration-300">
+									<span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 bg-white text-center font-bold uppercase ring-1 group-hover:ring-[#47B2E4] group-focus:ring-[#47B2E4] group-hover:text-[#47B2E4] group-focus:text-[#47B2E4] ring-black ring-offset-1 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1 duration-300 text-[#37517e]">Send Message</span>
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<!-- faq Part -->
+			<section id="faq" class="bg-gray-100">
+				<div class="py-10 w-11/12 sm:w-10/12 md:w-9/12 lg:w-2/3 mx-auto">
+					<div class="text-center text-[#37517e]">
+						<h1 class="relative text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-[#ddd] after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-[#47b2e4] uppercase">FREQUENTLY ASKED QUESTIONS</h1>
+						<p class="mt-4">Feel free to ask any question.</p>
+					</div>
+					<div x-data="{ selected: false }" class="space-y-5 mt-10">
+						<div class="bg-white rounded px-5">
+							<button class="py-4 w-full group  text-gray-800" @click="selected !== 'faq-1' ? selected = 'faq-1' : selected = false">
+								<div class="flex justify-between items-center group-hover:text-blue-400 duration-300" :class="selected == 'faq-1' ? 'text-blue-400': ''">
+									<div class="flex items-center gap-2">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="" class="fill-blue-400 h-5 w-5" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+										<p class="text-lg font-semibold">What is hosting?</p>
+									</div>
+									<div class="duration-300" :class="selected == 'faq-1' ? '-rotate-180': ''">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+									</div>
+								</div>
+							</button>
+							<div x-show="selected == 'faq-1'" x-collapse.duration.600ms>
+								<p class="leading-8 text-lg pb-4">
+									Hosting is a type of web server. Where all the data of a particular website or blog is stored. If a user searches the internet for a specific domain name, the hosting can view all the data of that website or blog. A website emerges in front of the user through the connection of domain and hosting. 
+								</p>
+							</div>
+						</div>
+						<div class="bg-white rounded px-5">
+							<button class="py-4 w-full group  text-gray-800" @click="selected !== 'faq-2' ? selected = 'faq-2' : selected = false">
+								<div class="flex justify-between items-center group-hover:text-blue-400 duration-300" :class="selected == 'faq-2' ? 'text-blue-400': ''">
+									<div class="flex items-center gap-2">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="" class="fill-blue-400 h-5 w-5" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+										<p class="text-lg font-semibold">How much type of hosting?</p>
+									</div>
+									<div class="duration-300" :class="selected == 'faq-2' ? '-rotate-180': ''">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+									</div>
+								</div>
+							</button>
+							<div x-show="selected == 'faq-2'" x-collapse.duration.600ms>
+								<p class="leading-8 text-lg pb-4">
+									There are different types of hosting services available, including:<br/>
+									1. <b>Shared Hosting:</b> Multiple websites are hosted on the same server, sharing its resources like CPU, RAM, and bandwidth. It's an affordable option for small websites.<br/>
+									2. <b>VPS Hosting (Virtual Private Server):</b> A virtualized server with dedicated resources for each website. It offers more control and customization compared to shared hosting.<br/>
+									3. <b>Dedicated Hosting:</b> An entire server is dedicated to a single website, providing the highest level of control and performance.<br/>
+									4. <b>Cloud Hosting:</b> Hosting that uses multiple interconnected servers to distribute resources and ensure high availability and scalability.<br/>
+									5. <b>Managed WordPress Hosting:</b> Hosting specifically optimized for WordPress websites, with additional support and performance enhancements.
+								</p>
+							</div>
+						</div>
+						<div class="bg-white rounded px-5">
+							<button class="py-4 w-full group  text-gray-800" @click="selected !== 'faq-3' ? selected = 'faq-3' : selected = false">
+								<div class="flex justify-between items-center group-hover:text-blue-400 duration-300" :class="selected == 'faq-3' ? 'text-blue-400': ''">
+									<div class="flex items-center gap-2">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="" class="fill-blue-400 h-5 w-5" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+										<p class="text-lg font-semibold">How to buy web hosting? </p>
+									</div>
+									<div class="duration-300" :class="selected == 'faq-3' ? '-rotate-180': ''">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+									</div>
+								</div>
+							</button>
+							<div x-show="selected == 'faq-3'" x-collapse.duration.600ms>
+								<p class="leading-8 text-lg pb-4">
+									If you want to buy hosting then from our website, you can buy hosting according to your blog traffic. Therefore, after visiting any website from here, you can create a new account, choose a hosting plan, pay and buy hosting.  
+								</p>
+							</div>
+						</div>
+						<div class="bg-white rounded px-5">
+							<button class="py-4 w-full group  text-gray-800" @click="selected !== 'faq-4' ? selected = 'faq-4' : selected = false">
+								<div class="flex justify-between items-center group-hover:text-blue-400 duration-300" :class="selected == 'faq-4' ? 'text-blue-400': ''">
+									<div class="flex items-center gap-2">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="" class="fill-blue-400 h-5 w-5" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+										<p class="text-lg font-semibold">What is meaning of shared hosting?</p>
+									</div>
+									<div class="duration-300" :class="selected == 'faq-4' ? '-rotate-180': ''">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+									</div>
+								</div>
+							</button>
+							<div x-show="selected == 'faq-4'" x-collapse.duration.600ms>
+								<p class="leading-8 text-lg pb-4">
+									A shared web hosting service is a web hosting service where many websites reside on a single web server connected to the Internet. This is usually the most cost-effective option for hosting as the overall cost of server maintenance is spread across multiple customers. 
+								</p>
+							</div>
+						</div>
+						<div class="bg-white rounded px-5">
+							<button class="py-4 w-full group  text-gray-800" @click="selected !== 'faq-5' ? selected = 'faq-5' : selected = false">
+								<div class="flex justify-between items-center group-hover:text-blue-400 duration-300" :class="selected == 'faq-5' ? 'text-blue-400': ''">
+									<div class="flex items-center gap-2">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="" class="fill-blue-400 h-5 w-5" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+										<p class="text-lg font-semibold">How to choose right shared hosting provider?</p>
+									</div>
+									<div class="duration-300" :class="selected == 'faq-5' ? '-rotate-180': ''">
+										<svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+									</div>
+								</div>
+							</button>
+							<div x-show="selected == 'faq-5'" x-collapse.duration.600ms>
+								<p class="leading-8 text-lg pb-4">
+									If you want to buy hosting for the first time then you need to keep many things in mind when buying hosting. Because a website and hosting depends on many things. For this, first know the information given below and then buy the hosting. Uptime hosting's job is to always show your domain to users and keep your website in front of the internet. But there are many types of hosting companies that go down most of the time. And being down can sometimes take your website off the internet. So before buying hosting, select the company that will guarantee 99.9% Uptime for your website. Speed The main thing of any website or blog is speed. If your website is slow to open then a user will leave your website and enter someone else's website. Because there are many types of websites on the internet that provide similar information. So no user will wait to open the website, he will immediately move to another website. So check the speed of the hosting you are using. For this you can discuss with the users who have already used the hosting of that company. Bandwidth Bandwidth is the amount of data that can be accessed on your website every second. If your hosting bandwidth is low, your website will slow down due to heavy traffic. So choose hosting with unlimited bandwidth if you can. The most important aspect of Disk Space hosting is the hosting space. Where all your website data is stored. Like mobile memory card it also has a certain limit. So if the disk space of your hosting is full, then you will not be able to store any new data in your hosting. So keep this thing in mind and choose hosting service with unlimited disk space. Buying hosting from a Customer Support hosting company; Check out their support system. Sometimes help and support is needed due to lack of technical knowledge. Because there are many types of hosting problems that cannot always be fixed by yourself. Therefore, before buying hosting, you must check the customer support of the hosting company you have chosen. Security The biggest thing you need to keep an eye on your website is security. If your hosting company does not provide security for your website then there is a fear of your website data being stolen. Therefore, choose a web hosting company that ensures website security. SSL certificate definitely plays a big role for website. Placing an SSL certificate on a website increases its security manifold. So while buying hosting check if the company provides SSL certificate. Money Back Guarantee Sometimes, while using a hosting service, various types of problems occur with that hosting service. So it is necessary to leave that hosting service and go to another company's hosting service. For this reason, you must check the hosting company that you currently want to join, whether they guarantee money back after paying for the service, or for how long, if you want to buy hosting services from a hosting company, then such organizations must provide a moneyback guarantee. Buy hosting from As a result, you can easily transfer your website to another hosting provider company with your money back.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="container mx-auto pt-20 ">
+				<div class="grid grid-cols-12 px-4 md:px-8 xl:px-16" id="footer">
+					<div class="col-span-12 lg:col-span-3">
+						<img src="images/best-sheba-logo.png" class="h-14" alt="">
+						<div class="space-y-2 text-stone-500 text-sm ">
+							<p class="w-7/12 lg:w-9/12"><b>Office 1: </b>Best Sheba, House # 02, Road # 09, Block - A, Mirpur 12, Pallabi - 1216, Dhaka.</p>
+							<p class="w-7/12 lg:w-9/12"><b>Office 2: </b>Best Sheba, House # 06, Road # 24, Housing Estate, Maijdee - 3800, Sadar, Noakhali.</p>
+							<div class="pt-2">
+								<p class=""><b>Hotline: </b>+880 9613-828811</p>
+								<p class=""><b>Phone: </b>mail2bestsheba@gmail.com</p>
+								<p class=""><b>Website: </b>bestsheba.com.bd</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
+						<p class="text-base font-semibold text-[#37518F] pb-3 pt-5 md:pt-2 lg:ml-2">Useful Links</p>
+						<div>
+							<ul class="list-none space-y-3">
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Home</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">About us</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Services</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Terms of service</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Privacy policy</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3">
+						<p class="text-base font-semibold text-[#37518F] pb-3 pt-5 md:pt-2 lg:ml-2">Our Services</p>
+						<div>
+							<ul class="list-none space-y-3">
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Web Design</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Web Development</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Product Management</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Marketing</a>
+								</li>
+								<li class="flex items-center group">
+									<svg xmlns="http://www.w3.org/2000/svg" class="group-hover:fill-[#47B2E4]" height="13" width="13" fill="#ccc" class="mt-1" viewBox="0 0 256 512"><path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z"/></svg>
+									<a href="" class="ml-1 hover:text-blue-500 hover:translate-x-2 duration-200">Graphic Design</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-span-12 md:col-span-4 lg:col-span-3 space-y-3">
+						<p class="text-base font-semibold text-[#37518F] pt-5 md:pt-2">Our Social Networks</p>
+						<p class="">Feel free to connect with us</p>
+						<ul class="flex items-center gap-3">
+							<a href= "#" class="bg-[#47B2E4] border flex group h-9 items-center justify-center overflow-hidden relative rounded-full text-white w-9">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="fill-white" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+								</span>                                                       
+								<span class="-left-[100%] absolute bg-white duration-500 group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-blue-100 w-full"></span>
+							</a>
+							<a href= "#" class="bg-[#47B2E4] border flex group h-9 items-center justify-center overflow-hidden relative rounded-full text-white w-9">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="fill-white" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+								</span>                                                       
+								<span class="-left-[100%] absolute bg-white duration-500 group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-blue-100 w-full"></span>
+							</a>
+							<a href= "#" class="bg-[#47B2E4] border flex group h-9 items-center justify-center overflow-hidden relative rounded-full text-white w-9">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="fill-white" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+								</span>                                                       
+								<span class="-left-[100%] absolute bg-white duration-500 group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-blue-100 w-full"></span>
+							</a>
+							<a href= "#" class="bg-[#47B2E4] border flex group h-9 items-center justify-center overflow-hidden relative rounded-full text-white w-9">
+								<span>
+									<svg xmlns="http://www.w3.org/2000/svg" height="1em" class="fill-white" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+								</span>                                                       
+								<span class="-left-[100%] absolute bg-white duration-500 group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_10px_10px_rgba(0,0,0,0.3)] shadow-blue-100 w-full"></span>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="flex sm:flex-row flex-col sm:justify-between text-center py-7 mt-4 bg-[#37517E] text-gray-100 px-24 text-sm">
+				<p>© Copyright Best Sheba. All Rights Reserved</p>
+				<p>Developed by <a href="#" class="text-[#47B2E4]">Best Sheba</a></p>
+			</div>
+		</footer>
+		
+		<script defer src="js/alpine.min.js"></script>	 
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+		<!-- typed JS -->
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+		<script>
+		var swiper = new Swiper(".TLSwiper", {
+		  spaceBetween: 50,
+		  slidesPerView: 3,
+		  loop: true,
+		  loopPreventsSliding: true,
+		  autoplay: {
+			delay: 3000,
+			disableOnInteraction: true,
+		  },
+		  pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		  },
+		breakpoints: {
+			  100: {
+				slidesPerView: 1,
+			  },
+			  768: {
+				slidesPerView: 2,
+			  },
+			  1024: {
+				slidesPerView: 3,
+			  },
+			},  
+		});
+	  </script>
+	  
+		  
+	</body>
+</html>
+	
