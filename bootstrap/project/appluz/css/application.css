@@ -1,0 +1,40 @@
+/* =======================================================
+=============== Application CSS ==========================
+======================================================== */
+#card-carousel .theme-blockquote:before{
+	left:42.5%;
+}
+
+#featuresTable tr:nth-child(even){
+	background-color:rgba(255,255,255,.02)!important;
+}
+#featuresTable tbody{
+	border:0!important;
+}
+#featuresTable th{
+	padding-top:.85rem;
+	padding-bottom:.85rem;
+	border-bottom:1px solid #53ba00!important;
+	text-align:center;
+}
+#featuresTable td{
+	padding-top:.85rem;
+	padding-bottom:.85rem;
+	font-weight:500;
+	border-bottom-color:rgba(255,255,255,.07)!important;
+	text-align:center;
+}
+#featuresTable tr td:first-child{
+	text-align:left;
+}
+@media (min-width: 992px) {
+	#fasterReliable {
+		background-image: url("../images/tablet_bg.jpg");
+	}
+}
+@media (max-width: 768px) {
+	#featuresTable th,
+	#featuresTable td{
+		font-size:.8rem;
+	}
+}
