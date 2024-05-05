@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta Tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+		
+		<title>NavBar</title>
+		
+		<!-- Fontawesome Sheet -->
+		<link rel="stylesheet" href="css/all.css">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		<main>
+			<section class="bg-success py-3" style="min-height: 100vh; min-width: 100vw;">
+				<div class="container">
+					<h3 class="text-center border-bottom text-light fw-bold py-3">Progress Bar</h3>
+					<!-- Progress 01 -->
+					<div class="">  
+						<h4>Progress 01</h4>
+						<style type="text/css">
+							*
+							{
+								margin:0;
+								padding:0;
+								box-sizing:border-box;
+								font-family:'poppins',sans-serif;
+								
+							}
+
+							section
+							{
+								padding-top:100px;
+								padding-bottom:50px;
+							}
+							.container
+							{
+								width:1100px;
+								margin:auto;
+								overflow:hidden;
+								text-align:center;
+								
+							}
+							.w-600
+							{
+								width:600px;
+								
+							}
+							#progress
+							{
+								display:flex;
+								justify-content:center;
+								align-items:center;
+							}
+							#progress .content
+							{
+								position:relative;
+								display:flex;
+								margin:20px 5px 0;
+								padding:24px 10px 24px;
+								background:linear-gradient(#616161 0%, #333 10%, #222);
+								border-radius:8px;
+								overflow:hidden;
+								border:2px solid #000;
+								transition:0.5s;
+								align-items: center;
+							}
+							#progress .content:before
+							{
+								content:'';
+								position:absolute;
+								top:0;
+								left:0;
+								width:100%;
+								height:50%;
+								background:rgba(142, 127, 127, 0.11);
+								z-index:10;
+							}
+							.name
+							{
+								position:relative;
+								width:110px;
+								text-align:right;
+								color:#fff;
+								margin-top:7px;
+								text-transform:uppercase;
+								font-size: 16px;
+							}
+							.value
+							{
+								position:relative;
+								width:40px;
+								text-align:left;
+								color:#fff;
+								margin-top:7px;
+								text-transform:uppercase;
+								
+							}
+							.progress-bar
+							{
+								position:relative;
+								width:calc(100% - 150px);
+								height:20px;
+								margin:0 10px;
+								border-radius:10px;
+								background:#151515;
+								box-shadow:inset 0 0 10px #000;
+								overflow:hidden;
+							}
+							.progress-achieve
+							{
+								position:relative;
+								top:0;
+								left:0;
+								height:100%;
+								border-radius:10px;
+								box-shadow:inset 0 0 10px #000;
+								animation:animate 4s ease-in-out forwards;
+								
+							}
+
+							@keyframes animate
+							{
+								from
+								{
+									width:0;
+								}
+							}
+							#progress .container:hover .content
+							{
+								opacity:0.05;
+							}
+
+							#progress .container .content:hover
+							{
+								opacity:1;
+								transform:scale(1.02);
+							}
+						</style>
+						<div id="progress">
+							<div class="container w-600">
+								<div class="">
+									<div class="">
+										<div class="content">
+											<h5 class="name">HTML</h5>
+											<div class="progress-bar">
+												<div class="progress-achieve" style="width:95%; background:linear-gradient(45deg,#1fe6ff,#673AB7);"></div>
+											</div>
+											<h5 class="value counter">95</h5>
+										</div>
+									</div>
+									
+									<div class="">
+										<div class="content">
+											<h5 class="name">css</h5>
+											<div class="progress-bar">
+												<div class="progress-achieve" style="width:80%; background:linear-gradient(45deg,#3bc0ff,#33ff00);"></div>
+											</div>
+											<h5 class="value counter">80</h5>
+										</div>
+									</div>
+									
+									<div class="">
+										<div class="content">
+											<h5 class="name">Bootstrap</h5>
+											<div class="progress-bar">
+												<div class="progress-achieve" style="width:82%;
+												background:linear-gradient(45deg,#ffee54,#ff00ca);"></div>
+											</div>
+											<h5 class="value counter">82</h5>
+										</div>
+									</div>
+									
+									<div class="">
+										<div class="content">
+											<h5 class="name">javascript</h5>
+											<div class="progress-bar">
+												<div class="progress-achieve" style="width:50%;background:linear-gradient(45deg,#ff4b22,#F3F021);"></div>
+											</div>
+											<h5 class="value counter">50</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>

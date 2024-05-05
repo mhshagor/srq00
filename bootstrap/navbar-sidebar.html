@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta Tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+		
+		<title>NavBar</title>
+		
+		<!-- Fontawesome Sheet -->
+		<link rel="stylesheet" href="css/all.css">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		<main>
+			<section class="bg-success py-3" style="min-height: 100vh; min-width: 100vw;">
+				<div class="container">
+					<h3 class="text-center border-bottom text-light fw-bold py-3">Navbar</h3>
+					<!-- Navbar 01 -->
+					<div class="">  
+						<h4>Navbar 01</h4>
+						<style type="text/css">
+							*{
+								margin:0;
+								padding:0;
+								box-sizing:border-box;
+								font-family:'poppins',sans-serif;
+							}
+							body{
+								display:flex;
+								justify-content:center;
+								align-items:center;
+								min-height:100vh;
+								background:gray;
+							}
+							#main-menu{
+								position:relative;
+								height:500px;
+								width:70px;
+								background:#2b343b;
+								box-shadow:10px 0 0 #4187f6;
+								border-left:10px solid #2b343b;
+								overflow-x:hidden;
+								transition:width 0.5s;
+							}
+							#main-menu:hover{
+								width:300px;
+							}
+							#main-menu ul{
+								position:absolute;
+								top:0;
+								left:0;
+								width:100%;
+								padding-left:5px;
+								padding-top:40px;
+							}
+							#main-menu ul li{
+								position:relative;
+								list-style:none;
+								width:100%;
+								border-top-left-radius:20px;
+								border-bottom-left-radius:20px;
+							}
+							#main-menu ul li:hover{
+								border: 1px dotted #4187f6;
+							}
+							#main-menu ul li.active{
+								background:#4187f6;
+							}
+							#main-menu ul li a{
+								position:relative;
+								display:block;
+								width:100%;
+								display:flex;
+								text-decoration:none;
+								color:white;
+							}
+							#main-menu ul li.active a::before{
+								content:'';
+								position:absolute;
+								top:-30px;
+								right:0;
+								width:30px;
+								height:30px;
+								background:#2b343b;
+								border-radius: 50%;
+								box-shadow:15px 15px 0 #4187f6;
+							}
+							#main-menu ul li.active a::after{
+								content:'';
+								position:absolute;
+								bottom:-30px;
+								right:0;
+								width:30px;
+								height:30px;
+								background:#2b343b;
+								border-radius: 50%;
+								box-shadow:15px -15px 0 #4187f6;
+							}
+							#main-menu ul li a .icon{
+								position:relative;
+								display:block;
+								min-width:60px;
+								height:60px;
+								line-height:70px;
+								text-align:center;
+							}
+							#main-menu ul li a .icon i{
+								position:relative;
+								font-size:1.5em;
+								z-index:1;
+							}
+							#main-menu ul li a .title{
+								position:relative;
+								display:block;
+								padding-left:10px;
+								height:60px;
+								line-height:60px;
+								white-space:nowrap;
+							}
+						</style>
+						<div id="main-menu" class="">
+							<ul>
+								<li class="active">
+									<a href="#">
+										<span class="icon"><i class="fas fa-home"></i></span>
+										<span class="title">Home</span>
+									</a>
+								</li>
+
+								<li class="">
+									<a href="#">
+										<span class="icon"><i class="far fa-user"></i></span>
+										<span class="title">Profile</span>
+									</a>
+								</li>
+
+								<li class="">
+									<a href="#">
+										<span class="icon"><i class="far fa-comment"></i></span>
+										<span class="title">Message</span>
+									</a>
+								</li>
+								
+								<li class="">
+									<a href="#">
+										<span class="icon"><i class="fas fa-cog"></i></span>
+										<span class="title">Setting</span>
+									</a>
+								</li>
+
+								<li class="">
+									<a href="#">
+										<span class="icon"><i class="fas fa-question"></i></span>
+										<span class="title">Help</span>
+									</a>
+								</li>
+
+								<li class="">
+									<a href="#">
+										<span class="icon"><i class="fas fa-lock"></i></span>
+										<span class="title">Password</span>
+									</a>
+								</li>
+
+								<li class="">
+									<a href="#">
+										<span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+										<span class="title">Sign Out</span>
+									</a>
+								</li>
+
+							</ul>
+
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
