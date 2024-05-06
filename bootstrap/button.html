@@ -1,130 +1,63 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- Required meta Tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
-		
-		
-		<title>Home | Green Leaf Technology</title>
-		<!-- for Use Icon -->
-		<link rel="icon" href="images/logo.png">
-		
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-		<!-- Fontawesome Icon -->
-		<link rel="stylesheet" href="css/all.css">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Company Name -->
+		<title>SHAGOR</title>
+
+		<!-- Fontawesome Sheet -->
+		<link rel="stylesheet" href="css/all.css" />
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<!-- All Custom css here -->
-		<link rel="stylesheet" href="css/bootstrap-extensions.css">
-		<!-- Wow Animate CSS here -->
-		<link rel="stylesheet" href="css/animate.min.css"/>
-		<!-- Owl Carouse CSS here -->
-		<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-		<link rel="stylesheet" href="css/owl.theme.default.min.css"/>
-		
-		<!-- All Custom css here -->
-		<link rel="stylesheet" href="css/nav.css"> 
-		<link rel="stylesheet" href="css/theme.css"> 
-		<link rel="stylesheet" href="css/icon.css">
-		<link rel="stylesheet" href="css/home.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		
 	</head>
-	<body>
-		<main>
-			<section class="bg-success py-3">
-				<div class=" container">
-					<h3 class="text-center border-bottom text-light fw-bold py-3">Button With Blink</h3>
-					<div class="row row-cols-4 g-3 justify-content-center align-items-center py-3">
-						<div>
-							<button class="w-100 flex-shrink-0 btn rounded-pill py-2 px-4 h-9 fw-bold  theme-btn-light-green-fixed theme-btn-blink small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-						</div>
-						<div>
-							<button class="w-100 flex-shrink-0 btn rounded-pill px-4 h-9 fw-bold text-white theme-btn-transparent-to-white theme-btn-blink small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-						</div>
-						<div>
-							<button class="w-100 flex-shrink-0 btn rounded-pill px-4 h-9 fw-bold text-white theme-btn-green theme-btn-blink small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-						</div>
-						<div>
-							<button class="w-100 flex-shrink-0 btn rounded-pill px-4 h-9 fw-bold text-white theme-btn-white theme-btn-blink small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-						</div>
-						<div>
-							<button class="w-100 flex-shrink-0 btn theme-btn-white-to-black theme-btn-blink duration-500 fw-bold rounded-pill px-4 h-9 small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-						</div>
-						<div>
-							<button class="w-100 flex-shrink-0 btn theme-text-light-green theme-border-light-green theme-btn-transparent-to-green theme-btn-blink rounded-pill h-9 small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-						</div>
+	<body class="d-flex justify-content-center align-items-center">  
+		<section class="bg-success py-3" style="min-height: 100vh; min-width: 100vw;">
+			<div class=" container">
+				<h3 class="text-center border-bottom text-light fw-bold py-3">Button</h3>
+				<!-- Button 01 -->
+				<style>
+					#hover-drop, #drop {
+						width: 150px;
+						height: 150px;
+						cursor: pointer;
+					}
+					#hover-drop:hover, #drop {
+						box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05), 15px 25px 10px rgba(0, 0, 0, 0.05), 15px 20px 20px rgba(255, 255, 255, 0.9), inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+					}
+					#hover-drop:hover::before, #drop::before {
+						content: "";
+						position: absolute;
+						top: 35px;
+						left: 25px;
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						background: #fff;
+					}
+					#hover-drop:hover::after, #drop::after {
+						content: "";
+						position: absolute;
+						top: 25px;
+						left: 50px;
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: #fff;
+					}
+				</style>
+				<div class="d-flex" style="background-color: rgb(189 197 205) !important;">
+					<div id="hover-drop" class="position-relative d-flex justify-content-center align-items-center rounded-circle m-5">
+						<i class="fa-5x fab fa-apple"></i>
 					</div>
-					<div>
-						<h3 class="text-center border-bottom text-light fw-bold py-3">Button With Shadow</h3>
-						<div class="row row-cols-4 g-3 justify-content-center align-items-center py-3">
-							<div>
-								<button class="flex-shrink-0 btn theme-btn-white rounded-pill text-black small font-roboto fw-500 px-3 h-9 small transition-all duration-700"><small class="small">Explore Tech solutions</small></button>
-							</div>
-						</div>
-					</div>
-					<div>
-						<h3 class="text-center border-bottom text-light fw-bold py-3">Search Icon</h3>
-						<div class="row row-cols-4 g-3 justify-content-center py-3">
-							<div>
-								<button class="flex-shrink-0 btn bg-transparent btn d-flex align-items-center justify-content-center duration-700 rounded-circle h-8 w-8"><span data-ico-icon7stroke="&#xe618;" class="theme-icon-search-circle-holder"></span></button>
-							</div>
-							<div>
-								<button class="flex-shrink-0 btn h-8 w-8 theme-btn-green theme-btn-blink text-light duration-300 rounded-circle"><i class="fas fa-search"></i></button>
-							</div>
-							<div class="position-relative">
-								<div class="position-absolute">
-									<a href="" class="btn d-flex align-items-center justify-content-center text-body theme-btn-light-green-fixed theme-btn-blink hover-scale-110 duration-700 rounded-circle fs-2 h-8 w-8"><span data-ico-icon7stroke=""></span></a>
-								</div>
-							</div>
-							<div class="position-relative  group-hover">
-								<a href="#" class="flex-shrink-0 h-8 w-8 m-auto hover-scale-130 duration-700 theme-icon-plus-circle-holder">
-										</a>
-							</div>
-						</div>
-					</div>
-					<div class="">
-						<h3 class="text-center border-bottom text-light fw-bold py-3">Social Media Icon</h3>
-						<div class="row row-cols-4 g-3 justify-content-center align-items-center py-3">
-							<div class="d-flex gap-2 justify-content-center align-items-center fs-6">
-								<a href="#" class="d-flex align-items-center justify-content-center text-white rounded-circle text-decoration-none"><i class="fab fa-facebook-f theme-icon-search-circle-holder social-icon-sm"></i></a>
-								<a href="#" class="d-flex align-items-center justify-content-center text-white rounded-circle text-decoration-none"><i class="fab fa-twitter theme-icon-search-circle-holder social-icon-sm"></i></a>
-								<a href="#" class="d-flex align-items-center justify-content-center text-white rounded-circle text-decoration-none"><i class="fab fa-linkedin-in theme-icon-search-circle-holder social-icon-sm"></i></a>
-							</div>
-							<ul class="nav gap-3 align-items-center h-100 small text-black">
-								<li class="nav-item group-hover lh-lg">
-									<a href="" class="px-1 py-2 transition-all duration-300 hover-theme-text-black-to-green"><i class="h-100 fab fa-facebook-f"></i></a>
-								</li>
-
-								<li class="nav-item">
-									<a href="" class="px-1 py-2 transition-all duration-300 hover-theme-text-black-to-green"><i class="fab fa-twitter"></i></a>
-								</li>
-								<li class="nav-item">
-									<a href="" class="px-1 py-2 transition-all duration-300 hover-theme-text-black-to-green"><i class="fab fa-instagram"></i></a>
-								</li>
-								<li class="nav-item">
-									<a href="" class="px-1 py-2 transition-all duration-300 hover-theme-text-black-to-green"><i class="fab fa-youtube"></i></a>
-								</li>
-								<li class="nav-item">
-									<a href="#searchOffcanvas" class="px-1 py-2 transition-all duration-300 hover-theme-text-black-to-green" data-bs-toggle="offcanvas" role="button"><i class="fas fa-search"></i></a>
-								</li>
-							</ul>
-							<div class="d-flex gap-3 mt-3 justify-content-center">
-								<a class="theme-text-green hover-scale-110 duration-300" href=""><i class="fab fa-youtube"></i></a>
-								<a class="theme-text-green hover-scale-110 duration-300" href=""><i class="fab fa-instagram"></i></a>
-								<a class="theme-text-green hover-scale-110 duration-300" href=""><i class="fab fa-twitter"></i></a>
-								<a class="theme-text-green hover-scale-110 duration-300" href=""><i class="fab fa-facebook-f"></i></a>
-							</div>
-						</div>
+					<div id="drop" class="position-relative d-flex justify-content-center align-items-center rounded-circle m-5">
+						<i class="fa-5x fab fa-apple"></i>
 					</div>
 				</div>
-			</section>
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/jquery-3.6.0.min.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/isotope.pkgd.min.js"></script>
-		<script src="js/theme.js"></script>
+			</div>
+		</section>
 	</body>
+	<script src="js/bootstrap.bundle.min.js"></script>
 </html>
