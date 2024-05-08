@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <!-- theme css -->
+		
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Alpine js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		  <!-- Alpine Plugins -->
+			<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+			
+		  <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+        <title>Assure Group</title>
+			<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+			
+			<style>
+			body {
+				 font-family: 'Poppins';
+			}
+			[x-cloak]{ display: none;}
+
+			/* ----- Scrollbar ------ */
+			.scroll-sm::-webkit-scrollbar {
+				 width: 6px;
+				 height: 6px;
+			  }
+			.scroll::-webkit-scrollbar {
+			width: 8px;
+			height: 8px;
+			}
+			.scroll-lg::-webkit-scrollbar {
+			width: 10px;
+			height: 10px;
+			}
+			.scroll-sm::-webkit-scrollbar-thumb,
+			.scroll::-webkit-scrollbar-thumb,
+			.scroll-lg::-webkit-scrollbar-thumb{
+			background: #06060652; 
+			}
+			.scroll-sm::-webkit-scrollbar-track,
+			.scroll::-webkit-scrollbar-track,
+			.scroll-lg::-webkit-scrollbar-track{
+			background: #00000025; 
+			}
+		</style>
+    </head>
+    <body class="relative">
+		<header>
+			<!-- Navbar -->
+			<nav id="main-nav" class="" x-data="{ open: true, focus: true }" @keydown.escape="onEscape">
+				<div class="w-full absolute z-10 top-[50px] ">
+					<div class="mx-auto max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] px-[15px] text-[15px]">
+						<div class="bg-[#17A84C]/85 lg:flex hidden items-center justify-between">
+							<div class="bg-white py-1 px-[15px] ">
+								<a href="" >
+									<img src="../images/logo.png" alt="" class="w-[170px] h-[90px] mx-auto object-fill align-middle">
+								</a>
+							</div>
+							<div class="hidden items-center justify-end md:flex"> 
+								<ul class="flex items-center justify-center gap-3 mr-6 text-[15px] text-white" x-data="{ dropdown: null }" @click.away="dropdown = null">
+									<li class="">
+										<a href="{{url('/')}}" class="px-[14px] py-[29px] block">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+												<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+											</svg>
+										</a>
+									</li>
+									
+									<!-- Corporate -->
+									<li class="relative">
+										<button @click="dropdown !== 'corporate' ? dropdown = 'corporate' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="corporate">Corporate</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'corporate' ? 'block' : 'hidden'"></div>
+											<div x-ref="corporate" x-bind:style="dropdown == 'corporate' ? 'max-height: ' + $refs.corporate.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute left-0 mt-[25px] w-56" :class="dropdown == 'corporate' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Company Profile</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Vision & Mission</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Meet the Team</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Corporate Structure</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Career Opportunity</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Customer Reviews</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Awards</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Affiliations</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Social Responsibility</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Land Wanted</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Certifications</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Testimonials</a>
+															</div>
+														</li>
+													</ul>
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- Businesses -->
+									<li class="relative">
+										<button @click="dropdown !== 'business' ? dropdown = 'business' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="business">business</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'business' ? 'block' : 'hidden'"></div>
+											<div x-ref="business" x-bind:style="dropdown == 'business' ? 'max-height: ' + $refs.business.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-28 mt-[25px] w-80" :class="dropdown == 'business' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3 w-full">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Development & Design Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Builders Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Properties Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Agro Complex Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Tourism (Dera Resort)</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Tours and Travels</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure General Hospital Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2 whitespace-nowrap">Assure Engineering & Constructions Ltd.</a>
+															</div>
+														</li>
+													</ul>
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- properties -->
+									<li class="relative">
+										<button @click="dropdown !== 'properties' ? dropdown = 'properties' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="properties">properties</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'properties' ? 'block' : 'hidden'"></div>
+											<div x-ref="properties" x-bind:style="dropdown == 'properties' ? 'max-height: ' + $refs.properties.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-48 mt-[25px] w-[30rem]" :class="dropdown == 'properties' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-16 flex items-center justify-between">
+													<div class="space-y-2">
+														<h3 class="font-semibold">Phases</h3>
+														<ul class="space-y-1">
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Ongoing</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Upcoming</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Completed</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<div class="space-y-2">
+														<h3 class="font-semibold">Phases</h3>
+														<ul class="space-y-1">
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Ongoing</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Upcoming</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Completed</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<div class="space-y-2">
+														<h3 class="font-semibold">Phases</h3>
+														<ul class="space-y-1">
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Ongoing</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Upcoming</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Completed</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- Media -->
+									<li class="relative">
+										<button @click="dropdown !== 'media' ? dropdown = 'media' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="media">media</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'media' ? 'block' : 'hidden'"></div>
+											<div x-ref="media" x-bind:style="dropdown == 'media' ? 'max-height: ' + $refs.media.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-20 mt-[25px] w-56" :class="dropdown == 'media' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3 w-full">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Blog</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">News</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Events</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Coverage</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Handover Projects</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Inauguration Ceremony</a>
+															</div>
+														</li>
+													</ul>
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- Services -->
+									<li class="relative">
+										<button @click="dropdown !== 'services' ? dropdown = 'services' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="services">services</button>
+										<div class="relative" x-data="{ serviceSubDropdown: null }" @click.away="serviceSubDropdown = null">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'services' ? 'block' : 'hidden'"></div>
+											<div x-ref="services" x-bind:style="dropdown == 'services' ? 'max-height: ' + $refs.services.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-28 mt-[25px] w-56" :class="dropdown == 'services' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3 w-full">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Construction</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Air Ticketing</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Visa Processing</a>
+															</div>
+														</li>
+														<li>
+															<button @click="serviceSubDropdown !== 'solution' ? serviceSubDropdown = 'solution' : serviceSubDropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize">
+																<div class="relative group flex items-center">
+																	<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																	<div class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Interior Solution</div>
+																</div>
+															</button>
+														</li>
+													</ul>
+
+												</div>						
+											</div>  
+											
+													<div x-ref="serviceSubDropdown" x-bind:style="serviceSubDropdown == 'solution' ? 'max-height: ' + $refs.serviceSubDropdown.scrollHeight + 100 + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-28 mt-[25px] w-56" :class="serviceSubDropdown == 'solution' ? 'border' : ''">
+																	  ddddddddddddddd
+													</div>
+										</div>			
+									</li>
+									
+									<li class="">
+										<a href="{{url('/')}}" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Contact</a>
+									</li>
+								</ul>
+							</div>
+							<div class="hidden items-center justify-end md:flex">
+								<a href="#" class="flex gap-2 pl-[15px] group before:content-[''] before:left-0 before:top-50 before:w-px before:h-5 before:mt-4 before:mr-1 before:bg-white">
+									<div class="flex justify-center items-center duration-300">
+										<span class="bg-[#CDFBDD] group-hover:bg-[#0c6e30] p-2 rounded duration-300" >
+											
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 group-hover:fill-white fill-[#17A84C] duration-300 " viewBox="0 0 512 512">
+												<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+											</svg>
+										</span>
+									</div>
+									<div class="text-[#CDFBDD] group-hover:text-white duration-300">
+										<p class="">Call Us Today</p>
+										<p class="text-lg font-bold">09612-008800</p>
+									</div>
+								</a>
+								<div class="flex flex-col items-center gap-1 ml-[25px]">
+									<a href="{{url('/')}}" class="bg-white group hover:bg-[#0c6e30] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 group-hover:fill-white fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+											<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+										</svg>
+									</a>
+									<a href="{{url('/')}}" class="bg-white group hover:bg-[#0c6e30] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 group-hover:fill-white fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+											<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+										</svg>
+									</a>
+									<a href="{{url('/')}}" class="bg-white group hover:bg-[#0c6e30] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 group-hover:fill-white fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+											<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+										</svg>
+									</a>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- mobile navBar -->
+				<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky top-0 z-30 bg-white px-4 sm:px-8 md:px-16 lg:px-28 mx-auto lg:hidden">
+					<div class="flex items-center justify-between">
+						<div>
+							<a href="{{url('/')}}">
+							  <img class="h-14 w-auto" src="images/logo.png" alt="Logo">
+							</a>
+						</div>
+						<div class="">
+							<div class=" flex relative py-3 sm:max-w-xl mx-auto">
+								<!-- offcanvase open button -->
+								<div class="shrink-0 block lg:hidden">
+									<button type="button" class="text-black hover:bg-green-700 hover:text-white border border-green-800 transition duration-700 ease-in-out h-10 w-10 flex justify-center items-center" @click="open = true">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+										</svg>
+									</button>
+								</div>
+								<!-- end offcanvase open button -->
+							</div>
+						</div>
+					</div>
+					<!-- Mobile offcanvase dialog -->
+					<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" style="display: none;">
+						<div class="fixed inset-0 z-40 flex">
+							<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-green-700 py-4 pb-12 shadow-xl" @click.away="open = false" style="display: none;">
+								<!-- offcanvase close -->
+								<div class="flex items-center px-4">
+									<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-green-800 border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
+										 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+									  </svg>
+									</button>
+								</div>
+								<!-- end offcanvase close -->
+								<!-- offcanvases -->
+								<div class="blocktext-white px-10 py-16">
+									<ul class="list-none text-white space-y-4 text-[1.15rem]">
+										<li class="">
+											<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
+										</li>
+										<li class="">
+											<a href="{{url('about-us')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block  after:duration-500 after:w-full after:bg-black text-gray-900 duration-300">About</a>
+										</li>
+										<li class="">
+											<a href="{{url('our-services')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Service</a>
+										</li>
+										<li class="">
+											<a href="{{url('our-team')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Team</a>
+										</li>
+										<li class="">
+											<a href="{{url('our-blogs')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Blogs</a>
+										</li>
+										<li class="">
+											<a href="#contact" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Contact</a>
+										</li>
+									</ul>
+									<div class="mt-5 flex">
+										<a href="{{url('login')}}" class="flex border border-2 border-gray-100 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+											SignIn                                                                                  
+											<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+											<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav> 
+			<!-- Navbar -->
+		</header>
+		<main class="">
+		
+			<section class="bg-[url('../images/land-wanted.jpg')] bg-cover bg-no-repeat bg-center w-full " >
+				<div class="max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] min-h-[250px] sm:min-h-[300px] lg:min-h-[380px] px-[15px] mx-auto flex items-center relative" >
+					<div class=" lg:mt-[75px]"> 
+						<div class=" px-[15px]"> 
+						  <div class="bg-[#17A84C] w-[58px] h-1">
+						  </div>
+						  <p class="text-xl md:text-[48px] text-white  leading-[24px] lg:leading-[58px] font-light ">Land Wanted</p>
+						</div>
+						<div class="flex flex-wrap text-xs  px-[30px] md:text-base text-white absolute bottom-5 gap-3">
+							<a href="" class="flex items-center gap-1"> 
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 fill-white hover:fill-[#00ff5b] duration-300" viewBox="0 0 576 512">
+									<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"></path>
+								</svg>
+								Home 
+							</a>
+							>
+							<a href=""> Corporate </a> 
+							>
+							<a href="" class="text-[#08F85E]"> Land Wanted </a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="bg-[#F8F8F8]"> 
+				<div class="grid col-span-1 lg:grid-cols-5 gap-8 items-center max-w-3xl lg:max-w-[1600px] py-10 md:py-14 px-[15px] mx-auto  py-10 md:py-14  mx-auto"> 
+					<div class="lg:col-span-2 lg:order-1 order-2"> 
+						<img class="h-full w-full" src="../images/land-4.jpg" alt="" />
+					</div>
+					<div class="lg:col-span-3 space-y-5 lg:order-2 order-1">
+						<h1 class="leading-10 md:leading-6 font-light">
+							<p class="text-[45px]"><span class="text-[#17A84C]">LAND </span>WANTED IN <b>DHAKA</b></p><br/> <p class="text-4xl">FOR <span class="text-[#17A84C] font-semibold">JOINT VENTURE</span> DEVELOPMENT</p>
+						</h1>
+						<div class="flex items-center gap-5 text-xl font-semibold text-[#2A2A2A] uppercase">
+							<h3>Call Us Now </h3>
+							<a href="" class="flex items-center gap-0.5 text-red-600">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+								  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+								</svg>
+								<span>09612 008800</span>
+							</a>
+						</div>
+						<div class="space-y-3 text-[#2A2A2A] leading-8 text-justify">
+							<p>ASSURE GROUP, as a leading developer company in Bangladesh, focuses on creating a remarkable experience for the clients through quality land development service in Dhaka. From conducting the feasibility study to vertical development, we research meticulously and invest time to process raw land and make it worthy of investment.</p>
+							<p>ASSURE GROUP, as a leading developer company in Bangladesh, focuses on creating a remarkable experience for the clients through quality land development service in Dhaka. From conducting the feasibility study to vertical development, we research meticulously and invest time to process raw land and make it worthy of investment.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class=""> 
+				<div class="max-w-3xl lg:max-w-[1600px] py-10 md:py-14 px-[15px] mx-auto space-y-6"> 
+					<div class="">
+						<p class="text-3xl md:text-[40px] text-[#1e1e1e] leading-[48px] mb-2 md:mb-5 font-light text-center">Why Choose Us for Developing Your Land</p>
+						<div class="flex justify-center">
+							<img src="../images/heading-arrow.png" alt="" />
+						</div>
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 text-center text-[#2d2d2d]">
+						<div class="p-5 space-y-3 bg-white shadow-lg rounded-lg hover:text-white hover:bg-[#17a84c] group duration-300">
+							<div class="flex justify-center mx-auto rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 80.74" class="text-[#17A84C] group-hover:text-white duration-300 w-16 h-16"><g transform="translate(-89 -262.821)"><path d="M183.908,343.052a1.19,1.19,0,0,0-1.3.257L169.62,356.3a1.189,1.189,0,0,0,.841,2.03h12.993a1.189,1.189,0,0,0,1.189-1.189V344.151A1.189,1.189,0,0,0,183.908,343.052Zm-1.643,12.9H173.33l8.933-8.933v8.933Z" transform="translate(-23.236 -23.199)" fill="currentColor"></path><path d="M169.266,300.8a1.189,1.189,0,0,0-1.3.257l-3.561,3.561v-24.21a1.189,1.189,0,0,0-1.189-1.189h-9.135L157.4,275.9h0l3.2-3.2a3.625,3.625,0,0,0,0-5.126l-3.695-3.695a3.626,3.626,0,0,0-5.127,0l-3.2,3.2-3.862,3.862-8.275,8.275h-36.9V267.454a1.189,1.189,0,0,0-1.189-1.189A9.362,9.362,0,0,0,89,275.616v50.5a1.166,1.166,0,0,0,.028.256,9,9,0,0,0,8.978,8.321h36.33l-6.842,6.842a1.189,1.189,0,0,0,.841,2.029h40.477A1.189,1.189,0,0,0,170,342.372V301.9A1.189,1.189,0,0,0,169.266,300.8Zm-19.844-31.2,5.458,5.459-2.181,2.181-5.458-5.458Zm4.037-4.037a1.249,1.249,0,0,1,1.764,0l3.695,3.695a1.248,1.248,0,0,1,0,1.764l-2.355,2.356L151.1,267.92ZM131.2,341.184l12.009-12.009h0a1.19,1.19,0,0,0,0-1.682,1.216,1.216,0,0,0-.171-.141,1.19,1.19,0,0,0-1.511.141l-4.818,4.819H98.006a6.59,6.59,0,0,1-6.622-6.415c.006-.226.024-.45.052-.671v0c.013-.106.029-.21.048-.314l.006-.036c.016-.092.036-.185.055-.277l.018-.077c.018-.078.038-.155.058-.232.011-.041.023-.083.036-.124.018-.06.036-.121.055-.18s.039-.119.06-.178c.014-.041.028-.082.044-.124.029-.077.06-.155.091-.231.009-.022.018-.045.028-.067.041-.095.082-.188.127-.281l.006-.012a7,7,0,0,1,4.864-3.8l.018,0c.1-.021.2-.038.3-.053l.05-.009c.09-.014.182-.025.273-.035l.077-.01c.088-.009.177-.014.266-.02l.085-.006q.175-.009.352-.009a1.189,1.189,0,0,0,1.189-1.189v-8.62a1.189,1.189,0,1,0-2.377,0v7.506a9.289,9.289,0,0,0-5.34,2.584c-.155.151-.3.308-.444.468V275.616a6.986,6.986,0,0,1,5.784-6.871v35.83h0a1.189,1.189,0,1,0,2.377,0h0V281.594h34.527l-6.572,6.572a1.189,1.189,0,0,0,1.681,1.682l8.6-8.6h0l7.782-7.781,5.458,5.459-.64.64h0L126.4,303.537l-5.459-5.459,4.726-4.725a1.189,1.189,0,0,0-1.681-1.681l-5.566,5.566a1.169,1.169,0,0,0-.084.094l-.025.033c-.016.022-.033.045-.048.068l-.025.041c-.013.023-.026.045-.038.068l-.021.045c-.011.023-.02.047-.029.071l-.011.024-2.316,6.562-1.579,4.474a1.088,1.088,0,0,0-.047.18h-3.954a1.189,1.189,0,0,0,0,2.378H143.17a1.189,1.189,0,0,0,0-2.378H119.548l7.251-2.559.018-.007c.028-.011.055-.023.083-.035l.033-.015c.028-.014.056-.031.084-.047l.027-.016c.028-.018.056-.038.084-.06l.021-.016a1.191,1.191,0,0,0,.1-.085l24.466-24.466h10.323v25.4L145.026,324a1.189,1.189,0,0,0,0,1.681c.029.029.059.056.09.082a1.187,1.187,0,0,0,1.5,0,1.083,1.083,0,0,0,.091-.082h0l20.915-20.915v10.489h-2.193a1.189,1.189,0,0,0,0,2.377h2.193v3.583h-2.193a1.189,1.189,0,1,0,0,2.377h2.193v3.582h-2.193a1.189,1.189,0,0,0,0,2.378h2.193v3.582h-2.193a1.189,1.189,0,1,0,0,2.377h2.193v5.671Zm-10.381-35.256-2.269-2.269,1.2-3.406,4.473,4.472Z" fill="currentColor"></path></g></svg>
+							</div>
+							<h1 class="text-2xl font-bold leading-8">Superior Quality and Architecture</h1>
+							<p class="leading-6">From architectural design to interior application, we maintain superior quality to build contemporary structures</p>
+						</div>
+						<div class="p-5 space-y-3 bg-white shadow-lg rounded-lg hover:text-white hover:bg-[#17a84c] group duration-300">
+							<div class="flex justify-center mx-auto rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.291 80.74"  class="text-[#17A84C] group-hover:text-white duration-300 w-16 h-16"><g transform="translate(-249 -269)"><path d="M304.292,301.767a1.277,1.277,0,0,0,1.925-.218l8.413-12.7a1.264,1.264,0,1,0-2.107-1.4L304.94,298.9l-4.212-4a1.264,1.264,0,0,0-1.741,1.833l5.3,5.037Zm0,0" transform="translate(-13.603 -2.73)" fill="currentColor"></path><path d="M298.775,315.317a1.861,1.861,0,0,0,.774.17h.01a1.845,1.845,0,0,0,.784-.18c19.221-9.141,22.478-28.864,23.019-34.69a3.022,3.022,0,0,0-1.864-3.084,11.046,11.046,0,0,1-6.788-9.27A2.5,2.5,0,0,0,312.233,266h-.015l-25.9.152a2.477,2.477,0,0,0-2.466,2.307,11.05,11.05,0,0,1-6.689,9.338,3.011,3.011,0,0,0-1.817,3.1c.608,5.82,4.1,25.5,23.424,34.42Zm-20.613-35.195a13.567,13.567,0,0,0,8.213-11.442l25.821-.152a13.567,13.567,0,0,0,8.334,11.339.507.507,0,0,1,.316.516c-.507,5.461-3.539,23.874-21.3,32.5-17.863-8.419-21.109-26.8-21.68-32.251a.5.5,0,0,1,.3-.512Zm0,0" transform="translate(-7.223 3)" fill="currentColor"></path><path d="M283.22,288.932a1.332,1.332,0,0,0,1.552.888,1.265,1.265,0,0,0,.888-1.551c-.322-1.187-.593-2.389-.8-3.581a17.77,17.77,0,0,0,7.232-9.478l18.255-.107a17.781,17.781,0,0,0,7.343,9.393c-.2,1.195-.454,2.4-.763,3.592a1.264,1.264,0,1,0,2.448.634c.362-1.4.657-2.818.876-4.219a1.935,1.935,0,0,0-.911-1.961,15.253,15.253,0,0,1-6.709-8.6,1.954,1.954,0,0,0-1.857-1.371h-.012l-19.112.112a1.955,1.955,0,0,0-1.853,1.394,15.254,15.254,0,0,1-6.607,8.677,1.934,1.934,0,0,0-.888,1.971c.236,1.4.546,2.813.925,4.206Zm0,0" transform="translate(-9.125 1.197)" fill="currentColor"></path><path d="M317.862,300.243a1.262,1.262,0,0,0-1.65.687,31.841,31.841,0,0,1-13.748,16,31.847,31.847,0,0,1-13.946-15.868,1.264,1.264,0,0,0-2.327.99,34.285,34.285,0,0,0,15.348,17.255,1.935,1.935,0,0,0,1.875-.01,34.28,34.28,0,0,0,15.134-17.407,1.262,1.262,0,0,0-.686-1.65Zm0,0" transform="translate(-10.174 -6.366)" fill="currentColor"></path><g transform="translate(249 308.841)"><path d="M258.485,355.127a4.472,4.472,0,1,0,4.473,4.472,4.477,4.477,0,0,0-4.473-4.472Zm0,6.417a1.945,1.945,0,1,1,1.945-1.945,1.947,1.947,0,0,1-1.945,1.945Zm0,0" transform="translate(-250.375 -330.287)" fill="currentColor"></path><path d="M334.385,333.363a5.266,5.266,0,0,0-7.272-1.406l-16.524,11.06-3.527-.2-.091-.9a7.671,7.671,0,0,0-6.574-6.854l-.067-.008-17.805-1.56c-.6-.094-2.531-.647-7.83-3.687a19.654,19.654,0,0,0-9.008-2.592v-3.308a3.013,3.013,0,0,0-3.01-3.009H252.01a3.013,3.013,0,0,0-3.01,3.009v32.57a3.014,3.014,0,0,0,3.01,3.009h10.666a3.014,3.014,0,0,0,3.01-3.009v-.9l15.564,5.894a8.718,8.718,0,0,0,3.623.266l25.861-3.728.019,0a12.71,12.71,0,0,0,6.026-2.7l.046-.039,16.7-15.023a5.267,5.267,0,0,0,.856-6.884Zm-2.541,5-16.685,15.008a10.189,10.189,0,0,1-4.8,2.142l-25.842,3.726-.023,0-.012,0a5.67,5.67,0,0,1-2.394-.153l-16.406-6.213V338.441a1.264,1.264,0,0,0-2.528,0v18.037a.482.482,0,0,1-.482.481H252.01a.482.482,0,0,1-.481-.481v-32.57a.481.481,0,0,1,.481-.48h10.666a.482.482,0,0,1,.482.48v8.824a1.264,1.264,0,0,0,2.528,0v-2.986A17.115,17.115,0,0,1,273.437,332c6.391,3.665,8.175,3.918,8.762,4l.065.007,17.807,1.561a5.15,5.15,0,0,1,4.383,4.6l.067.673-23.84,1.472-.047,0a2.882,2.882,0,0,1-1.967-1.029,1.264,1.264,0,1,0-1.941,1.618,5.467,5.467,0,0,0,3.683,1.928c.781.082,25.5-1.539,25.5-1.539l4.956.278a1.262,1.262,0,0,0,.774-.212l16.879-11.3a2.725,2.725,0,0,1,3.323,4.3Zm0,0" transform="translate(-249 -320.899)" fill="currentColor"></path></g></g></svg>
+							</div>
+							<h1 class="text-2xl font-bold leading-8">Superior Quality and Architecture</h1>
+							<p class="leading-6">From architectural design to interior application, we maintain superior quality to build contemporary structures</p>
+						</div>
+						<div class="p-5 space-y-3 bg-white shadow-lg rounded-lg hover:text-white hover:bg-[#17a84c] group duration-300">
+							<div class="flex justify-center mx-auto rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.733 85.733"  class="text-[#17A84C] group-hover:text-white duration-300 w-16 h-16"><path d="M414.381,332.333a1.053,1.053,0,0,1-.52-.139l-25.332-14.476a1.048,1.048,0,0,1-.528-.909V291.584a.854.854,0,0,0,.029-.22.983.983,0,0,1,.106-.377l.047-.1a1.194,1.194,0,0,1,.3-.27l.032-.021a.952.952,0,0,0,.117-.045,1.7,1.7,0,0,0,.16-.085l26.8-7.155,15.572-18.686a8.931,8.931,0,0,1,6.816-3.11,8.583,8.583,0,0,1,3.825.886l5.8,2.9,1.99-4.974a1.04,1.04,0,0,1,.506-.549l1.994-1,.016-.452a2.735,2.735,0,0,1,1-2.078l10.147-8.117A5.2,5.2,0,0,1,466.495,247h1.665a5.174,5.174,0,0,1,1.422,10.149l-13.947,3.988a2.907,2.907,0,0,1-.789.108,2.743,2.743,0,0,1-1.416-.393l-.36-.217-1.677.839-1.906,4.766,13.887,6.944a4.836,4.836,0,0,1,1.154,7.912l-.732.706,8.937,5.107a.814.814,0,0,0,.117.091l.034.023a1.035,1.035,0,0,0,.086.09.848.848,0,0,1,.261.365,1.067,1.067,0,0,1,.066.286.812.812,0,0,0,.036.185V313.19a1.042,1.042,0,0,1-.734,1l-57.906,18.1A1,1,0,0,1,414.381,332.333Zm1.048-25.613v23.141l55.809-17.442V289.282ZM390.1,316.2l23.238,13.276V306.559L390.1,293.283Zm1.687-24.369,22.723,12.984,55.174-17.243-8.565-4.9-8.25,2.063.424.85a1.043,1.043,0,0,1-.008,1,1.055,1.055,0,0,1-.9.505,1.036,1.036,0,0,1-.536-.151l-2.3-1.376-9.029,2.258,1.551.949a1.046,1.046,0,0,1-.547,1.939,1.086,1.086,0,0,1-.549-.153l-3.346-2.011-9.054,2.265,2.635,1.575a1.046,1.046,0,0,1-.542,1.943,1.059,1.059,0,0,1-.542-.151l-4.422-2.65-9.047,2.26,3.7,2.216a1.047,1.047,0,0,1-1.083,1.793l-5.482-3.291-6.386,1.6a.98.98,0,0,1-.257.035,1.048,1.048,0,0,1-.8-1.72l6.936-8.321ZM437.9,263.571a6.653,6.653,0,0,0-5.116,2.395L410.007,293.3l50.874-12.718h.034l.1-.033.856-.215a2.835,2.835,0,0,0,.581-5.28l-13.739-6.868-.786,1.963a1.031,1.031,0,0,1-.431.507l-18.1,10.859a1.022,1.022,0,0,1-.538.152,1.049,1.049,0,0,1-.541-1.947l17.79-10.677.721-1.8-5.944-2.971A6.86,6.86,0,0,0,437.9,263.571Zm17.515-4.553,13.6-3.886a3.078,3.078,0,0,0-.846-6.037h-1.669a3.072,3.072,0,0,0-1.922.675l-9.961,7.968.408.585a1.413,1.413,0,0,0,.117.144Z" transform="translate(-387.8 -246.8)" fill="currentColor" stroke="#17a84c" stroke-miterlimit="10" stroke-width="0.4"></path></svg>
+							</div>
+							<h1 class="text-2xl font-bold leading-8">Superior Quality and Architecture</h1>
+							<p class="leading-6">From architectural design to interior application, we maintain superior quality to build contemporary structures</p>
+						</div>
+						<div class="p-5 space-y-3 bg-white shadow-lg rounded-lg hover:text-white hover:bg-[#17a84c] group duration-300">
+							<div class="flex justify-center mx-auto rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 80.74" class="text-[#17A84C] group-hover:text-white duration-300 w-16 h-16"><g transform="translate(-89 -262.821)"><path d="M183.908,343.052a1.19,1.19,0,0,0-1.3.257L169.62,356.3a1.189,1.189,0,0,0,.841,2.03h12.993a1.189,1.189,0,0,0,1.189-1.189V344.151A1.189,1.189,0,0,0,183.908,343.052Zm-1.643,12.9H173.33l8.933-8.933v8.933Z" transform="translate(-23.236 -23.199)" fill="currentColor"></path><path d="M169.266,300.8a1.189,1.189,0,0,0-1.3.257l-3.561,3.561v-24.21a1.189,1.189,0,0,0-1.189-1.189h-9.135L157.4,275.9h0l3.2-3.2a3.625,3.625,0,0,0,0-5.126l-3.695-3.695a3.626,3.626,0,0,0-5.127,0l-3.2,3.2-3.862,3.862-8.275,8.275h-36.9V267.454a1.189,1.189,0,0,0-1.189-1.189A9.362,9.362,0,0,0,89,275.616v50.5a1.166,1.166,0,0,0,.028.256,9,9,0,0,0,8.978,8.321h36.33l-6.842,6.842a1.189,1.189,0,0,0,.841,2.029h40.477A1.189,1.189,0,0,0,170,342.372V301.9A1.189,1.189,0,0,0,169.266,300.8Zm-19.844-31.2,5.458,5.459-2.181,2.181-5.458-5.458Zm4.037-4.037a1.249,1.249,0,0,1,1.764,0l3.695,3.695a1.248,1.248,0,0,1,0,1.764l-2.355,2.356L151.1,267.92ZM131.2,341.184l12.009-12.009h0a1.19,1.19,0,0,0,0-1.682,1.216,1.216,0,0,0-.171-.141,1.19,1.19,0,0,0-1.511.141l-4.818,4.819H98.006a6.59,6.59,0,0,1-6.622-6.415c.006-.226.024-.45.052-.671v0c.013-.106.029-.21.048-.314l.006-.036c.016-.092.036-.185.055-.277l.018-.077c.018-.078.038-.155.058-.232.011-.041.023-.083.036-.124.018-.06.036-.121.055-.18s.039-.119.06-.178c.014-.041.028-.082.044-.124.029-.077.06-.155.091-.231.009-.022.018-.045.028-.067.041-.095.082-.188.127-.281l.006-.012a7,7,0,0,1,4.864-3.8l.018,0c.1-.021.2-.038.3-.053l.05-.009c.09-.014.182-.025.273-.035l.077-.01c.088-.009.177-.014.266-.02l.085-.006q.175-.009.352-.009a1.189,1.189,0,0,0,1.189-1.189v-8.62a1.189,1.189,0,1,0-2.377,0v7.506a9.289,9.289,0,0,0-5.34,2.584c-.155.151-.3.308-.444.468V275.616a6.986,6.986,0,0,1,5.784-6.871v35.83h0a1.189,1.189,0,1,0,2.377,0h0V281.594h34.527l-6.572,6.572a1.189,1.189,0,0,0,1.681,1.682l8.6-8.6h0l7.782-7.781,5.458,5.459-.64.64h0L126.4,303.537l-5.459-5.459,4.726-4.725a1.189,1.189,0,0,0-1.681-1.681l-5.566,5.566a1.169,1.169,0,0,0-.084.094l-.025.033c-.016.022-.033.045-.048.068l-.025.041c-.013.023-.026.045-.038.068l-.021.045c-.011.023-.02.047-.029.071l-.011.024-2.316,6.562-1.579,4.474a1.088,1.088,0,0,0-.047.18h-3.954a1.189,1.189,0,0,0,0,2.378H143.17a1.189,1.189,0,0,0,0-2.378H119.548l7.251-2.559.018-.007c.028-.011.055-.023.083-.035l.033-.015c.028-.014.056-.031.084-.047l.027-.016c.028-.018.056-.038.084-.06l.021-.016a1.191,1.191,0,0,0,.1-.085l24.466-24.466h10.323v25.4L145.026,324a1.189,1.189,0,0,0,0,1.681c.029.029.059.056.09.082a1.187,1.187,0,0,0,1.5,0,1.083,1.083,0,0,0,.091-.082h0l20.915-20.915v10.489h-2.193a1.189,1.189,0,0,0,0,2.377h2.193v3.583h-2.193a1.189,1.189,0,1,0,0,2.377h2.193v3.582h-2.193a1.189,1.189,0,0,0,0,2.378h2.193v3.582h-2.193a1.189,1.189,0,1,0,0,2.377h2.193v5.671Zm-10.381-35.256-2.269-2.269,1.2-3.406,4.473,4.472Z" fill="currentColor"></path></g></svg>
+							</div>
+							<h1 class="text-2xl font-bold leading-8">Superior Quality and Architecture</h1>
+							<p class="leading-6">From architectural design to interior application, we maintain superior quality to build contemporary structures</p>
+						</div>
+						<div class="p-5 space-y-3 bg-white shadow-lg rounded-lg hover:text-white hover:bg-[#17a84c] group duration-300">
+							<div class="flex justify-center mx-auto rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.291 80.74"  class="text-[#17A84C] group-hover:text-white duration-300 w-16 h-16"><g transform="translate(-249 -269)"><path d="M304.292,301.767a1.277,1.277,0,0,0,1.925-.218l8.413-12.7a1.264,1.264,0,1,0-2.107-1.4L304.94,298.9l-4.212-4a1.264,1.264,0,0,0-1.741,1.833l5.3,5.037Zm0,0" transform="translate(-13.603 -2.73)" fill="currentColor"></path><path d="M298.775,315.317a1.861,1.861,0,0,0,.774.17h.01a1.845,1.845,0,0,0,.784-.18c19.221-9.141,22.478-28.864,23.019-34.69a3.022,3.022,0,0,0-1.864-3.084,11.046,11.046,0,0,1-6.788-9.27A2.5,2.5,0,0,0,312.233,266h-.015l-25.9.152a2.477,2.477,0,0,0-2.466,2.307,11.05,11.05,0,0,1-6.689,9.338,3.011,3.011,0,0,0-1.817,3.1c.608,5.82,4.1,25.5,23.424,34.42Zm-20.613-35.195a13.567,13.567,0,0,0,8.213-11.442l25.821-.152a13.567,13.567,0,0,0,8.334,11.339.507.507,0,0,1,.316.516c-.507,5.461-3.539,23.874-21.3,32.5-17.863-8.419-21.109-26.8-21.68-32.251a.5.5,0,0,1,.3-.512Zm0,0" transform="translate(-7.223 3)" fill="currentColor"></path><path d="M283.22,288.932a1.332,1.332,0,0,0,1.552.888,1.265,1.265,0,0,0,.888-1.551c-.322-1.187-.593-2.389-.8-3.581a17.77,17.77,0,0,0,7.232-9.478l18.255-.107a17.781,17.781,0,0,0,7.343,9.393c-.2,1.195-.454,2.4-.763,3.592a1.264,1.264,0,1,0,2.448.634c.362-1.4.657-2.818.876-4.219a1.935,1.935,0,0,0-.911-1.961,15.253,15.253,0,0,1-6.709-8.6,1.954,1.954,0,0,0-1.857-1.371h-.012l-19.112.112a1.955,1.955,0,0,0-1.853,1.394,15.254,15.254,0,0,1-6.607,8.677,1.934,1.934,0,0,0-.888,1.971c.236,1.4.546,2.813.925,4.206Zm0,0" transform="translate(-9.125 1.197)" fill="currentColor"></path><path d="M317.862,300.243a1.262,1.262,0,0,0-1.65.687,31.841,31.841,0,0,1-13.748,16,31.847,31.847,0,0,1-13.946-15.868,1.264,1.264,0,0,0-2.327.99,34.285,34.285,0,0,0,15.348,17.255,1.935,1.935,0,0,0,1.875-.01,34.28,34.28,0,0,0,15.134-17.407,1.262,1.262,0,0,0-.686-1.65Zm0,0" transform="translate(-10.174 -6.366)" fill="currentColor"></path><g transform="translate(249 308.841)"><path d="M258.485,355.127a4.472,4.472,0,1,0,4.473,4.472,4.477,4.477,0,0,0-4.473-4.472Zm0,6.417a1.945,1.945,0,1,1,1.945-1.945,1.947,1.947,0,0,1-1.945,1.945Zm0,0" transform="translate(-250.375 -330.287)" fill="currentColor"></path><path d="M334.385,333.363a5.266,5.266,0,0,0-7.272-1.406l-16.524,11.06-3.527-.2-.091-.9a7.671,7.671,0,0,0-6.574-6.854l-.067-.008-17.805-1.56c-.6-.094-2.531-.647-7.83-3.687a19.654,19.654,0,0,0-9.008-2.592v-3.308a3.013,3.013,0,0,0-3.01-3.009H252.01a3.013,3.013,0,0,0-3.01,3.009v32.57a3.014,3.014,0,0,0,3.01,3.009h10.666a3.014,3.014,0,0,0,3.01-3.009v-.9l15.564,5.894a8.718,8.718,0,0,0,3.623.266l25.861-3.728.019,0a12.71,12.71,0,0,0,6.026-2.7l.046-.039,16.7-15.023a5.267,5.267,0,0,0,.856-6.884Zm-2.541,5-16.685,15.008a10.189,10.189,0,0,1-4.8,2.142l-25.842,3.726-.023,0-.012,0a5.67,5.67,0,0,1-2.394-.153l-16.406-6.213V338.441a1.264,1.264,0,0,0-2.528,0v18.037a.482.482,0,0,1-.482.481H252.01a.482.482,0,0,1-.481-.481v-32.57a.481.481,0,0,1,.481-.48h10.666a.482.482,0,0,1,.482.48v8.824a1.264,1.264,0,0,0,2.528,0v-2.986A17.115,17.115,0,0,1,273.437,332c6.391,3.665,8.175,3.918,8.762,4l.065.007,17.807,1.561a5.15,5.15,0,0,1,4.383,4.6l.067.673-23.84,1.472-.047,0a2.882,2.882,0,0,1-1.967-1.029,1.264,1.264,0,1,0-1.941,1.618,5.467,5.467,0,0,0,3.683,1.928c.781.082,25.5-1.539,25.5-1.539l4.956.278a1.262,1.262,0,0,0,.774-.212l16.879-11.3a2.725,2.725,0,0,1,3.323,4.3Zm0,0" transform="translate(-249 -320.899)" fill="currentColor"></path></g></g></svg>
+							</div>
+							<h1 class="text-2xl font-bold leading-8">Superior Quality and Architecture</h1>
+							<p class="leading-6">From architectural design to interior application, we maintain superior quality to build contemporary structures</p>
+						</div>
+						<div class="p-5 space-y-3 bg-white shadow-lg rounded-lg hover:text-white hover:bg-[#17a84c] group duration-300">
+							<div class="flex justify-center mx-auto rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.733 85.733"  class="text-[#17A84C] group-hover:text-white duration-300 w-16 h-16"><path d="M414.381,332.333a1.053,1.053,0,0,1-.52-.139l-25.332-14.476a1.048,1.048,0,0,1-.528-.909V291.584a.854.854,0,0,0,.029-.22.983.983,0,0,1,.106-.377l.047-.1a1.194,1.194,0,0,1,.3-.27l.032-.021a.952.952,0,0,0,.117-.045,1.7,1.7,0,0,0,.16-.085l26.8-7.155,15.572-18.686a8.931,8.931,0,0,1,6.816-3.11,8.583,8.583,0,0,1,3.825.886l5.8,2.9,1.99-4.974a1.04,1.04,0,0,1,.506-.549l1.994-1,.016-.452a2.735,2.735,0,0,1,1-2.078l10.147-8.117A5.2,5.2,0,0,1,466.495,247h1.665a5.174,5.174,0,0,1,1.422,10.149l-13.947,3.988a2.907,2.907,0,0,1-.789.108,2.743,2.743,0,0,1-1.416-.393l-.36-.217-1.677.839-1.906,4.766,13.887,6.944a4.836,4.836,0,0,1,1.154,7.912l-.732.706,8.937,5.107a.814.814,0,0,0,.117.091l.034.023a1.035,1.035,0,0,0,.086.09.848.848,0,0,1,.261.365,1.067,1.067,0,0,1,.066.286.812.812,0,0,0,.036.185V313.19a1.042,1.042,0,0,1-.734,1l-57.906,18.1A1,1,0,0,1,414.381,332.333Zm1.048-25.613v23.141l55.809-17.442V289.282ZM390.1,316.2l23.238,13.276V306.559L390.1,293.283Zm1.687-24.369,22.723,12.984,55.174-17.243-8.565-4.9-8.25,2.063.424.85a1.043,1.043,0,0,1-.008,1,1.055,1.055,0,0,1-.9.505,1.036,1.036,0,0,1-.536-.151l-2.3-1.376-9.029,2.258,1.551.949a1.046,1.046,0,0,1-.547,1.939,1.086,1.086,0,0,1-.549-.153l-3.346-2.011-9.054,2.265,2.635,1.575a1.046,1.046,0,0,1-.542,1.943,1.059,1.059,0,0,1-.542-.151l-4.422-2.65-9.047,2.26,3.7,2.216a1.047,1.047,0,0,1-1.083,1.793l-5.482-3.291-6.386,1.6a.98.98,0,0,1-.257.035,1.048,1.048,0,0,1-.8-1.72l6.936-8.321ZM437.9,263.571a6.653,6.653,0,0,0-5.116,2.395L410.007,293.3l50.874-12.718h.034l.1-.033.856-.215a2.835,2.835,0,0,0,.581-5.28l-13.739-6.868-.786,1.963a1.031,1.031,0,0,1-.431.507l-18.1,10.859a1.022,1.022,0,0,1-.538.152,1.049,1.049,0,0,1-.541-1.947l17.79-10.677.721-1.8-5.944-2.971A6.86,6.86,0,0,0,437.9,263.571Zm17.515-4.553,13.6-3.886a3.078,3.078,0,0,0-.846-6.037h-1.669a3.072,3.072,0,0,0-1.922.675l-9.961,7.968.408.585a1.413,1.413,0,0,0,.117.144Z" transform="translate(-387.8 -246.8)" fill="currentColor" stroke="#17a84c" stroke-miterlimit="10" stroke-width="0.4"></path></svg>
+							</div>
+							<h1 class="text-2xl font-bold leading-8">Superior Quality and Architecture</h1>
+							<p class="leading-6">From architectural design to interior application, we maintain superior quality to build contemporary structures</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class=""> 
+				<div class="max-w-3xl lg:max-w-[1600px] py-10 md:py-14 mx-auto"> 
+					<div class="grid gird-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0">
+						<div class="px-[15px]"> 
+							<div> 
+							  <p class="text-3xl md:text-[40px] text-[#1e1e1e] leading-[48px] mb-2 md:mb-5 font-light text-center">Our Achievements Speak for Us!</p>
+							<div class="flex justify-center">
+								<img src="../images/heading-arrow.png" alt="" />
+							</div>
+							<p class="lg:pl-8 pt-8 text-[#2e2e2e] leading-8">As a quality-focused real estate company, we've achieved several notable milestones, including earning the trust of our esteemed clients, recognition from industry experts, and acknowledgment from international organizations. Our achievements include serving a significant number of customers, completing numerous projects, and managing a substantial portfolio of ongoing and upcoming ventures.</p>
+							</div>
+						</div>
+					    <div class="px-[15px]">
+							<div> 
+								<h3 class="text-lg md:text-2xl text-[#17a84c] mb-2 md:mb-5 leading-6 font-extrabold text-center">Key Business</h3>
+								<p class="text-3xl md:text-[40px] text-[#1e1e1e] leading-[48px] mb-2 md:mb-5 font-light text-center">Achievement [at a Glance]</p>
+								<div class="flex justify-center">
+									<img src="../images/heading-arrow.png" alt="" />
+								</div>
+								<div class="px-2.5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-5 my-12">
+									<div class="flex flex-col justify-center items-center gap-2 bg-white p-5 border rounded-[20px] bg-white shadow"> 
+										<h6 class="text-[#2e2e2e] text-lg">Land Owner</h6>
+										<span class="p-1.5 bg-[#17a84c] rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+												<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+											</svg>
+										</span>
+										<p class="flex items-center whitespace-nowrap text-[#17a84c] font-bold gap-2">
+											09612-008800
+											<span>
+												<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+											</span>
+											2
+										</p>
+									</div>
+									<div class="flex flex-col justify-center items-center gap-2 bg-white p-5 border rounded-[20px] bg-white shadow"> 
+										<h6 class="text-[#2e2e2e] text-lg">Land Owner</h6>
+										<span class="p-1.5 bg-[#17a84c] rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+												<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+											</svg>
+										</span>
+										<p class="flex items-center whitespace-nowrap text-[#17a84c] font-bold gap-2">
+											09612-008800
+											<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+											2
+										</p>
+									</div>
+									<div class="flex flex-col justify-center items-center gap-2 bg-white p-5 border rounded-[20px] bg-white shadow"> 
+										<h6 class="text-[#2e2e2e] text-lg">Land Owner</h6>
+										<span class="p-1.5 bg-[#17a84c] rounded-full">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-3 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+												<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+											</svg>
+										</span>
+										<p class="flex items-center whitespace-nowrap text-[#17a84c] font-bold gap-2">
+											09612-008800
+											<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" fill="currentColor" class="" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg>
+											2
+										</p>
+									</div>
+								
+								</div>
+							</div>
+					    </div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="bg-[url('../images/associates-and-suppliers.jpg')] bg-cover bg-no-repeat bg-center" >
+				<div class="bg-gradient-to-r from-black/80 to-[#1BAF51]/80 py-[50px] w-full " >
+					<div class="max-w-80 sm:max-w-3xl lg:max-w-[1600px] mx-auto " >
+						<div class="grid grid-cols-1 lg:grid-cols-4 gap-y-7 ">
+							<div class="col-span-1 px-[15px] "> 
+								<div class=""> 
+								  <p class="text-3xl md:text-[40px] text-white leading-[48px] mb-2 md:mb-5 font-light text-center">Awards</p>
+								  <div class="flex justify-center">
+									<img src="../images/heading-arrow-w.png" alt="" />
+								  </div>
+								</div> 
+								<div class="flex justify-center items-center gap-2 mt-12"> 
+									<div class=""> 
+										<a href="" >
+											<img src="../images/fastest-growing-brands-assure-group.png" alt="" /> 
+										</a>
+									</div>
+									<div class=""> 
+										<a href="" >
+											<img src="../images/fastest-growing-brands-assure-group.png" alt="" /> 
+										</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-span-3 px-[15px] "> 
+								<div class=""> 
+								  <p class="text-3xl md:text-[40px] text-white leading-[48px] mb-2 md:mb-5 font-light text-center">Affiliations & Suppliers of Assure Group</p>
+								  <div class="flex justify-center">
+									<img src="../images/heading-arrow-w.png" alt="" />
+								  </div>
+								</div> 
+								<div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 justify-center items-center gap-2 mt-12"> 
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="h-96">
+			
+			</section>
+		</main>
+		<!-- Footer Part -->
+		<footer>
+			<div class="relative bg-[url('../images/footer-bg.jpg')] bg-cover bg-no-repeat bg-center pt-[50px] border-b-[15px] border-[#17A84C] before:content-[''] before:absolute before:bg-black/95 before:w-full before:h-full before:left-0 before:top-0 before:z-[-1] z-10">
+				<div class="max-w-3xl lg:max-w-[1600px] mx-auto ">
+					<div class="grid grid-cols-12 gap-5">
+						<div class="col-span-12 sm:col-span-6 lg:col-span-4 px-[15px]">
+							<a href="" class="inline-block">
+								<img src="../images/logo.png" alt="" class="w-[188px] h-[90px] object-fill align-middle">
+							</a>
+							<div class="flex items-center mt-7">
+								<p class="font-bold text-[#BEBEBE] mr-2.5">FOLLOW US:</p>
+								<a href="" class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</a>
+								<a href="" class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</a>
+							</div>
+							<div class="flex items-center gap-3 mt-7">
+								<span class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-[#BEBEBE] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</span>
+								<a href="" class="text-sm text-[#BEBEBE] hover:text-[#1AA24A] mr-2.5">09612-008800</a>
+							</div>
+							<div class="flex gap-3 mt-7">
+								<span class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-[#BEBEBE] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</span>
+								<div class="flex flex-wrap gap-1 text-sm text-[#BEBEBE] ">
+									<a href="" class="hover:text-[#1AA24A]">09612-008800</a>,
+									<a href="" class="hover:text-[#1AA24A]">09612-008800</a>,
+									<a href="" class="hover:text-[#1AA24A]">09612-008800</a>,
+								</div>
+							</div>
+						</div>
+						<div class="col-span-12 sm:col-span-6 lg:col-span-4 px-[15px]">
+							<p class="font-bold text-[#BEBEBE] mr-2.5 uppercase mb-[25px]">Businesses</p>
+							<div class="flex flex-col gap-1 text-[15px] text-[#BEBEBE] ">
+								<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Assure Development & Design Ltd </a>
+								<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Assure Development & Design Ltd </a>
+								<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Assure Development & Design Ltd </a>
+							</div>
+						</div>
+						<div class="col-span-12 sm:col-span-12 lg:col-span-4 px-[15px]">
+							<p class="font-bold text-[#BEBEBE] mr-2.5 uppercase mb-[25px]">Property Collections</p>
+							<div class="grid gird-cols-1 sm:grid-cols-3 gap-5 ">
+								<div class="text-[15px] text-[#BEBEBE] ">
+									<div class="mb-4">
+										<a href="" class="hover:text-[#1AA24A] font-medium uppercase leading-[30px] ">Phases</a>
+									</div>
+									<div class="flex flex-col gap-1">
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+									</div>
+								</div>
+								<div class="text-[15px] text-[#BEBEBE] ">
+									<div class="mb-4">
+										<a href="" class="hover:text-[#1AA24A] font-medium uppercase leading-[30px] ">Phases</a>
+									</div>
+									<div class="flex flex-col gap-1">
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+									</div>
+								</div>
+								<div class="text-[15px] text-[#BEBEBE] ">
+									<div class="mb-4">
+										<a href="" class="hover:text-[#1AA24A] font-medium uppercase leading-[30px] ">Phases</a>
+									</div>
+									<div class="flex flex-col gap-1">
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+									</div>
+								</div>
+								
+							</div>
+							<div class="flex flex-col gap-1 text-[15px] text-[#BEBEBE] ">
+								
+							</div>
+						</div>
+						
+					</div>
+					<div class="flex justify-center md:justify-between text-[#BEBEBE] md:px-[15px] pt-7 md:pt-9"> 
+						<div class="flex"> 
+							<a href="" class="hover:text-[#1AA24A] ">Privacy Policy</a>
+							<span class="px-[11px]">|</span>
+							<a href="" class="hover:text-[#1AA24A] ">Sitemap</a>
+						</div>
+						<div> 
+						
+						</div>
+					</div>
+				</div>
+				<div class=" flex justify-center">
+					<a href="" class="bg-[#17a84c] py-3 md:py-4 px-6 md:px-8 inline-block"> 
+						<svg xmlns="http://www.w3.org/2000/svg" class=" h-3 fill-white" viewBox="0 0 512 512">
+						<path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+		
+		<script defer src=""></script>
+		<!-- Alpine Plugins -->
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		 
+		<!-- Alpine Core -->
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	   
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>	
+		<script>
+		
+			var splide = new Splide( '#first-slider', {
+			  type : 'loop',
+			  perPage: 1,
+			  pagination: false,
+			  breakpoints: {
+				 640: {
+					perPage: 1,
+					height : '100vh',
+				 },
+				 480: {
+					perPage: 1,
+					height : '100vh',
+				 },
+			  },
+			} );
+
+			splide.mount();
+	   </script>
+	   
+    </body>
+</html>
