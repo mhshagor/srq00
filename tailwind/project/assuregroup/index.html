@@ -52,16 +52,16 @@
 		<header>
 			<!-- Navbar -->
 			<nav id="main-nav" class="" x-data="{ open: true, focus: true }" @keydown.escape="onEscape">
-				<div class="w-full absolute z-10 top-[50px]">
+				<div class="w-full absolute z-10 top-[50px] ">
 					<div class="mx-auto max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] px-[15px] text-[15px]">
-						<div class="bg-[#17A84C]/85 lg:flex hidden items-center justify-between md:justify-start md:space-x-10">
+						<div class="bg-[#17A84C]/85 lg:flex hidden items-center justify-between">
 							<div class="bg-white py-1 px-[15px] ">
 								<a href="" >
-									<img src="images/logo.png" alt="" class="w-[170px] h-[90px] mx-auto object-fill align-middle">
+									<img src="../images/logo.png" alt="" class="w-[170px] h-[90px] mx-auto object-fill align-middle">
 								</a>
 							</div>
-							<div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0"> 
-								<ul class="flex items-center justify-center mr-6 text-[15px] text-white">
+							<div class="hidden items-center justify-end md:flex"> 
+								<ul class="flex items-center justify-center gap-3 mr-6 text-[15px] text-white" x-data="{ dropdown: null }" @click.away="dropdown = null">
 									<li class="">
 										<a href="{{url('/')}}" class="px-[14px] py-[29px] block">
 											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
@@ -69,14 +69,338 @@
 											</svg>
 										</a>
 									</li>
-									<li class="">
-										<a href="{{url('/')}}" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Home</a>
+									
+									<!-- Corporate -->
+									<li class="relative">
+										<button @click="dropdown !== 'corporate' ? dropdown = 'corporate' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="corporate">Corporate</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'corporate' ? 'block' : 'hidden'"></div>
+											<div x-ref="corporate" x-bind:style="dropdown == 'corporate' ? 'max-height: ' + $refs.corporate.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute left-0 mt-[25px] w-56" :class="dropdown == 'corporate' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Company Profile</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Vision & Mission</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Meet the Team</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Corporate Structure</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Career Opportunity</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Customer Reviews</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Awards</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Affiliations</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Social Responsibility</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Land Wanted</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Certifications</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Testimonials</a>
+															</div>
+														</li>
+													</ul>
+												</div>						
+											</div>  
+										</div>
 									</li>
+									
+									<!-- Businesses -->
+									<li class="relative">
+										<button @click="dropdown !== 'business' ? dropdown = 'business' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="business">business</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'business' ? 'block' : 'hidden'"></div>
+											<div x-ref="business" x-bind:style="dropdown == 'business' ? 'max-height: ' + $refs.business.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-28 mt-[25px] w-80" :class="dropdown == 'business' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3 w-full">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Development & Design Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Builders Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Properties Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Agro Complex Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Tourism (Dera Resort)</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure Tours and Travels</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Assure General Hospital Ltd.</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2 whitespace-nowrap">Assure Engineering & Constructions Ltd.</a>
+															</div>
+														</li>
+													</ul>
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- properties -->
+									<li class="relative">
+										<button @click="dropdown !== 'properties' ? dropdown = 'properties' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="properties">properties</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'properties' ? 'block' : 'hidden'"></div>
+											<div x-ref="properties" x-bind:style="dropdown == 'properties' ? 'max-height: ' + $refs.properties.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-48 mt-[25px] w-[30rem]" :class="dropdown == 'properties' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-16 flex items-center justify-between">
+													<div class="space-y-2">
+														<h3 class="font-semibold">Phases</h3>
+														<ul class="space-y-1">
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Ongoing</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Upcoming</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Completed</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<div class="space-y-2">
+														<h3 class="font-semibold">Phases</h3>
+														<ul class="space-y-1">
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Ongoing</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Upcoming</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Completed</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													<div class="space-y-2">
+														<h3 class="font-semibold">Phases</h3>
+														<ul class="space-y-1">
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Ongoing</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Upcoming</span>
+																</a>
+															</li>
+															<li>
+																<a href="" class="relative group flex items-center">
+																	<div class="absolute left-[-25%] border-[4px] border-[#17A84C] border-l-transparent border-b-transparent transform group-hover:translate-x-2 transition-all duration-300  rotate-45 block"></div>
+																	<span class="whitespace-nowrap">Completed</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+													
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- Media -->
+									<li class="relative">
+										<button @click="dropdown !== 'media' ? dropdown = 'media' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="media">media</button>
+										<div class="relative">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'media' ? 'block' : 'hidden'"></div>
+											<div x-ref="media" x-bind:style="dropdown == 'media' ? 'max-height: ' + $refs.media.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-20 mt-[25px] w-56" :class="dropdown == 'media' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3 w-full">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Blog</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">News</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Events</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Coverage</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Handover Projects</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Inauguration Ceremony</a>
+															</div>
+														</li>
+													</ul>
+												</div>						
+											</div>  
+										</div>
+									</li>
+									
+									<!-- Services -->
+									<li class="relative">
+										<button @click="dropdown !== 'services' ? dropdown = 'services' : dropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize" title="services">services</button>
+										<div class="relative" x-data="{ serviceSubDropdown: null }" @click.away="serviceSubDropdown = null">  
+											<div class="absolute left-[48%] -bottom-[31px] border-[6px] border-white border-b-transparent border-r-transparent transform rotate-45 block" :class="dropdown == 'services' ? 'block' : 'hidden'"></div>
+											<div x-ref="services" x-bind:style="dropdown == 'services' ? 'max-height: ' + $refs.services.scrollHeight + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-28 mt-[25px] w-56" :class="dropdown == 'services' ? 'border' : ''">
+												<div class="shadow-lg bg-white text-black font-light py-5 px-3 w-full">
+													<ul class="space-y-2">
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Construction</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Air Ticketing</a>
+															</div>
+														</li>
+														<li>
+															<div class="relative group flex items-center">
+																<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																<a href="" class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Visa Processing</a>
+															</div>
+														</li>
+														<li>
+															<button @click="serviceSubDropdown !== 'solution' ? serviceSubDropdown = 'solution' : serviceSubDropdown = null" class="flex gap-0 hover:text-[#00ff5b] duration-700 text-[15px] capitalize">
+																<div class="relative group flex items-center">
+																	<div class="absolute translate-x-[-150%] group-hover:translate-x-[-72%] transition-all duration-300 border-t border-[#17A84C] w-10"></div>
+																	<div class="transform group-hover:translate-x-2 transition-all duration-300 group-hover:text-[#17A84C] whitespace-nowrap pl-2">Interior Solution</div>
+																</div>
+															</button>
+														</li>
+													</ul>
+
+												</div>						
+											</div>  
+											
+													<div x-ref="serviceSubDropdown" x-bind:style="serviceSubDropdown == 'solution' ? 'max-height: ' + $refs.serviceSubDropdown.scrollHeight + 100 + 'px' : ''" class="max-h-0 overflow-hidden absolute -left-28 mt-[25px] w-56" :class="serviceSubDropdown == 'solution' ? 'border' : ''">
+																	  ddddddddddddddd
+													</div>
+										</div>			
+									</li>
+									
 									<li class="">
-										<a href="{{url('/')}}" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Home</a>
+										<a href="{{url('/')}}" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Contact</a>
 									</li>
 								</ul>
-								
+							</div>
+							<div class="hidden items-center justify-end md:flex">
 								<a href="#" class="flex gap-2 pl-[15px] group before:content-[''] before:left-0 before:top-50 before:w-px before:h-5 before:mt-4 before:mr-1 before:bg-white">
 									<div class="flex justify-center items-center duration-300">
 										<span class="bg-[#CDFBDD] group-hover:bg-[#0c6e30] p-2 rounded duration-300" >
