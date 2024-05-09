@@ -5,49 +5,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="" type="image/x-icon">
-        <!-- theme css -->
+        <title>Land Wanted</title>
 		
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
+		
         <!-- Alpine js -->
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-		  <!-- Alpine Plugins -->
-			<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-			
-		  <link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
-        <title>Assure Group</title>
-			<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-			
-			<style>
-			body {
-				 font-family: 'Poppins';
-			}
-			[x-cloak]{ display: none;}
-
-			/* ----- Scrollbar ------ */
-			.scroll-sm::-webkit-scrollbar {
-				 width: 6px;
-				 height: 6px;
-			  }
-			.scroll::-webkit-scrollbar {
-			width: 8px;
-			height: 8px;
-			}
-			.scroll-lg::-webkit-scrollbar {
-			width: 10px;
-			height: 10px;
-			}
-			.scroll-sm::-webkit-scrollbar-thumb,
-			.scroll::-webkit-scrollbar-thumb,
-			.scroll-lg::-webkit-scrollbar-thumb{
-			background: #06060652; 
-			}
-			.scroll-sm::-webkit-scrollbar-track,
-			.scroll::-webkit-scrollbar-track,
-			.scroll-lg::-webkit-scrollbar-track{
-			background: #00000025; 
-			}
-		</style>
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		
+		<!-- Splide Js -->
+		<link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+		
+		<!-- Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		
+		<!-- theme css -->
+        <link href="../css/style.css" rel="stylesheet">
     </head>
     <body class="relative">
 		<header>
@@ -511,7 +485,7 @@
 			<!-- Navbar -->
 		</header>
 		<main class="">
-		
+			<!-- Land Wanted -->
 			<section class="bg-[url('../images/land-wanted.jpg')] bg-cover bg-no-repeat bg-center w-full " >
 				<div class="max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] min-h-[250px] sm:min-h-[300px] lg:min-h-[380px] px-[15px] mx-auto flex items-center relative" >
 					<div class=" lg:mt-[75px]"> 
@@ -535,6 +509,7 @@
 					</div>
 				</div>
 			</section>
+			<!-- land wanted in dhaka -->
 			<section class="bg-[#F8F8F8]"> 
 				<div class="grid col-span-1 lg:grid-cols-5 gap-8 items-center max-w-3xl lg:max-w-[1600px] py-10 md:py-14 px-[15px] mx-auto  py-10 md:py-14  mx-auto"> 
 					<div class="lg:col-span-2 lg:order-1 order-2"> 
@@ -560,7 +535,7 @@
 					</div>
 				</div>
 			</section>
-			
+			<!-- Why Choose Us for Developing Your Land -->
 			<section class=""> 
 				<div class="max-w-3xl lg:max-w-[1600px] py-10 md:py-14 px-[15px] mx-auto space-y-6"> 
 					<div class="">
@@ -615,6 +590,7 @@
 					</div>
 				</div>
 			</section>
+			<!-- Our Achievements Speak for Us! -->
 			<section class=""> 
 				<div class="max-w-3xl lg:max-w-[1600px] py-10 md:py-14 mx-auto"> 
 					<div class="grid gird-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-y-0">
@@ -683,7 +659,7 @@
 					</div>
 				</div>
 			</section>
-			
+			<!-- Awards -->
 			<section class="bg-[url('../images/associates-and-suppliers.jpg')] bg-cover bg-no-repeat bg-center" >
 				<div class="bg-gradient-to-r from-black/80 to-[#1BAF51]/80 py-[50px] w-full " >
 					<div class="max-w-80 sm:max-w-3xl lg:max-w-[1600px] mx-auto " >
@@ -899,35 +875,11 @@
 				</div>
 			</div>
 		</footer>
-		
-		<script defer src=""></script>
 		<!-- Alpine Plugins -->
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
-		 
-		<!-- Alpine Core -->
 		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-	   
 		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>	
-		<script>
-		
-			var splide = new Splide( '#first-slider', {
-			  type : 'loop',
-			  perPage: 1,
-			  pagination: false,
-			  breakpoints: {
-				 640: {
-					perPage: 1,
-					height : '100vh',
-				 },
-				 480: {
-					perPage: 1,
-					height : '100vh',
-				 },
-			  },
-			} );
-
-			splide.mount();
-	   </script>
+		<script src="../js/theme.js"></script>
 	   
     </body>
 </html>
