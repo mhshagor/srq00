@@ -34,13 +34,25 @@ background: #00000025;
 }
 .splide__track--nav>.splide__list>.splide__slide.is-active {
 	opacity: 1;
+	border: 0;
+}
+#concept-slide .splide__arrow {
+    background: #00953680;
+    border-radius: 15%;
+    width: 2.5em;
+    height: 2.5em;
+}
+#concept-slide .splide__arrow svg {
+    fill: white;
+    height: 1.5em;
+    width: 1.5em;
+}
+#thumbnail-carousel .splide__track--nav>.splide__list>.splide__slide.is-active {
 	border:12px solid black;
 	border-top: 0;
 	border-bottom: 12px solid black;
-	
 }
-.splide__track--nav>.splide__list>.splide__slide.is-active h5 {
+#thumbnail-carousel .splide__track--nav>.splide__list>.splide__slide.is-active h5 {
 	color: white;
 	background-color: black;
-}
-			
+}	
