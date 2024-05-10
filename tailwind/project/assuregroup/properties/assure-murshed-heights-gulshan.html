@@ -188,7 +188,7 @@
 			<section class=""> 
 				<div class="lg:max-w-[1600px] pb-10 md:pb-14 mx-auto ">
 					<div class="" x-data="{ activeTab: 'tab-1' }">
-						<div class="flex flex-wrap gap-0 justify-center text-[12px] md:text-base bg-[#262626] py-1">
+						<div class="flex gap-0 whitespace-nowrap justify-center text-[12px] md:text-base bg-[#262626] py-1 overflow-x-auto">
 							<div class="relative"> 
 								<button type="button" @click="activeTab = 'tab-1'" class=" block px-4 lg:px-7 py-2.5 capitalize border-2 border-[#262626] hover:border-[#17A874] hover:bg-white text-white hover:text-[#17A874]" :class="activeTab == 'tab-1' ? 'bg-white border-[#17A874]  text-[#17A874]' : ''">
 								OVERVIEW</button>
@@ -523,7 +523,7 @@
 												   </div>
 													<div class="w-full mb-5 group space-y-2">
 														<label for="" class="leading-6 text-[#2e2e2e]">Full Name*</label>
-														<textarea type="text" name="" id="" class="py-3 px-5 w-full text-gray-900 bg-white border-0 border-b-[3px] rounded border-[#3ab861] focus:outline-none focus:ring-0 focus:border-[#ff7730]" placeholder=" " required />
+														<textarea name="" id="" class="py-3 px-5 w-full text-gray-900 bg-white border-0 border-b-[3px] rounded border-[#3ab861] focus:outline-none focus:ring-0 focus:border-[#ff7730]" placeholder=" " required >
 														</textarea>
 												   </div>
 													<button type="button" class="text-white bg-[#17a84c] hover:bg-gradient-to-br focus:outline-none hover:-translate-y-2 hover:shadow-xl shadow-black rounded-full px-10 py-2.5 text-center duration-300">SUBMIT FORM</button>
