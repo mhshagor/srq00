@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		<!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <title>Corporate Opportunities</title>
+		
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+		
+        <!-- Alpine js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		
+		<!-- Splide Js -->
+		<link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
+		
+		<!-- Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		
+		<!-- theme css -->
+        <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body class="relative">
+		<header>
+			<!-- Navbar -->
+			<nav id="main-nav" class="" x-data="{ open: true, focus: true }" @keydown.escape="onEscape">
+				<div class="w-full absolute z-10 top-[50px] ">
+					<div class="mx-auto max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] px-[15px] text-[15px]">
+						<div class="bg-[#17A84C]/85 lg:flex hidden items-center justify-between md:justify-start md:space-x-10">
+							<div class="bg-white py-1 px-[15px] ">
+								<a href="" >
+									<img src="../images/logo.png" alt="" class="w-[170px] h-[90px] mx-auto object-fill align-middle">
+								</a>
+							</div>
+							<div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0"> 
+								<ul class="flex items-center justify-center mr-6 text-[15px] text-white">
+									<li class="">
+										<a href="{{url('/')}}" class="px-[14px] py-[29px] block">
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+												<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+											</svg>
+										</a>
+									</li>
+									<li class="">
+										<a href="{{url('/')}}" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Home</a>
+									</li>
+									<li class="">
+										<a href="{{url('/')}}" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Home</a>
+									</li>
+								</ul>
+								
+								<a href="#" class="flex gap-2 pl-[15px] group before:content-[''] before:left-0 before:top-50 before:w-px before:h-5 before:mt-4 before:mr-1 before:bg-white">
+									<div class="flex justify-center items-center duration-300">
+										<span class="bg-[#CDFBDD] group-hover:bg-[#0c6e30] p-2 rounded duration-300" >
+											
+											<svg xmlns="http://www.w3.org/2000/svg" class="h-4 group-hover:fill-white fill-[#17A84C] duration-300 " viewBox="0 0 512 512">
+												<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+											</svg>
+										</span>
+									</div>
+									<div class="text-[#CDFBDD] group-hover:text-white duration-300">
+										<p class="">Call Us Today</p>
+										<p class="text-lg font-bold">09612-008800</p>
+									</div>
+								</a>
+								<div class="flex flex-col items-center gap-1 ml-[25px]">
+									<a href="{{url('/')}}" class="bg-white group hover:bg-[#0c6e30] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 group-hover:fill-white fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+											<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+										</svg>
+									</a>
+									<a href="{{url('/')}}" class="bg-white group hover:bg-[#0c6e30] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 group-hover:fill-white fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+											<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+										</svg>
+									</a>
+									<a href="{{url('/')}}" class="bg-white group hover:bg-[#0c6e30] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
+										<svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 group-hover:fill-white fill-[#00ff5b] duration-300 " viewBox="0 0 576 512">
+											<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"/>
+										</svg>
+									</a>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- mobile navBar -->
+				<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky top-0 z-30 bg-white px-4 sm:px-8 md:px-16 lg:px-28 mx-auto lg:hidden">
+					<div class="flex items-center justify-between">
+						<div>
+							<a href="{{url('/')}}">
+							  <img class="h-14 w-auto" src="../images/logo.png" alt="Logo">
+							</a>
+						</div>
+						<div class="">
+							<div class=" flex relative py-3 sm:max-w-xl mx-auto">
+								<!-- offcanvase open button -->
+								<div class="shrink-0 block lg:hidden">
+									<button type="button" class="text-black hover:bg-green-700 hover:text-white border border-green-800 transition duration-700 ease-in-out h-10 w-10 flex justify-center items-center" @click="open = true">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+										</svg>
+									</button>
+								</div>
+								<!-- end offcanvase open button -->
+							</div>
+						</div>
+					</div>
+					<!-- Mobile offcanvase dialog -->
+					<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" style="display: none;">
+						<div class="fixed inset-0 z-40 flex">
+							<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-green-700 py-4 pb-12 shadow-xl" @click.away="open = false" style="display: none;">
+								<!-- offcanvase close -->
+								<div class="flex items-center px-4">
+									<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-green-800 border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
+										 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+									  </svg>
+									</button>
+								</div>
+								<!-- end offcanvase close -->
+								<!-- offcanvases -->
+								<div class="blocktext-white px-10 py-16">
+									<ul class="list-none text-white space-y-4 text-[1.15rem]">
+										<li class="">
+											<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
+										</li>
+										<li class="">
+											<a href="{{url('about-us')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block  after:duration-500 after:w-full after:bg-black text-gray-900 duration-300">About</a>
+										</li>
+										<li class="">
+											<a href="{{url('our-services')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Service</a>
+										</li>
+										<li class="">
+											<a href="{{url('our-team')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Team</a>
+										</li>
+										<li class="">
+											<a href="{{url('our-blogs')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Blogs</a>
+										</li>
+										<li class="">
+											<a href="#contact" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Contact</a>
+										</li>
+									</ul>
+									<div class="mt-5 flex">
+										<a href="{{url('login')}}" class="flex border border-2 border-gray-100 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
+											SignIn                                                                                  
+											<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
+											<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav> 
+			<!-- Navbar -->
+		</header>
+		<main class="">
+		
+			<section class="bg-[url('../images/career-opportunities.jpg')] bg-cover bg-no-repeat bg-center w-full " >
+				<div class="max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] min-h-[250px] sm:min-h-[300px] lg:min-h-[380px] px-[15px] mx-auto flex items-center relative" >
+					<div class=" lg:mt-[75px]"> 
+						<div class=" px-[15px]"> 
+						  <div class="bg-[#17A84C] w-[58px] h-1">
+						  </div>
+						  <p class="text-xl md:text-[48px] text-white  leading-[24px] lg:leading-[58px] font-light ">Career Opportunities</p>
+						</div>
+						<div class="flex flex-wrap text-xs  px-[30px] md:text-base text-white absolute bottom-5 gap-3">
+							<a href="" class="flex items-center gap-1"> 
+								<svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 fill-white hover:fill-[#00ff5b] duration-300" viewBox="0 0 576 512">
+									<path d="M543.8 287.6c17 0 32-14 32-32.1c1-9-3-17-11-24L512 185V64c0-17.7-14.3-32-32-32H448c-17.7 0-32 14.3-32 32v36.7L309.5 7c-6-5-14-7-21-7s-15 1-22 8L10 231.5c-7 7-10 15-10 24c0 18 14 32.1 32 32.1h32v69.7c-.1 .9-.1 1.8-.1 2.8V472c0 22.1 17.9 40 40 40h16c1.2 0 2.4-.1 3.6-.2c1.5 .1 3 .2 4.5 .2H160h24c22.1 0 40-17.9 40-40V448 384c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v64 24c0 22.1 17.9 40 40 40h24 32.5c1.4 0 2.8 0 4.2-.1c1.1 .1 2.2 .1 3.3 .1h16c22.1 0 40-17.9 40-40V455.8c.3-2.6 .5-5.3 .5-8.1l-.7-160.2h32z"></path>
+								</svg>
+								Home 
+							</a>
+							>
+							<a href=""> Corporate </a> 
+							>
+							<a href="" class="text-[#08F85E]"> Career Opportunities </a></a>
+						</div>
+					</div>
+				</div>
+			</section>
+				
+			<section class="" >
+				<div class="max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] pt-6 px-[15px] mx-auto" >
+					<div> 
+					   <p class="text-[#2e2e2e] leading-6 text-center">Career Opportunities @ Assure Group</p>
+					   <p class="text-3xl md:text-[38px] text-[#4a4a4a] leading-[46px] mb-2 md:mb-5 font-light text-center">We are Hiring</p>
+					   <div class="flex justify-center">
+							<img src="../images/heading-arrow.png" alt="">
+					   </div>
+					   <div class="grid grid-cols-1 md:grid-cols-2 mt-6 gap-8 ">
+							<div class="border rounded"> 
+							   <div class="flex justify-center">
+									<img src="../images/executive-marketing-sales.jpeg" alt="">
+							   </div>
+							   <div class="p-4">
+									<p class="text-xl leading-6 text-[#007bff] hover:text-[#6e1bf2] mb-3 duration-300"><a href="">Executive Marketing & Sales</a></p>
+									<div class="leading-8 text-[#2e2e2e] space-y-1">
+										<p class="">We are looking for a Executive Marketing & Sales </p>
+										<p class=""><b>Job Type:</b> Full-time</p>
+										<p class=""><b>Job Location:</b> Dhaka</p>
+									</div>
+									<button type="button" class="text-white bg-[#17a84c] hover:underline rounded-md px-5 py-2.5 mt-2">Apply Now</button>
+								</div>
+							</div>
+							<div class="border rounded"> 
+							   <div class="flex justify-center">
+									<img src="../images/executive-marketing-sales.jpeg" alt="">
+							   </div>
+							   <div class="p-4">
+									<p class="text-xl leading-6 text-[#007bff] hover:text-[#6e1bf2] mb-3 duration-300"><a href="">Executive Marketing & Sales</a></p>
+									<div class="leading-8 text-[#2e2e2e] space-y-1">
+										<p class="">We are looking for a Executive Marketing & Sales </p>
+										<p class=""><b>Job Type:</b> Full-time</p>
+										<p class=""><b>Job Location:</b> Dhaka</p>
+									</div>
+									<button type="button" class="text-white bg-[#17a84c] hover:underline rounded-md px-5 py-2.5 mt-2">Apply Now</button>
+								</div>
+							</div>
+							<div class="border rounded"> 
+							   <div class="flex justify-center">
+									<img src="../images/executive-marketing-sales.jpeg" alt="">
+							   </div>
+							   <div class="p-4">
+									<p class="text-xl leading-6 text-[#007bff] hover:text-[#6e1bf2] mb-3 duration-300"><a href="">Executive Marketing & Sales</a></p>
+									<div class="leading-8 text-[#2e2e2e] space-y-1">
+										<p class="">We are looking for a Executive Marketing & Sales </p>
+										<p class=""><b>Job Type:</b> Full-time</p>
+										<p class=""><b>Job Location:</b> Dhaka</p>
+									</div>
+									<button type="button" class="text-white bg-[#17a84c] hover:underline rounded-md px-5 py-2.5 mt-2">Apply Now</button>
+								</div>
+							</div>
+					   </div>
+					   <div class="mt-[50px]">
+						  <p class="text-[#2e2e2e] leading-6 text-center">Career Opportunities @ Assure Group</p>
+						  <p class="text-3xl md:text-[38px] text-[#4a4a4a] leading-[46px] mb-2 md:mb-5 font-light text-center">Real Estate Expert? | Join the Team | Apply Now!</p>
+						  <div class="flex justify-center">
+								<img src="../images/heading-arrow.png" alt="">
+						  </div>
+						  <p class="text-[#2e2e2e] leading-8 mb-4">At Assure Group, leadership and innovation come naturally. Our team has constantly transformed to meet the changing landscape of the marketplace, serving the customers with quality residential apartments, commercial spaces, and great customer support & service. It continues today with innovations that consistently reinvent the business and our team as we strive for raising our standards for quality, safety, and sustainability.</p>
+						  <p class="text-[#2e2e2e] leading-8 italic mb-4">*We are an Equal Opportunity Employer and all inquiries are kept confidential</p>
+						  <p class="text-[#2e2e2e] leading-8 mb-4">Fill out the form below to submit your resume and one of our hiring managers will contact you if we have an available position that matches your resume.</p>
+						  <div> 
+							
+						  </div>
+					   </div>
+					</div>
+				</div>
+			</section>
+			<!-- Awards -->
+			<section class="bg-[url('../images/associates-and-suppliers.jpg')] bg-cover bg-no-repeat bg-center" >
+				<div class="bg-gradient-to-r from-black/80 to-[#1BAF51]/80 py-[50px] w-full " >
+					<div class="max-w-80 sm:max-w-3xl lg:max-w-[1600px] mx-auto " >
+						<div class="grid grid-cols-1 lg:grid-cols-4 gap-y-7 ">
+							<div class="col-span-1 px-[15px] "> 
+								<div class=""> 
+								  <p class="text-3xl md:text-[40px] text-white leading-[48px] mb-2 md:mb-5 font-light text-center">Awards</p>
+								  <div class="flex justify-center">
+									<img src="../images/heading-arrow-w.png" alt="" />
+								  </div>
+								</div> 
+								<div class="flex justify-center items-center gap-2 mt-12"> 
+									<div class=""> 
+										<a href="" >
+											<img src="../images/fastest-growing-brands-assure-group.png" alt="" /> 
+										</a>
+									</div>
+									<div class=""> 
+										<a href="" >
+											<img src="../images/fastest-growing-brands-assure-group.png" alt="" /> 
+										</a>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-span-3 px-[15px] "> 
+								<div class=""> 
+								  <p class="text-3xl md:text-[40px] text-white leading-[48px] mb-2 md:mb-5 font-light text-center">Affiliations & Suppliers of Assure Group</p>
+								  <div class="flex justify-center">
+									<img src="../images/heading-arrow-w.png" alt="" />
+								  </div>
+								</div> 
+								<div class="grid grid-cols-2 sm:grid-cols-5 lg:grid-cols-8 justify-center items-center gap-2 mt-12"> 
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/prime-bank.png" width="98" alt="" /> 
+										</a>
+									</div>
+									<div class="flex justify-center items-center min-h-[85px]"> 
+										<a href="" >
+											<img src="../images/ipdc-logo.png" width="98" alt="" /> 
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="h-96">
+			
+			</section>
+			
+		</main>
+		<!-- Footer Part -->
+		<footer class="">
+			<div class="relative bg-[url('../images/footer-bg.jpg')] bg-cover bg-no-repeat bg-center pt-[50px] border-b-[15px] border-[#17A84C] before:content-[''] before:absolute before:bg-black/95 before:w-full before:h-full before:left-0 before:top-0 before:z-[-1] z-10">
+				<div class="max-w-3xl lg:max-w-[1600px] mx-auto ">
+					<div class="grid grid-cols-12 gap-5">
+						<div class="col-span-12 sm:col-span-6 lg:col-span-4 px-[15px]">
+							<a href="" class="inline-block">
+								<img src="../images/logo.png" alt="" class="w-[188px] h-[90px] object-fill align-middle">
+							</a>
+							<div class="flex items-center mt-7">
+								<p class="font-bold text-[#BEBEBE] mr-2.5">FOLLOW US:</p>
+								<a href="" class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</a>
+								<a href="" class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-white hover:fill-[#1AA24A] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</a>
+							</div>
+							<div class="flex items-center gap-3 mt-7">
+								<span class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-[#BEBEBE] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</span>
+								<a href="" class="text-sm text-[#BEBEBE] hover:text-[#1AA24A] mr-2.5">09612-008800</a>
+							</div>
+							<div class="flex gap-3 mt-7">
+								<span class="" >
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-4 fill-[#BEBEBE] duration-300 " viewBox="0 0 512 512">
+										<path d="M347.1 24.6c7.7-18.6 28-28.5 47.4-23.2l88 24C499.9 30.2 512 46 512 64c0 247.4-200.6 448-448 448c-18 0-33.8-12.1-38.6-29.5l-24-88c-5.3-19.4 4.6-39.7 23.2-47.4l96-40c16.3-6.8 35.2-2.1 46.3 11.6L207.3 368c70.4-33.3 127.4-90.3 160.7-160.7L318.7 167c-13.7-11.2-18.4-30-11.6-46.3l40-96z"/>
+									</svg>
+								</span>
+								<div class="flex flex-wrap gap-1 text-sm text-[#BEBEBE] ">
+									<a href="" class="hover:text-[#1AA24A]">09612-008800</a>,
+									<a href="" class="hover:text-[#1AA24A]">09612-008800</a>,
+									<a href="" class="hover:text-[#1AA24A]">09612-008800</a>,
+								</div>
+							</div>
+						</div>
+						<div class="col-span-12 sm:col-span-6 lg:col-span-4 px-[15px]">
+							<p class="font-bold text-[#BEBEBE] mr-2.5 uppercase mb-[25px]">Businesses</p>
+							<div class="flex flex-col gap-1 text-[15px] text-[#BEBEBE] ">
+								<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Assure Development & Design Ltd </a>
+								<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Assure Development & Design Ltd </a>
+								<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Assure Development & Design Ltd </a>
+							</div>
+						</div>
+						<div class="col-span-12 sm:col-span-12 lg:col-span-4 px-[15px]">
+							<p class="font-bold text-[#BEBEBE] mr-2.5 uppercase mb-[25px]">Property Collections</p>
+							<div class="grid gird-cols-1 sm:grid-cols-3 gap-5 ">
+								<div class="text-[15px] text-[#BEBEBE] ">
+									<div class="mb-4">
+										<a href="" class="hover:text-[#1AA24A] font-medium uppercase leading-[30px] ">Phases</a>
+									</div>
+									<div class="flex flex-col gap-1">
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+									</div>
+								</div>
+								<div class="text-[15px] text-[#BEBEBE] ">
+									<div class="mb-4">
+										<a href="" class="hover:text-[#1AA24A] font-medium uppercase leading-[30px] ">Phases</a>
+									</div>
+									<div class="flex flex-col gap-1">
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+									</div>
+								</div>
+								<div class="text-[15px] text-[#BEBEBE] ">
+									<div class="mb-4">
+										<a href="" class="hover:text-[#1AA24A] font-medium uppercase leading-[30px] ">Phases</a>
+									</div>
+									<div class="flex flex-col gap-1">
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+										<a href="" class="hover:text-[#1AA24A] relative pl-4 before:content-[''] before:absolute before:bg-[#17A84C] before:w-[7px] before:h-[7px] before:left-0 before:top-[7px]">Ongoing</a>
+									</div>
+								</div>
+								
+							</div>
+							<div class="flex flex-col gap-1 text-[15px] text-[#BEBEBE] ">
+								
+							</div>
+						</div>
+						
+					</div>
+					<div class="flex justify-center md:justify-between text-[#BEBEBE] md:px-[15px] pt-7 md:pt-9"> 
+						<div class="flex"> 
+							<a href="" class="hover:text-[#1AA24A] ">Privacy Policy</a>
+							<span class="px-[11px]">|</span>
+							<a href="" class="hover:text-[#1AA24A] ">Sitemap</a>
+						</div>
+						<div> 
+						
+						</div>
+					</div>
+				</div>
+				<div class=" flex justify-center">
+					<a href="" class="bg-[#17a84c] py-3 md:py-4 px-6 md:px-8 inline-block"> 
+						<svg xmlns="http://www.w3.org/2000/svg" class=" h-3 fill-white" viewBox="0 0 512 512">
+						<path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+		<!-- Alpine Plugins -->
+		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>	
+		<script src="../js/theme.js"></script>
+		
+    </body>
+</html>
