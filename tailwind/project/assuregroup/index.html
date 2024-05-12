@@ -11,8 +11,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
 		
         <!-- Alpine js -->
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.min.js"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.min.js"></script>
 		
 		<!-- Splide Js -->
 		<link href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css " rel="stylesheet">
@@ -27,33 +27,130 @@
 		<header>
 			<!-- Navbar -->
 			<nav id="main-nav" class="" x-data="{ open: true, focus: true }" @keydown.escape="onEscape">
-				<div class="w-full absolute z-10 top-[50px] ">
-					<div class="mx-auto max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] px-[15px] text-[15px]">
-						<div class="bg-[#17A84C]/85 flex items-center justify-between">
+				<div class="w-full absolute z-10 lg:top-[50px] ">
+					<div class="mx-auto max-w-full lg:max-w-5xl xl:max-w-6xl 2xl:max-w-[1400px] text-[15px] bg-[#17A84C]/85 ">
+						<div class="flex items-center justify-between">
 							<div class="flex items-center">
-								<div x-data="{ open: false }" @keydown.window.escape="open = false" class="lg:hidden px-4 z-30">
+								<div x-data="{ open: true }" @keydown.window.escape="open = false" class="lg:hidden p-2 z-30">
 									<button type="button" class="text-black text-white transition duration-700 ease-in-out h-12 w-12 flex justify-center items-center" @click="open = true">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
 											<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 										</svg>
 									</button>
 									<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" @click.away="open = false">
-										<div class="fixed inset-0 z-40 flex bg-black bg-opacity-40 duration-300">
-											<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-green-700 py-4 pb-12 shadow-xl" @click.away="open = false">
+										<div class="fixed inset-0 z-40 flex bg-black bg-opacity-50 duration-300">
+											<div 
+												x-show="open" 
+												x-transition:enter="transition ease-in-out duration-300 transform" 
+												x-transition:enter-start="-translate-x-full" 
+												x-transition:enter-end="translate-x-0" 
+												x-transition:leave="transition ease-in-out duration-300 transform" 
+												x-transition:leave-start="translate-x-0" 
+												x-transition:leave-end="-translate-x-full" 
+												class="relative mr-auto flex h-full w-full max-w-[280px] flex-col overflow-y-auto scroll-sm bg-white py-4 pb-12 shadow-xl" 
+												@click.away="open = false"
+											>
 												<div class="flex items-center px-4">
-													<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-green-800 border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
-														 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+													<button type="button" class="h-6 w-6 ml-auto text-red-300 hover:text-red-500 duration-300" @click="open = false">
+														 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 															<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
 													  </svg>
 													</button>
 												</div>
-												<div class="block text-white px-10 py-16">
-													<ul class="list-none text-white space-y-4 text-[1.15rem]">
-														<li class="">
-															<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
+												<div class="bg-white py-1 px-7">
+													<a href="" >
+														<img src="images/logo.png" alt="" class="w-full h-full object-fill">
+													</a>
+												</div>
+												<div x-data="{ acordion: 'corporate' }">
+													<ul class="list-none text-base">
+														<li>
+															<a href="{{url('/')}}" class="hover:bg-[#0c8d3b] hover:text-white transition-all duration-100 block px-3 py-2">Home</a>
+														</li>
+														<li>
+															<button @click="acordion !== 'corporate' ? acordion = 'corporate' : acordion = null" class="w-full flex items-center justify-between px-3 py-2 hover:bg-[#0c8d3b] hover:text-white transition-all duration-300" :class="acordion == 'corporate' ? 'bg-[#EAF7EF]' : '' ">
+																<h5>Corporate</h5>
+																<span x-show="acordion !== 'corporate'" class="text-lg font-semibold">+</span>
+																<span x-show="acordion === 'corporate'" class="text-lg font-semibold">-</span>
+															</button>
+															<div x-show.transition.duration.300ms="acordion === 'corporate'" x-cloak class="overflow-hidden transition-all duration-300 bg-[#EAF7EF]">
+																	<ul class="ml-2 pt-2 bg-[#D7F0E0] text-black">
+																	<li>
+																		<a href="index.php" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Company Profile</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Vision & Mission</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>E-Meet The T
+																			eam</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Corporate Structure</small>
+																			</a></li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Career Opportunities</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Customer Reviews</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Awards</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Affiliations</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Social Responsibility</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Land Wanted</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Certifications</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Testimonials</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Before After Photos</small>
+																		</a>
+																	</li>
+																	<li>
+																		<a href="" class="hover:text-white duration-100 hover:bg-[#0c8d3b] block px-2">
+																			<small>Sitemap</small>
+																		</a>
+																	</li>
+																</ul>
+															</div>
 														</li>
 													</ul>
 												</div>
+
 											</div>
 										</div>
 									</div>
@@ -405,7 +502,7 @@
 								</ul>
 							</div>
 							<div class="border-r h-5 border-white lg:flex hidden"></div>
-							<div class="flex items-center justify-end">
+							<div class="flex items-center justify-end grow">
 								<a href="#" class="flex gap-2 pl-[15px] group whitespace-nowrap">
 									<div class="flex justify-center items-center duration-300">
 										<span class="bg-[#CDFBDD] group-hover:bg-[#0c6e30] p-2 rounded duration-300" >
@@ -420,7 +517,7 @@
 										<p class="text-lg font-bold">09612-008800</p>
 									</div>
 								</a>
-								<div class="flex flex-col items-center gap-1 ml-[25px]">
+								<div class="flex flex-col items-center gap-1 ml-3 sm:ml-[25px]">
 									<a href="{{url('/')}}" class="bg-[#0c6e30] group hover:bg-[#a2ccb1] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
 										<svg class="h-3 group-hover:fill-[#0c6e30] fill-white duration-300 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
 									</a>
