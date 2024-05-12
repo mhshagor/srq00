@@ -56,3 +56,56 @@ background: #00000025;
 	color: white;
 	background-color: black;
 }	
+
+/* ribbon style for sold out */
+.ribbon-box {
+    top: -8px;
+    left: 8px;
+    z-index: 18;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.ribbon-box:before,
+.ribbon-box:after {
+    content: "";
+    position: absolute;
+}
+
+.ribbon-box:before {
+    width: 40px;
+    height: 8px;
+    right: 100px;
+    background: #4D6530;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.ribbon-box:after {
+    right: 0px;
+    top: 100px;
+    width: 8px;
+    height: 40px;
+    background: #4D6530;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.ribbon-text {
+    top: 30px;
+    z-index: 2;
+    right: -50px;
+    width: 200px;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    text-align: center;
+    border: 1px dashed;
+    background: #fed524;
+    transform: rotate(45deg);
+    position: absolute !important;
+    -webkit-transform: rotate(45deg);
+    box-shadow: 0 0 0 3px #fed524, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
+}
+
+/* ribbon style for sold out */
