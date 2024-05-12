@@ -11,7 +11,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
 		
         <!-- Alpine js -->
-        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.min.js"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
 		
 		<!-- Splide Js -->
@@ -23,19 +23,48 @@
 		<!-- theme css -->
         <link href="css/style.css" rel="stylesheet">
     </head>
-    <body class="relative">
+    <body class="relative x-cloak">
 		<header>
 			<!-- Navbar -->
 			<nav id="main-nav" class="" x-data="{ open: true, focus: true }" @keydown.escape="onEscape">
 				<div class="w-full absolute z-10 top-[50px] ">
 					<div class="mx-auto max-w-[960px] xl:max-w-6xl 2xl:max-w-[1400px] px-[15px] text-[15px]">
-						<div class="bg-[#17A84C]/85 lg:flex hidden items-center justify-between">
-							<div class="bg-white py-1 px-[15px] ">
-								<a href="" >
-									<img src="images/logo.png" alt="" class="w-[170px] h-[90px] mx-auto object-fill align-middle">
-								</a>
+						<div class="bg-[#17A84C]/85 flex items-center justify-between">
+							<div class="flex items-center">
+								<div x-data="{ open: false }" @keydown.window.escape="open = false" class="lg:hidden px-4 z-30">
+									<button type="button" class="text-black text-white transition duration-700 ease-in-out h-12 w-12 flex justify-center items-center" @click="open = true">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+											<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+										</svg>
+									</button>
+									<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" @click.away="open = false">
+										<div class="fixed inset-0 z-40 flex bg-black bg-opacity-40 duration-300">
+											<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-green-700 py-4 pb-12 shadow-xl" @click.away="open = false">
+												<div class="flex items-center px-4">
+													<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-green-800 border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
+														 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+															<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+													  </svg>
+													</button>
+												</div>
+												<div class="block text-white px-10 py-16">
+													<ul class="list-none text-white space-y-4 text-[1.15rem]">
+														<li class="">
+															<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bg-white py-1 px-[15px] w-[170px] h-[90px]">
+									<a href="" >
+										<img src="images/logo.png" alt="" class="w-full h-full object-contain">
+									</a>
+								</div>
 							</div>
-							<div class="hidden items-center justify-end md:flex"> 
+							<div class="items-center justify-end lg:flex hidden"> 
 								<ul class="flex items-center justify-center gap-6 mr-6 text-[15px] text-white" x-data="{ dropdown: null }" @click.away="dropdown = null">
 									<li class="">
 										<a href="{{url('/')}}" class="px-[14px] py-[29px] block">
@@ -371,12 +400,13 @@
 									</li>
 									
 									<li class="">
-										<a href="contact-us.html" class="hover:text-[#00ff5b] duration-300 px-[14px] py-[29px]">Contact</a>
+										<a href="contact-us.html" class="hover:text-[#00ff5b] duration-300">Contact</a>
 									</li>
 								</ul>
 							</div>
-							<div class="hidden items-center justify-end md:flex">
-								<a href="#" class="flex gap-2 pl-[15px] group before:content-[''] before:left-0 before:top-50 before:w-px before:h-5 before:mt-4 before:mr-1 before:bg-white">
+							<div class="border-r h-5 border-white lg:flex hidden"></div>
+							<div class="flex items-center justify-end">
+								<a href="#" class="flex gap-2 pl-[15px] group whitespace-nowrap">
 									<div class="flex justify-center items-center duration-300">
 										<span class="bg-[#CDFBDD] group-hover:bg-[#0c6e30] p-2 rounded duration-300" >
 											
@@ -385,7 +415,7 @@
 											</svg>
 										</span>
 									</div>
-									<div class="text-[#CDFBDD] group-hover:text-white duration-300">
+									<div class="text-[#CDFBDD] group-hover:text-white duration-300 hidden sm:block">
 										<p class="">Call Us Today</p>
 										<p class="text-lg font-bold">09612-008800</p>
 									</div>
@@ -400,75 +430,6 @@
 									<a href="{{url('/')}}" class="bg-[#0c6e30] group hover:bg-[#a2ccb1] rounded-bl h-5 w-5 flex justify-center items-center duration-300">
 										<svg class="h-3 group-hover:fill-[#0c6e30] fill-white duration-300 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
 									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- mobile navBar -->
-				<div x-data="{ open: false }" @keydown.window.escape="open = false" class="sticky top-0 z-30 bg-white px-4 sm:px-8 md:px-16 lg:px-28 mx-auto lg:hidden">
-					<div class="flex items-center justify-between">
-						<div>
-							<a href="{{url('/')}}">
-							  <img class="h-14 w-auto" src="images/logo.png" alt="Logo">
-							</a>
-						</div>
-						<div class="">
-							<div class=" flex relative py-3 sm:max-w-xl mx-auto">
-								<!-- offcanvase open button -->
-								<div class="shrink-0 block lg:hidden">
-									<button type="button" class="text-black hover:bg-green-700 hover:text-white border border-green-800 transition duration-700 ease-in-out h-10 w-10 flex justify-center items-center" @click="open = true">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-										</svg>
-									</button>
-								</div>
-								<!-- end offcanvase open button -->
-							</div>
-						</div>
-					</div>
-					<!-- Mobile offcanvase dialog -->
-					<div x-show="open" class="relative z-40 lg:hidden" x-ref="dialog" aria-modal="true" style="display: none;">
-						<div class="fixed inset-0 z-40 flex">
-							<div x-show="open" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-green-700 py-4 pb-12 shadow-xl" @click.away="open = false" style="display: none;">
-								<!-- offcanvase close -->
-								<div class="flex items-center px-4">
-									<button type="button" class="-mr-2 flex h-10 w-10 items-center justify-center  bg-white p-2  hover:text-white hover:bg-green-800 border-2 border-white  transition duration-700 ease-in-out" @click="open = false">
-										 <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-											<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-									  </svg>
-									</button>
-								</div>
-								<!-- end offcanvase close -->
-								<!-- offcanvases -->
-								<div class="blocktext-white px-10 py-16">
-									<ul class="list-none text-white space-y-4 text-[1.15rem]">
-										<li class="">
-											<a href="{{url('/')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Home</a>
-										</li>
-										<li class="">
-											<a href="{{url('about-us')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block  after:duration-500 after:w-full after:bg-black text-gray-900 duration-300">About</a>
-										</li>
-										<li class="">
-											<a href="{{url('our-services')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Service</a>
-										</li>
-										<li class="">
-											<a href="{{url('our-team')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Team</a>
-										</li>
-										<li class="">
-											<a href="{{url('our-blogs')}}" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Blogs</a>
-										</li>
-										<li class="">
-											<a href="#contact" class="inline-block relative after:content-[''] after:absolute after:h-[3px] after:block after:w-0 hover:after:w-full after:bg-black hover:text-gray-900 after:duration-500 duration-300">Contact</a>
-										</li>
-									</ul>
-									<div class="mt-5 flex">
-										<a href="{{url('login')}}" class="flex border border-2 border-gray-100 text-white font-semibold hover:shadow-[0_0_0_2em_rgb(255,255,255)_inset,_0_3px_10px_rgba(24,24,24,0.3)] hover:text-black px-5 py-2 rounded-full duration-700 overflow-hidden relative group whitespace-nowrap">
-											SignIn                                                                                  
-											<svg xmlns="http://www.w3.org/2000/svg" height="18" fill="currentColor" class="mt-0.5 ml-1.5" viewBox="0 0 512 512"><path d="M352 96l64 0c17.7 0 32 14.3 32 32l0 256c0 17.7-14.3 32-32 32l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0c53 0 96-43 96-96l0-256c0-53-43-96-96-96l-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-9.4 182.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L242.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"></path></svg>
-											<span class="-left-[100%] absolute bg-white duration-[1200ms] group-hover:left-[100%] bg-opacity-50 opacity-50 h-[5px] inline-flex rotate-[100deg] rounded-md shadow-[0_0_20px_5px_#ffffff] shadow-blue-100 w-full"></span>
-										</a>
-									</div>
 								</div>
 							</div>
 						</div>
