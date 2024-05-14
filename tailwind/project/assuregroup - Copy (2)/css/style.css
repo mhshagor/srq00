@@ -1,0 +1,111 @@
+body {
+	 font-family: 'Poppins';
+}
+[x-cloak]{ display: none;}
+
+/* ----- Scrollbar ------ */
+.scroll-sm::-webkit-scrollbar {
+	 width: 6px;
+	 height: 6px;
+  }
+.scroll::-webkit-scrollbar {
+width: 8px;
+height: 8px;
+}
+.scroll-lg::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+.scroll-sm::-webkit-scrollbar-thumb,
+.scroll::-webkit-scrollbar-thumb,
+.scroll-lg::-webkit-scrollbar-thumb{
+background: #06060652; 
+}
+.scroll-sm::-webkit-scrollbar-track,
+.scroll::-webkit-scrollbar-track,
+.scroll-lg::-webkit-scrollbar-track{
+background: #00000025; 
+}
+
+
+.splide__track--nav>.splide__list>.splide__slide {
+	cursor: pointer;
+	opacity: .5;
+}
+.splide__track--nav>.splide__list>.splide__slide.is-active {
+	opacity: 1;
+	border: 0;
+}
+#concept-slide .splide__arrow {
+    background: #00953680;
+    border-radius: 15%;
+    width: 2.5em;
+    height: 2.5em;
+}
+#concept-slide .splide__arrow svg {
+    fill: white;
+    height: 1.5em;
+    width: 1.5em;
+}
+#thumbnail-carousel .splide__track--nav>.splide__list>.splide__slide.is-active {
+	border:12px solid black;
+	border-top: 0;
+	border-bottom: 12px solid black;
+}
+#thumbnail-carousel .splide__track--nav>.splide__list>.splide__slide.is-active h5 {
+	color: white;
+	background-color: black;
+}	
+
+/* ribbon style for sold out */
+.ribbon-box {
+    top: -8px;
+    left: 8px;
+    z-index: 18;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.ribbon-box:before,
+.ribbon-box:after {
+    content: "";
+    position: absolute;
+}
+
+.ribbon-box:before {
+    width: 40px;
+    height: 8px;
+    right: 100px;
+    background: #4D6530;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.ribbon-box:after {
+    right: 0px;
+    top: 100px;
+    width: 8px;
+    height: 40px;
+    background: #4D6530;
+    border-radius: 0px 8px 8px 0px;
+}
+
+.ribbon-text {
+    top: 30px;
+    z-index: 2;
+    right: -50px;
+    width: 200px;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    text-align: center;
+    border: 1px dashed;
+    background: #fed524;
+    transform: rotate(45deg);
+    position: absolute !important;
+    -webkit-transform: rotate(45deg);
+    box-shadow: 0 0 0 3px #fed524, 0px 21px 5px -18px rgba(0, 0, 0, 0.6);
+}
+
+/* ribbon style for sold out */
