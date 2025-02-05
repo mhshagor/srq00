@@ -1,0 +1,16 @@
+{
+ "workbench.colorCustomizations": {
+  "editor.lineHighlightBackground": "#000000ab",
+  "editor.selectionBackground": "#2600ff",
+  "editor.selectionHighlightBackground": "#451f70a9",
+  "editor.wordHighlightBackground": "#2040669f",
+  "editor.wordHighlightStrongBackground": "#be11111f",
+  "editorBracketHighlight.foreground1": "#ff0000",
+  "editorBracketHighlight.foreground2": "#00ff00",
+  "editorBracketHighlight.foreground3": "#0000ff",
+  "editorBracketMatch.border": "#00a2ff",
+  "editorBracketMatch.background": "#258fb93a",
+  "minimap.background": "#00000000",
+  "scrollbar.shadow": "#00000000"
+ }
+}

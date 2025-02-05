@@ -1,64 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="tailwind/images/logos/favicon.ico" type="image/x-icon">
-		
-        <!-- Tailwind CSS -->
-        <script src="tailwind/css/tailwind-3.4.1.min.css"></script>
-		<script defer src="tailwind/js/collapse.min.js"></script>
-		<script defer src="tailwind/js/alpine.min.js"></script> 
-		
-		<title>My Component</title>
-	</head>
-    <body > 
-		<main class="bg-gray-50 min-h-screen pb-20">
-			<section id="service" class="min-h-[250px] bg-cover bg-center bg-no-repeat bg-gradient-to-br from-green-500 to-green-900 bg-blend-multiply" style="background-image:linear-gradient(146deg,rgb(34 195 93)0%,rgb(23 109 56)69%), url(images/service_bg.png)">
-				<div class="lg:container text-white pt-36 pb-20 px-6 md:px-20 xl:px-28 mx-auto">
-					<h1 class="text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-						My Component
-					</h1>
-				</div>
-			</section>
-			<section class="grid grid-cols-2">
-				<div class="space-y-5  bg-[#38BDF8] py-10 w-full">
-					<div class="text-center">
-						<h1 class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase">Tailwind Component</h1>
-					</div>
-					<div class="flex flex-wrap gap-3 justify-center">
-						<a href="tailwind/header.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Header</a>
-						<a href="tailwind/footer.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Footer</a>
-						<a href="tailwind/button.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Button</a>
-						<a href="tailwind/form.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Form</a>
-						<a href="tailwind/accordion.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Accordion</a>
-						<a href="tailwind/card.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Card</a>
-						<a href="tailwind/nav-tab.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Nav-Tab</a>
-						<a href="tailwind/line-heading.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Line Heading</a>
-					</div>
-				</div>
-				<div class="space-y-5  bg-[#7952B3] py-10 w-full">
-					<div class="text-center">
-						<h1 class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase">Bootstrap Component</h1>
-					</div>
-					<div class="flex flex-wrap gap-3 justify-center">
-						<a href="bootstrap/button.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Button</a>
-						<a href="bootstrap/line-heading.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Line Heading</a>
-						<a href="bootstrap/navbar-sidebar.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">navbar Sidebar</a>
-						<a href="bootstrap/progress.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Progress</a>
-					</div>
-				</div>
-				<div class="space-y-5 bg-orange-500 py-10 w-full">
-					<div class="text-center">
-						<h1 class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase">Alpine Component</h1>
-					</div>
-					<div class="flex flex-wrap gap-3 justify-center">
-						<a href="alpine/select-option.html" class="px-5 py-2 bg-blue-500 rounded font-bold text-white">Select-Option</a>
-					</div>
-				</div>
-			</section>
-		</main>
-	</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="tailwind/images/logos/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="tailwind/css/tailwind-3.4.1.min.css"></script>
+    <script defer src="tailwind/js/collapse.min.js"></script>
+    <script defer src="tailwind/js/alpine.min.js"></script>
+
+    <title>My Component</title>
+  </head>
+  <body>
+    <main class="bg-gray-50 min-h-screen pb-20">
+      <section
+        id="service"
+        class="min-h-[250px] bg-cover bg-center bg-no-repeat bg-gradient-to-br from-green-500 to-green-900 bg-blend-multiply"
+        style="
+          background-image: linear-gradient(
+              146deg,
+              rgb(34 195 93) 0%,
+              rgb(23 109 56) 69%
+            ),
+            url(images/service_bg.png);
+        "
+      >
+        <div
+          class="lg:container text-white pt-36 pb-20 px-6 md:px-20 xl:px-28 mx-auto"
+        >
+          <h1 class="text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+            My Component
+          </h1>
+        </div>
+      </section>
+      <section class="grid grid-cols-2">
+        <div class="space-y-5 bg-[#38BDF8] py-10 w-full">
+          <div class="text-center">
+            <h1
+              class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase"
+            >
+              Tailwind Component
+            </h1>
+          </div>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a
+              href="tailwind/header.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Header</a
+            >
+            <a
+              href="tailwind/footer.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Footer</a
+            >
+            <a
+              href="tailwind/button.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Button</a
+            >
+            <a
+              href="tailwind/form.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Form</a
+            >
+            <a
+              href="tailwind/accordion.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Accordion</a
+            >
+            <a
+              href="tailwind/card.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Card</a
+            >
+            <a
+              href="tailwind/nav-tab.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Nav-Tab</a
+            >
+            <a
+              href="tailwind/line-heading.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Line Heading</a
+            >
+          </div>
+        </div>
+        <div class="space-y-5 bg-[#7952B3] py-10 w-full">
+          <div class="text-center">
+            <h1
+              class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase"
+            >
+              Bootstrap Component
+            </h1>
+          </div>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a
+              href="bootstrap/button.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Button</a
+            >
+            <a
+              href="bootstrap/line-heading.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Line Heading</a
+            >
+            <a
+              href="bootstrap/navbar-sidebar.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >navbar Sidebar</a
+            >
+            <a
+              href="bootstrap/progress.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Progress</a
+            >
+          </div>
+        </div>
+        <div class="space-y-5 bg-orange-500 py-10 w-full">
+          <div class="text-center">
+            <h1
+              class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase"
+            >
+              Alpine Component
+            </h1>
+          </div>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a
+              href="alpine/select-option.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Select-Option</a
+            >
+          </div>
+        </div>
+        <div class="space-y-5 bg-orange-500 py-10 w-full">
+          <div class="text-center">
+            <h1
+              class="relative text-white text-[2rem] font-bold pb-4 before:content-[''] before:absolute before:left-[calc(50%-60px)] before:bottom-[1px] before:h-[1px] before:block before:w-[120px] before:bg-green-500 after:content-[''] after:absolute after:left-[calc(50%-20px)] after:bottom-0 after:h-[3px] after:w-[40px] after:block before:w-[120px] after:bg-green-800 uppercase"
+            >
+              Css Component
+            </h1>
+          </div>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <a
+              href="css-component/button.html"
+              class="px-5 py-2 bg-blue-500 rounded font-bold text-white"
+              >Button</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
-	
