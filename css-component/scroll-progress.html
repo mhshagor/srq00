@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Progress</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <style>
+    @keyframes scroll-progress {
+      0% {
+        transform: scaleX(0);
+      }
+    }
+    @keyframes scroll-progress-top-to-bottom {
+      0% {
+        transform: scaleY(0);
+      }
+    }
+    .scroll-progress {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scroll-progress linear;
+        animation-timeline: scroll();
+      }
+    }
+    .scroll-progress-top-to-bottom {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scroll-progress-top-to-bottom linear;
+        animation-timeline: scroll();
+      }
+    }
+    .scroll-progress--view {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scroll-progress linear;
+        animation-timeline: view();
+        animation-range: entry entry 200px;
+        animation-fill-mode: both;
+      }
+    }
+    .scroll-progress--view-reverse {
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scroll-progress linear reverse;
+        animation-timeline: view();
+        animation-range: entry entry 200px;
+        animation-fill-mode: both;
+      }
+    }
+  </style>
+  <body class="h-screen max-w-4xl mx-auto">
+    <header
+      class="bg-gray-300 p-4 flex items-center justify-between fixed top-0 inset-x-0 z-50"
+    >
+      <h1 class="text-2xl">Scroll Progress</h1>
+      <a class="text-blue-500 hover:text-blue-700">GitHub</a>
+    </header>
+    <div class="flex items-center justify-center mt-16 pt-5">
+      <div class="bg-white p-4 rounded-lg shadow-lg border text-2xl">
+        <div class="">
+          <h1 class="text-4xl font-bold py-5">Section 1</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 2</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 3</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 4</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 5</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 6</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 7</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <div class="w-full">
+            <h1 class="text-4xl font-bold py-5">Section 8</h1>
+            <div
+              class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+            ></div>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 9</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 10</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 11</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 12</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 13</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 14</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 15</h1>
+          <div
+            class="scroll-progress--view origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+          <h1 class="text-4xl font-bold py-5">Section 16</h1>
+          <div
+            class="scroll-progress--view-reverse origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500"
+          ></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec
+            nulla auctor, vestibulum magna sed, convallis ex. Sed ullamcorper
+            vitae nulla vitae dictum. Nullam auctor, nunc et dictum dictum, ex
+            erat convallis nunc, sed convallis nunc lorem in ex. Sed auctor,
+            nunc et dictum dictum, ex erat convallis nunc, sed convallis nunc
+            lorem in ex.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="scroll-progress origin-left h-2 w-full bg-gradient-to-r from-indigo-500 to-teal-500 fixed top-16 left-0 z-50"
+    ></div>
+    <div
+      class="scroll-progress-top-to-bottom origin-top h-full w-2 bg-gradient-to-b from-indigo-500 to-teal-500 fixed top-16 left-0 z-50"
+    ></div>
+    <div 
+      class="scroll-progress origin-right h-2 w-full bg-gradient-to-r from-teal-500 to-indigo-500 fixed bottom-0 right-0 z-50"
+    ></div>
+    <div
+      class="scroll-progress-top-to-bottom origin-bottom top-16 h-full w-2 bg-gradient-to-t from-indigo-500 to-teal-500 fixed bottom-0 right-0 z-50"
+    ></div>
+  </body>
+</html>
