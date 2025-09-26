@@ -540,6 +540,128 @@
 					</div>
 				</div>
 			</section>
+			
+			<style>
+				.drop {
+					background: rgba(255, 255, 255, 0.08); /* frosted background */
+					border-radius: 30px;
+					border: 1px solid rgba(255, 255, 255, 0.15);
+					backdrop-filter: blur(12px);
+			
+					box-shadow:
+						inset 6px 6px 10px rgba(255, 255, 255, 0.1),
+						10px 18px 25px rgba(0, 0, 0, 0.2),
+						inset -6px -6px 10px rgba(255, 255, 255, 0.08);
+			
+					transition: all 0.4s ease;
+				}
+			
+				.drop:hover {
+					transform: translateY(-6px) scale(1.03);
+					box-shadow:
+						inset 4px 4px 6px rgba(255, 255, 255, 0.08),
+						18px 28px 35px rgba(0, 0, 0, 0.25),
+						inset -4px -4px 6px rgba(255, 255, 255, 0.1);
+				}
+			</style>
+			<section class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center p-6">
+				<div class="max-w-sm w-full">
+					<article
+						class="group relative overflow-hidden rounded-[30px] border border-white/10 p-6 pt-10 drop bg-white/5 cursor-pointer"
+					>
+						<!-- Fancy animated accent shape -->
+						<div
+							class="absolute -inset-x-10 -top-20 h-40 bg-gradient-to-r from-pink-500/30 via-indigo-500/20 to-purple-500/30 blur-3xl opacity-30 group-hover:opacity-50 transition-all duration-500 ease-out"
+							aria-hidden="true"
+						></div>
+			
+						<!-- Icon / avatar -->
+						<div class="flex items-center gap-4 relative">
+							<div
+								class="w-14 h-14 rounded-2xl flex-shrink-0 bg-gradient-to-br from-indigo-500/40 to-pink-400/30 ring-1 ring-white/10 p-1"
+							>
+								<!-- SVG icon -->
+								<svg
+									class="w-full h-full p-2"
+									viewBox="0 0 24 24"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+									aria-hidden="true"
+								>
+									<path
+										d="M12 2v8l6 3-6 3v6"
+										stroke="currentColor"
+										stroke-width="1.5"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										class="text-white/90"
+									></path>
+								</svg>
+							</div>
+			
+							<div class="flex-1">
+								<h3 id="card-title" class="text-lg font-semibold leading-tight">
+									Glasify UI Card
+								</h3>
+								<p id="card-desc" class="text-sm mt-1 text-white/80">
+									Smooth glassmorphism + soft shadows with floating accent.
+								</p>
+							</div>
+						</div>
+			
+						<!-- Content -->
+						<div class="mt-5 relative">
+							<p class="text-sm leading-relaxed text-white/90">
+								This card now has **softer corners, inner glow, outer shadow, and a
+								floating gradient background shape**. The hover effect adds depth and
+								movement.
+							</p>
+			
+							<!-- Meta row -->
+							<div class="mt-4 flex items-center justify-between gap-3">
+								<div class="flex items-center gap-2">
+									<span
+										class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-white/10 ring-1 ring-white/6"
+									>
+										New
+									</span>
+									<span class="text-xs text-white/70">· 8 min read</span>
+								</div>
+			
+								<div class="flex items-center gap-3">
+									<button
+										class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/6 hover:bg-white/10 transition-all focus:outline-none focus:ring-2 focus:ring-white/20"
+									>
+										<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+											<path
+												d="M5 12h14"
+												stroke="currentColor"
+												stroke-width="2"
+												stroke-linecap="round"
+											/>
+										</svg>
+										Read
+									</button>
+									<button
+										aria-label="More"
+										class="p-1.5 rounded-lg hover:bg-white/6 focus:outline-none"
+									>
+										<svg
+											class="w-5 h-5 text-white/70"
+											viewBox="0 0 24 24"
+											fill="none"
+										>
+											<circle cx="12" cy="12" r="1.5" />
+											<circle cx="19" cy="12" r="1.5" />
+											<circle cx="5" cy="12" r="1.5" />
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
 		</main>
 	</body>
 </html>
